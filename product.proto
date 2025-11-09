@@ -1,0 +1,20 @@
+// product.proto
+syntax = "proto3";
+
+package acg_goods;
+
+message Tag {
+  string text_jp = 1;
+  string text_zh = 2;
+}
+
+message Product {
+  string vendor = 1;
+  string product_id = 2;
+  string title_jp = 3;
+  string title_zh = 4;
+  repeated Tag tags = 5;
+  repeated string image_urls = 6;
+}
+
+message ProductsInfo { repeated Product products = 1; }

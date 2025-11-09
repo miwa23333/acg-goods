@@ -1,0 +1,54 @@
+products {
+  vendor: "jump"
+  product_id: "18044760"
+  image_urls: "https://jumpshop-online.com/cdn/shop/products/18044760.jpg"
+  image_urls: "https://jumpshop-online.com/cdn/shop/products/18044760-1.jpg"
+  image_urls: "https://jumpshop-online.com/cdn/shop/products/18044760-2.jpg"
+  tags {
+    text_zh: "排球少年"
+    text_jp: "ハイキュー"
+  }
+  tags {
+    text_zh: "js趴娃"
+    text_jp: "のるキャラマスコット"
+  }
+}
+products {
+  vendor: "jump"
+  product_id: "18045453"
+  image_urls: "https://jumpshop-online.com/cdn/shop/products/18045453.jpg"
+  tags {
+    text_zh: "排球少年"
+    text_jp: "ハイキュー"
+  }
+  tags {
+    text_zh: "js趴娃"
+    text_jp: "のるキャラマスコット"
+  }
+}
+products {
+  vendor: "jump"
+  product_id: "18047987"
+  image_urls: "https://jumpshop-online.com/cdn/shop/products/18047987.jpg"
+  tags {
+    text_zh: "排球少年"
+    text_jp: "ハイキュー"
+  }
+  tags {
+    text_zh: "js趴娃"
+    text_jp: "のるキャラマスコット"
+  }
+}
+products {
+  vendor: "jump"
+  product_id: "18056071"
+  image_urls: "https://jumpshop-online.com/cdn/shop/files/18056071.jpg"
+  tags {
+    text_zh: "坂本日常"
+    text_jp: "SAKAMOTO DAYS"
+  }
+  tags {
+    text_zh: "js趴娃"
+    text_jp: "のるキャラマスコット"
+  }
+}
