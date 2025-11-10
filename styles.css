@@ -204,9 +204,21 @@ h1 {
   "is-owned" State Styling
 */
 
+/* MODIFIED: 
+  The glow (box-shadow) is now applied directly to the .catalog-card
+  when it has the .is-owned class. This prevents it from being clipped
+  by the 'overflow: hidden' rule.
+*/
+.catalog-card.is-owned {
+    box-shadow: 0 0 10px 2px var(--success-color);
+}
+
+/* This rule is no longer needed, so it is REMOVED: */
+/*
 .catalog-card.is-owned .catalog-image-wrapper {
     box-shadow: 0 0 10px 2px var(--success-color);
 }
+*/
 
 /* Make the button active and green when owned */
 .catalog-card.is-owned .own-it-btn,
@@ -278,7 +290,7 @@ h1 {
     max-height: calc(90vh - 140px); 
     object-fit: contain; 
     border-radius: 4px;
-    margin-bottom: 15px; /* MODIFIED: Space between image and thumbnails */
+    margin-bottom: 15px; /* Space between image and thumbnails */
 }
 
 #modal-thumbnail-gallery {
@@ -291,7 +303,7 @@ h1 {
     max-height: 80px; 
 }
 
-/* MODIFIED: Tag list inside the modal, now at the bottom */
+/* Tag list inside the modal, at the bottom */
 #modal-tag-list {
     display: flex;
     flex-wrap: wrap;
@@ -299,7 +311,7 @@ h1 {
     gap: 8px;
     width: 100%;
     max-width: 600px;
-    margin-top: 15px; /* NEW: Space between thumbnails and tags */
+    margin-top: 15px; /* Space between thumbnails and tags */
 }
 
 .modal-tag-item {
