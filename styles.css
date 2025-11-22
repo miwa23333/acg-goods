@@ -1,37 +1,26 @@
 /* ==========================================
-  Modern Variables and Resets
+  Variables & Reset
   ==========================================
 */
 :root {
-    /* Define color palette */
     --bg-color: #f8f9fa;
     --text-color: #212529;
     --card-bg: #ffffff;
     --border-color: #dee2e6;
     --shadow-color: rgba(0, 0, 0, 0.06);
     --shadow-color-hover: rgba(0, 0, 0, 0.12);
-    --primary-color: #007bff; /* For active state */
-    --success-color: #28a745; /* Green for "owned" */
-    --tag-bg: #e9ecef; /* Background for tags */
-
-    /* Define spacing */
+    --primary-color: #007bff; 
+    --success-color: #28a745; 
+    --tag-bg: #e9ecef; 
     --main-padding: 24px;
     --grid-gap: 24px; 
 }
 
-/* A modern, simple reset */
-html {
-    box-sizing: border-box;
-    font-size: 16px;
-}
-
-*, *:before:after {
-    box-sizing: inherit;
-}
+html { box-sizing: border-box; font-size: 16px; }
+*, *:before:after { box-sizing: inherit; }
 
 body {
-    font-family: "system-ui", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, 
-                 Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    font-family: "system-ui", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
     margin: 0;
@@ -40,10 +29,6 @@ body {
     line-height: 1.6;
 }
 
-/* ==========================================
-  Typography
-  ==========================================
-*/
 h1 {
     text-align: center;
     font-size: clamp(2rem, 5vw, 3rem);
@@ -52,8 +37,9 @@ h1 {
     letter-spacing: -0.5px;
 }
 
-/*
-  Filter Button Styling
+/* ==========================================
+  Filter Buttons
+  ==========================================
 */
 #filter-container {
     display: flex;
@@ -62,8 +48,7 @@ h1 {
     gap: 10px;
     margin-bottom: var(--grid-gap); 
     max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
 }
 
 .filter-btn {
@@ -78,21 +63,11 @@ h1 {
     transition: all 0.2s ease;
 }
 
-.filter-btn:hover {
-    background-color: #f1f3f5;
-    border-color: #ced4da;
-}
-
-/* Active state for filter button */
-.filter-btn.active {
-    background-color: var(--primary-color);
-    color: white;
-    border-color: var(--primary-color);
-}
-
+.filter-btn:hover { background-color: #f1f3f5; border-color: #ced4da; }
+.filter-btn.active { background-color: var(--primary-color); color: white; border-color: var(--primary-color); }
 
 /* ==========================================
-  Responsive Grid Container
+  Grid & Cards
   ==========================================
 */
 #catalog-container {
@@ -104,147 +79,80 @@ h1 {
     justify-content: center;
 }
 
-/* ==========================================
-  Image Card Styling
-  ==========================================
-*/
-
 .catalog-card {
-    position: relative; 
     border-radius: 12px;
-    overflow: hidden; 
     box-shadow: 0 2px 8px var(--shadow-color); 
     transition: box-shadow 0.3s ease;
     background-color: var(--card-bg);
+    overflow: hidden; 
 }
 
-/* Card hover effect (for non-touch devices) */
 @media (hover: hover) {
-    .catalog-card:not(.is-owned):hover { 
-        box-shadow: 0 4px 12px var(--shadow-color-hover);
-    }
+    .catalog-card:not(.is-owned):hover { box-shadow: 0 4px 12px var(--shadow-color-hover); }
 }
 
-
+/* WRAPPER: Handles borders and click area.
+   This ensures the border is square even if the image is zoomed/cropped inside.
+*/
 .catalog-image-wrapper {
-    /* This wrapper is now the card's only direct child */
-    border-radius: 12px;
-    overflow: hidden;
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Force Square */
     position: relative; 
+    cursor: pointer; /* Entire square is clickable */
+    overflow: hidden;
 }
 
+/* IMAGE: Fills the wrapper. 
+   Zoom/Crop is handled via JS 'object-view-box' property.
+*/
 .catalog-image {
     width: 100%;
-    height: auto;
-    aspect-ratio: 1 / 1;
+    height: 100%;
     object-fit: cover; 
     display: block; 
-    cursor: pointer; 
-    transition: opacity 0.3s ease, filter 0.3s ease;
+    transition: opacity 0.3s ease;
 }
 
 .image-count-indicator {
     position: absolute;
-    top: 8px;
-    right: 8px;
+    top: 8px; right: 8px;
     background-color: rgba(0, 0, 0, 0.7);
     color: white;
-    font-size: 0.75rem;
-    font-weight: 600;
-    padding: 2px 6px;
-    border-radius: 10px;
-    line-height: 1;
-    pointer-events: none; 
-    z-index: 2;
+    font-size: 0.75rem; font-weight: 600;
+    padding: 2px 6px; border-radius: 10px;
+    pointer-events: none; z-index: 2;
 }
 
-/*
-  REMOVED: .tag-list and .tag-list-item styles
-*/
-
-
-/*
-  "Own It" Button Styling
-*/
+/* "Own It" Button */
 .own-it-btn {
     position: absolute;
-    bottom: 8px;
-    right: 8px;
-    z-index: 2;
-    
-    background-color: rgba(255, 255, 255, 0.8);
+    bottom: 8px; right: 8px;
+    z-index: 5; 
+    background-color: rgba(255, 255, 255, 0.9);
     color: var(--text-color);
     border: 1px solid var(--border-color);
-    
-    width: 32px;
-    height: 32px;
+    width: 32px; height: 32px;
     border-radius: 50%; 
-    
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-    font-size: 1.2rem;
-    font-weight: bold;
-    line-height: 1;
-    
-    cursor: pointer;
-    
-    opacity: 0.8; 
-    
-    transition: opacity 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem; font-weight: bold;
+    cursor: pointer; opacity: 0.8; 
+    transition: all 0.2s ease;
 }
 
-/* Make button fully opaque on hover */
-.catalog-card:hover .own-it-btn {
-    opacity: 1;
-}
-
-/*
-  "is-owned" State Styling
-*/
-
-/* MODIFIED: 
-  The glow (box-shadow) is now applied directly to the .catalog-card
-  when it has the .is-owned class. This prevents it from being clipped
-  by the 'overflow: hidden' rule.
-*/
-.catalog-card.is-owned {
-    box-shadow: 0 0 10px 2px var(--success-color);
-}
-
-/* This rule is no longer needed, so it is REMOVED: */
-/*
-.catalog-card.is-owned .catalog-image-wrapper {
-    box-shadow: 0 0 10px 2px var(--success-color);
-}
-*/
-
-/* Make the button active and green when owned */
-.catalog-card.is-owned .own-it-btn,
-.own-it-btn.active {
-    opacity: 1;
-    background-color: var(--success-color);
-    color: white;
-    border-color: var(--success-color);
-}
-
+.catalog-card:hover .own-it-btn { opacity: 1; }
+.catalog-card.is-owned { box-shadow: 0 0 0 2px var(--success-color), 0 4px 12px rgba(40, 167, 69, 0.3); }
+.catalog-card.is-owned .own-it-btn, .own-it-btn.active { opacity: 1; background-color: var(--success-color); color: white; border-color: var(--success-color); }
 
 /* ==========================================
-  Modal (Lightbox) Styling
+  Modal (Lightbox)
   ==========================================
 */
 #modal-backdrop {
     display: none; 
-    position: fixed; 
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
+    position: fixed; z-index: 1000;
+    left: 0; top: 0; width: 100%; height: 100%;
     background-color: rgba(0, 0, 0, 0.85); 
-    align-items: center;
-    justify-content: center;
+    align-items: center; justify-content: center;
     padding: 20px;
 }
 
@@ -253,148 +161,80 @@ h1 {
     background-color: #fff;
     border-radius: 8px;
     padding: 20px;
-    max-width: 90vw;
-    max-height: 90vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    max-width: 90vw; max-height: 90vh;
+    display: flex; flex-direction: column; align-items: center;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 #modal-close-btn {
     position: absolute;
-    top: -10px;
-    right: -10px;
-    background: white;
-    color: #333;
-    font-size: 28px;
-    font-weight: bold;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    line-height: 1;
-    cursor: pointer;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    top: -10px; right: -10px;
+    background: white; color: #333;
+    font-size: 28px; font-weight: bold;
+    width: 36px; height: 36px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; box-shadow: 0 2px 10px rgba(0,0,0,0.2);
     z-index: 1001;
 }
 
-#modal-close-btn:hover {
-    background: #f1f1f1;
-}
-
+/* MAIN IMAGE: Using 'contain' so the full zoomed crop is visible */
 #modal-main-image {
     max-width: 100%;
     max-height: calc(90vh - 140px); 
     object-fit: contain; 
     border-radius: 4px;
-    margin-bottom: 15px; /* Space between image and thumbnails */
+    margin-bottom: 15px; 
+    width: auto; height: auto;
+    transition: opacity 0.2s;
+}
+
+/* Thumbnails use cover to fill their tiny boxes */
+.modal-thumbnail.is-cropped {
+    object-fit: cover !important; 
 }
 
 #modal-thumbnail-gallery {
-    display: flex;
-    flex-wrap: wrap; 
-    justify-content: center;
-    gap: 10px;
-    width: 100%;
-    overflow-y: auto; 
-    max-height: 80px; 
+    display: flex; flex-wrap: wrap; justify-content: center;
+    gap: 10px; width: 100%;
+    overflow-y: auto; max-height: 80px; 
 }
 
-/* Tag list inside the modal, at the bottom */
+/* Tags */
 #modal-tag-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 8px;
-    width: 100%;
-    max-width: 600px;
-    margin-top: 15px; /* Space between thumbnails and tags */
+    display: flex; flex-wrap: wrap; justify-content: center;
+    gap: 8px; width: 100%; max-width: 600px; margin-top: 15px; 
 }
-
 .modal-tag-item {
-    font-size: 0.85rem;
-    font-weight: 500;
-    background-color: var(--tag-bg);
-    color: #495057;
-    padding: 4px 10px;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
+    font-size: 0.85rem; font-weight: 500;
+    background-color: var(--tag-bg); color: #495057;
+    padding: 4px 10px; border-radius: 6px;
+    cursor: pointer; transition: background-color 0.2s ease;
 }
+.modal-tag-item:hover { background-color: #d8dde2; }
 
-.modal-tag-item:hover {
-    background-color: #d8dde2;
-}
-
-
-.modal-thumbnail {
-    width: 60px;
-    height: 60px;
-    object-fit: cover;
+/* Thumbnail Wrapper (The Gray Border) */
+.modal-thumbnail-wrapper {
+    width: 60px; height: 60px;
+    position: relative;
     border: 2px solid var(--border-color);
     border-radius: 4px;
     cursor: pointer;
     transition: border-color 0.2s;
+    overflow: hidden;
+    flex-shrink: 0;
 }
 
-.modal-thumbnail:hover {
-    border-color: #999;
+.modal-thumbnail-wrapper:hover { border-color: #999; }
+.modal-thumbnail-wrapper.active { border-color: var(--primary-color); box-shadow: 0 0 5px var(--primary-color); }
+
+.modal-thumbnail {
+    width: 100%; height: 100%;
+    object-fit: cover; display: block;
 }
 
-.modal-thumbnail.active {
-    border-color: var(--primary-color);
-    box-shadow: 0 0 5px var(--primary-color);
-}
-
-
-/* ==========================================
-  Mobile-Specific Adjustments
-  ==========================================
-*/
 @media (max-width: 600px) {
-    :root {
-        --main-padding: 16px;
-        --grid-gap: 20px;
-    }
-    
-    #catalog-container {
-        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-    }
-    
-    .catalog-card {
-        border-radius: 8px;
-    }
-    
-    .catalog-image-wrapper {
-        border-radius: 8px;
-    }
-
-    #modal-content {
-        padding: 15px;
-        max-width: 100vw;
-        max-height: 100vh;
-        width: 100%;
-        height: 100%;
-        border-radius: 0;
-    }
-
-    #modal-close-btn {
-        top: 10px;
-        right: 10px;
-        font-size: 24px;
-        width: 30px;
-        height: 30px;
-    }
-
-    #modal-main-image {
-        max-height: calc(100vh - 130px); /* Adjusted for mobile */
-        margin-bottom: 10px;
-    }
-    
-    #modal-tag-list {
-        margin-top: 10px;
-    }
+    :root { --main-padding: 16px; --grid-gap: 20px; }
+    #catalog-container { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); }
+    #modal-content { padding: 15px; max-width: 100vw; max-height: 100vh; border-radius: 0; }
+    #modal-close-btn { top: 10px; right: 10px; }
 }
