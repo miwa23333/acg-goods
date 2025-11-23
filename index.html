@@ -10,20 +10,40 @@
 
     <h1>動漫週邊圖鑑</h1>
 
-    <div id="filter-container"></div>
+    <div class="controls-container">
+        <div id="filter-container"></div>
+        <button id="generate-btn" class="action-btn">
+            📥 製作進度表
+        </button>
+    </div>
 
     <div id="catalog-container"></div>
 
     <div id="modal-backdrop">
         <div id="modal-content">
             <span id="modal-close-btn">&times;</span>
-            
             <img id="modal-main-image" src="" alt="Selected Product Image">
-            
             <div id="modal-thumbnail-gallery"></div>
-
             <div id="modal-tag-list"></div>
         </div>
+    </div>
+
+    <div id="preview-modal">
+        <div class="preview-content">
+            <h3>預覽圖鑑進度</h3>
+            <div class="preview-image-container">
+                <img id="generated-preview-img" alt="Generated Preview">
+            </div>
+            <div class="preview-actions">
+                <button id="close-preview-btn" class="secondary-btn">關閉</button>
+                <button id="confirm-download-btn" class="action-btn">確認下載</button>
+            </div>
+        </div>
+    </div>
+    
+    <div id="loading-overlay">
+        <div class="spinner"></div>
+        <p>正在繪製預覽圖，請稍候...</p>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/protobufjs@7.5.3/dist/protobuf.min.js"></script>
