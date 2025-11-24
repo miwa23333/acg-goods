@@ -180,6 +180,9 @@ document.addEventListener("DOMContentLoaded", () => {
   async function generateCollectionImage() {
     // === 1. Setup & Filtering ===
     const loadingOverlay = document.getElementById("loading-overlay");
+    // [New] Select the text paragraph inside the overlay to update progress
+    const loadingText = loadingOverlay.querySelector("p"); 
+    
     const previewModal = document.getElementById("preview-modal");
     const generatedPreviewImg = document.getElementById(
       "generated-preview-img"
@@ -213,13 +216,17 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    // --- NEW: Calculate Stats ---
+    // --- Stats Calculation (For the Image Text) ---
     const totalItems = productsToDraw.length;
     const ownedCount = productsToDraw.filter(p => ownedProductIds.has(p.productId)).length;
-    const percentage = totalItems > 0 ? Math.round((ownedCount / totalItems) * 100) : 0;
-    // ----------------------------
+    const completionPercentage = totalItems > 0 ? Math.round((ownedCount / totalItems) * 100) : 0;
+    // ----------------------------------------------
 
+    // [New] Progress Tracking Variables
+    let processedCount = 0;
+    
     loadingOverlay.style.display = "flex";
+    loadingText.textContent = "正在準備畫布..."; // Initial text
 
     try {
       // === 2. Grouping ===
@@ -244,11 +251,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const PADDING = 40;
       const CARD_SIZE = 200;
       const GAP = 20;
-      
-      // --- MODIFIED: Increase Header Height for subtitle ---
+      // Increased height to fit the stats text
       const MAIN_HEADER_HEIGHT = 130; 
-      // ----------------------------------------------------
-      
       const GROUP_HEADER_HEIGHT = 70;
       const GROUP_BOTTOM_MARGIN = 40;
 
@@ -272,7 +276,7 @@ document.addEventListener("DOMContentLoaded", () => {
       ctx.fillStyle = "#ffffff";
       ctx.fillRect(0, 0, canvasWidth, totalHeight);
 
-      // --- MODIFIED: Draw Title & Progress ---
+      // --- Draw Title & Stats on Canvas ---
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
 
@@ -281,11 +285,11 @@ document.addEventListener("DOMContentLoaded", () => {
       ctx.font = "bold 48px sans-serif";
       ctx.fillText("蒐集進度表", canvasWidth / 2, 50);
 
-      // Progress Subtitle
-      ctx.fillStyle = "#666666"; // Lighter grey for subtitle
+      // Subtitle with Stats
+      ctx.fillStyle = "#666666";
       ctx.font = "bold 28px sans-serif";
-      ctx.fillText(`完成度：${percentage}%  (${ownedCount} / ${totalItems})`, canvasWidth / 2, 95);
-      // ---------------------------------------
+      ctx.fillText(`完成度：${completionPercentage}%  (${ownedCount} / ${totalItems})`, canvasWidth / 2, 95);
+      // ------------------------------------
 
       // Helper to load image
       const loadImage = (url) => {
@@ -380,9 +384,16 @@ document.addEventListener("DOMContentLoaded", () => {
             console.error("Error drawing image", err);
             ctx.fillStyle = "#f0f0f0";
             ctx.fillRect(dx, dy, CARD_SIZE, CARD_SIZE);
+          } finally {
+            // [New] Update Progress
+            processedCount++;
+            const percent = Math.round((processedCount / totalItems) * 100);
+            loadingText.textContent = `正在繪製預覽圖... ${percent}%`;
           }
         });
 
+        // Wait for this group to finish before moving to next row calculation
+        // But the progress UI updates individually thanks to the 'finally' block above
         await Promise.all(drawPromises);
 
         const rows = Math.ceil(groupItems.length / COLS);
@@ -401,7 +412,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (confirmDownloadBtn) {
         confirmDownloadBtn.onclick = () => {
           const link = document.createElement("a");
-          link.download = `蒐集進度_${percentage}percent_${new Date().getTime()}.png`; // Added % to filename
+          link.download = `蒐集進度_${completionPercentage}percent_${new Date().getTime()}.png`;
           link.href = dataUrl;
           link.click();
         };
@@ -411,6 +422,7 @@ document.addEventListener("DOMContentLoaded", () => {
       alert("產生圖片失敗，請檢查圖片來源或稍後再試。");
     } finally {
       loadingOverlay.style.display = "none";
+      loadingText.textContent = "正在繪製預覽圖，請稍候..."; // Reset text for next time
     }
   }
 
