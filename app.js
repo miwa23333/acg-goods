@@ -213,6 +213,12 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
+    // --- NEW: Calculate Stats ---
+    const totalItems = productsToDraw.length;
+    const ownedCount = productsToDraw.filter(p => ownedProductIds.has(p.productId)).length;
+    const percentage = totalItems > 0 ? Math.round((ownedCount / totalItems) * 100) : 0;
+    // ----------------------------
+
     loadingOverlay.style.display = "flex";
 
     try {
@@ -238,7 +244,11 @@ document.addEventListener("DOMContentLoaded", () => {
       const PADDING = 40;
       const CARD_SIZE = 200;
       const GAP = 20;
-      const MAIN_HEADER_HEIGHT = 100;
+      
+      // --- MODIFIED: Increase Header Height for subtitle ---
+      const MAIN_HEADER_HEIGHT = 130; 
+      // ----------------------------------------------------
+      
       const GROUP_HEADER_HEIGHT = 70;
       const GROUP_BOTTOM_MARGIN = 40;
 
@@ -258,16 +268,24 @@ document.addEventListener("DOMContentLoaded", () => {
       canvas.height = totalHeight;
       const ctx = canvas.getContext("2d");
 
-      // Draw Background (FIXED: used totalHeight instead of canvasHeight)
+      // Draw Background
       ctx.fillStyle = "#ffffff";
       ctx.fillRect(0, 0, canvasWidth, totalHeight);
 
-      // Draw Main Title
-      ctx.fillStyle = "#333333";
-      ctx.font = "bold 48px sans-serif";
+      // --- MODIFIED: Draw Title & Progress ---
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
-      ctx.fillText("蒐集進度", canvasWidth / 2, MAIN_HEADER_HEIGHT / 2);
+
+      // Main Title
+      ctx.fillStyle = "#333333";
+      ctx.font = "bold 48px sans-serif";
+      ctx.fillText("蒐集進度表", canvasWidth / 2, 50);
+
+      // Progress Subtitle
+      ctx.fillStyle = "#666666"; // Lighter grey for subtitle
+      ctx.font = "bold 28px sans-serif";
+      ctx.fillText(`完成度：${percentage}%  (${ownedCount} / ${totalItems})`, canvasWidth / 2, 95);
+      // ---------------------------------------
 
       // Helper to load image
       const loadImage = (url) => {
@@ -318,7 +336,7 @@ document.addEventListener("DOMContentLoaded", () => {
               ctx.filter = "grayscale(100%) opacity(50%)";
             }
 
-            // Calculate Crop (Uses the helper function now)
+            // Calculate Crop
             const { sx, sy, sWidth, sHeight } = getCropCoordinates(
               imgObj.naturalWidth,
               imgObj.naturalHeight,
@@ -383,7 +401,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (confirmDownloadBtn) {
         confirmDownloadBtn.onclick = () => {
           const link = document.createElement("a");
-          link.download = `蒐集進度_${new Date().getTime()}.png`;
+          link.download = `蒐集進度_${percentage}percent_${new Date().getTime()}.png`; // Added % to filename
           link.href = dataUrl;
           link.click();
         };
