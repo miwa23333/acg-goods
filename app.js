@@ -331,6 +331,32 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  const clearBtn = document.getElementById("clear-btn");
+  if (clearBtn) {
+      clearBtn.addEventListener("click", () => {
+          // A. Confirm with the user first
+          const confirmed = confirm("確定要清除所有已標記的商品嗎？\n此動作無法復原！");
+          
+          if (confirmed) {
+              // B. Clear the Data
+              ownedProductIds.clear();
+              localStorage.removeItem(STORAGE_KEY);
+
+              // C. Update the UI (Remove 'is-owned' class from all cards)
+              const allCards = document.querySelectorAll('.catalog-card');
+              allCards.forEach(card => {
+                  card.classList.remove('is-owned');
+                  // Also reset the checkmark button inside the card
+                  const btn = card.querySelector('.own-it-btn');
+                  if (btn) btn.classList.remove('active');
+              });
+
+              // D. Feedback
+              alert("紀錄已清除！");
+          }
+      });
+  }
+
   // === Event Listeners for Preview Modal ===
   generateBtn.addEventListener("click", generateCollectionImage);
 

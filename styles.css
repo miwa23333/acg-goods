@@ -458,3 +458,21 @@ h1 {
     #modal-thumbnail-gallery { margin-bottom: 15px; flex-shrink: 0; }
     #modal-tag-list { margin-bottom: 10px; flex-shrink: 0; }
 }
+
+.danger-btn {
+    background-color: #dc3545; /* Red color */
+    color: white;
+    padding: 12px 24px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.danger-btn:hover {
+    background-color: #c82333;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 12px rgba(220, 53, 69, 0.2);
+}
