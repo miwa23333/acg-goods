@@ -410,8 +410,10 @@ document.addEventListener("DOMContentLoaded", () => {
         "confirm-download-btn"
       );
       if (confirmDownloadBtn) {
+        // .onclick automatically replaces the previous handler, preventing duplicates
         confirmDownloadBtn.onclick = () => {
           const link = document.createElement("a");
+          // This uses the correct percentage calculated in this function
           link.download = `蒐集進度_${completionPercentage}percent_${new Date().getTime()}.png`;
           link.href = dataUrl;
           link.click();
@@ -459,15 +461,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   closePreviewBtn.addEventListener("click", () => {
     previewModal.style.display = "none";
-  });
-
-  confirmDownloadBtn.addEventListener("click", () => {
-    if (generatedPreviewImg.src) {
-      const link = document.createElement("a");
-      link.download = `collection-progress-${Date.now()}.png`;
-      link.href = generatedPreviewImg.src;
-      link.click();
-    }
   });
 
   // Clicking outside preview modal closes it
