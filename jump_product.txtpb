@@ -2433,12 +2433,152 @@ products {
 }
 products {
   vendor: "jump"
+  product_id: "cIXEAEAR7AUTS-47aTZLuIGpjNg-paKKp01YTji7mqk"
+  tags {
+    text_zh: "失憶投捕"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/Q3lLojMzOgj4PX9r5jUdCxc5GqZnGYpCHq6d5IwzNXw"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/swfa_uMAculEdXn6FozpTRCgyu4V0ifNd4WkNTj5zgQ"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/P7Yfh0p86wD-HJa5eJSmtuOzNxBAtMX5A4kKgFM1wcM"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/sa_NiG8ofMBTSnxaXPU1dUUc64LPqCOeh6jcGZdwgUc"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/xSmqICQx6gK15XruTZ1gc4OujNCzs9P90NkorjKDe_8"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/pjyXp69FjmRmmxOjboT00ZFAN6P8qjJ7SUWmEaiUN0Y"
+  }
+}
+products {
+  vendor: "jump"
+  product_id: "MPsHY_nPZ6y0eleotL9K-z0WjBRqte1vAZAMMw64WyQ"
+  tags {
+    text_zh: "失憶投捕"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/Vk1uVSAp-2a-PthjIQ6VN2gdCBlCHfSi0a1wgfwdHzI"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/z7_CUuP_uSk56Yzb_8asoxCTmv0llAlpQo40yEW_xEg"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/EmVo-pFWpB7FnqM-_A2TV32puKKNu-pxxPKtBGTbDrA"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/iIEAcwE8AaP2O1AHp5_CI9L5Y2gHEr32daknPpPYz4w"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/IXPfEGDzCHXOBePfD-yk7CrM3jyNNuYsBblLW0UH4WI"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/41y6GwhVC-YKIkvG9TC91f8Tc7O6Hjdu1_QUqqDNohQ"
+  }
+}
+products {
+  vendor: "jump"
+  product_id: "OUUJCSIo28485e5jfCGtC51IvR49fqRJBvRcczs5Zik"
+  tags {
+    text_zh: "失憶投捕"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/WovNAR9wdmUki0Jwlp_DYDaAQGAL4mjbXOF1dGg1Vcc"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/j9IWeYjZ9snUw3mqGnhINH7ScbSRsKyDN1xpddcJZQQ"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/VTtr086paSCpCMfv99wcr27Tk5dZcrSJ0qNRUuglSxE"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/IsfQrScf2JMYCEimKIFHeQQ9UA5DXhmhRyt8avYN09w"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/RGlBBy6QDyPUDMhppq7lfJCqjLzAHwB6JP1FluDcIF0"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/WuSZFnPkO8tEeXB6bpALzxcd0wcsjNL7mpz-SSs23oo"
+  }
+}
+products {
+  vendor: "jump"
+  product_id: "XOuwuTKPQEZpdphb2sUDoSNmwT9D4wTvkaN6D0JI-FI"
+  tags {
+    text_zh: "失憶投捕"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/7PhDh8rtyB0fQeoRZ1fZRndhSHyGj-xr7OGbgJM5RlQ"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/8K51P3VkcO88Pnl9ujAEtzvluKjIXG5VzHpldxoqHzw"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/FmPTYgiAv3Uqf8A_48efJzY8JqUhkX6qMdF-BrLm7Cs"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/TefGOmLo_fSHM4Q80gUnIzhg-t1_TernadI9xeUcBYw"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/ZMkatBwnu3OXxYwEiz_oEB_iDoubmf23sqtAsVlq_rU"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/tBOcrVDUcQPNQG3QhyfLx2deRZyS3qe_p-shFV7HKr8"
+  }
+}
+products {
+  vendor: "jump"
+  product_id: "7AE3ILJ5XyRuroOFoKPaz_LROnGPw9dnj0AtFOIBp40"
+  tags {
+    text_zh: "失憶投捕"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/yzn8BOE0EaoupqV-Pr4ux3ywpnHuEtf5GPXUUJoZPLQ"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/LYpLbFqf-Yz68ZX8jtIMQGcBL_acvwiG5AYyZDJjGoE"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/WmqItv4NzBhF-tvQZEMcgg0wZAk2PE66ymwZm3LlBMA"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/rqPytw9dI3oOVN77jq20R7MsED1nCRj1QDBHHjA4d4I"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/vvrVLo7wCKb-s481yY1gOOZgZJ7-hsgvWn2xg6Z7GyY"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/gsSn3CYnO36rNzA04HOBaNOiVjwpCSmXCBDlSlqKeHw"
+  }
+}
+products {
+  vendor: "jump"
   product_id: "0eAcSqWH4l87sOQ8hq0mDYhvDMSRgYx15LVJeeDOS3w"
   tags {
     text_zh: "坂本日常"
   }
   images {
     url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/gReJLefnQkCJ7tJ8EgX9Ruq3DYEmMMTCXf7DxJJVUps"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/2bfDxOjxYgDuzhwxGm4ycBfcE7D2A5gksmfz9MPsGv0"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/P4iGBf5gtmOwgeX8Qab9PhaGkKjgo-lCRbAIXzMW9E0"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/ahJVOZvaOe3mpiJzgHqVAf6J0RXdkbuEaWIA9ArYAxs"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/Csixxua3ZQ56_pLWOj1SrQvv8JwwpvLxbj3HH5n7aBc"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/oaWYzbGOQUwUQNDfk9Uk97Z1eQY5gsAE1ltNQ6f6oho"
   }
 }
 products {
@@ -2450,6 +2590,21 @@ products {
   images {
     url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/C3FcXSlawW2eTrE4WbF9v2Lq9bFOIX_1Z1PyL19zHxw"
   }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/EZWRiYWsilKSLu-0lvtqgjjkPFBYg9KATG5yFpJnx8k"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/T61T9640CjEv_MSfQaVVPSmysqPtaRbuzC7KfJVhYtw"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/Hx1JpmOJaS7uQ5Fviehe9d0iQcit1j63r1qtoQ3oJM8"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/yZREFLkgpilrFAWUj0N6FTwxorjC85whDo87zSB8C9E"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/ZzkSCbFFDU77mz-J9H9IxUcd8B7rDTFtJlcas1GVbMk"
+  }
 }
 products {
   vendor: "jump"
@@ -2459,6 +2614,21 @@ products {
   }
   images {
     url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/PXuL69GQOLB2K-GbZa_jXxdMh88a1P5cRq0UjHx67J8"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/IqOfLJ4gXUvGBjCbhg56ASrf1c4-SCj8C4JsCwt7hnQ"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/7fdGzkU2NmkQSye7tDhh-9v9rfccKoJa42Iik2-ni-Q"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/lQaAYyZaa0Mv4on5kpDW3uRqRDmsP7c6PefQI5_Mwe0"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/aEaubMxgjAWHU1VYIEFY86FPyvdkgzLqLBVMmTMQfPM"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/hB7CWgHdHGhs_Og39EzMzVKXnakITQFnVbmgW2xWIPE"
   }
 }
 products {
@@ -2470,6 +2640,21 @@ products {
   images {
     url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/A-0EfgjBRLjizEQWz4qt6bWz4bVxYNjSWXNNqHxu7DM"
   }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/WpH2Az-8A0Ojjp-8i0DrYgLiAD-SH787VkgslF9oYvM"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/-OAXQ_QpZU2VDM6TS9h0_g7tF4CqQTsCm3QwCUWlB5I"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/rsJTtzTSc6wZeNy79GyfQMDUDwl6Ur8v0hfsOM-uXoU"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/Dlst4Nz95h4ZNeUJBKDTequ_4CH5pvmJ4NMPTl1KDf8"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/PJ1XND9EaK070I3DkA36UgJrOvPFG85iK5E4wEXrHWQ"
+  }
 }
 products {
   vendor: "jump"
@@ -2479,6 +2664,21 @@ products {
   }
   images {
     url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/XD2_rnT0f0M1EWHaxPmm0SyA_EAdf2u5xJKaFI83PBQ"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/y-KNcZ6bzydtgl1tE1dzD9W_tffzDVFdD6NH4B-Pk_A"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/Hyg4NtPX14ZuSgO7GMNWNivu22WlBOhLH1T6sEbg4UI"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/cIfp-X30s40uhEiJM-cFHZ9pZPZxjplqJ4AfM-t8JOw"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/SvZdd2Gk24xHV64g7EpkxYzNzou48d8Dni6tBkd1_lY"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/imGpQ8Hay17U2foi68uy6GyR7DKbzJgxF-cDzcxBAXU"
   }
 }
 products {
@@ -2490,6 +2690,21 @@ products {
   images {
     url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/vLNLFBjRhPfUwYz2s5mtAutkxSOh9OPYbxbefkrMS-0"
   }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/-JJp7w_Hf6LwPq6FXFdncVn65St5nys-gQGmmnVjAIQ"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/M68ehUkSKZXz0BO03l0DPTQGxPClwplhWPV7qRenB4M"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/cCueQAhmJ4f2M_DIOl127GBlWZi4J4Fy8E0qvKThjWE"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/RuUD7SegWxShBMj6E2P5OgpypLKYHV3o055cQLwYJ_U"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/D94aB0L7WgYagKGoBrVMiA_Z1hsLw4LI0CZ5oVO2eRA"
+  }
 }
 products {
   vendor: "jump"
@@ -2499,6 +2714,21 @@ products {
   }
   images {
     url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/xOiH2v2zC9y0hLHaqVaRLDYo7YcsbV3ywcMjCEv5bTk"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/bf1amuK8S50S54dk1VaH2UmHjqT6DAol9oAdO4e0WVo"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/teMwnRNZUzFTKlOEcSKrcw1VZacFrg-lxwtra9-V93I"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/cnflIyhcrX9jHDdA0XnE3yPAmAO9YcLp-5IvZhBTUAs"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/y-XVI_ybCEc0-IC-IL-7FATR7w3e2QNFa7E8JYeZKnU"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/lFJT3je5v6MSKVkZWBBfGeZPAwgu5zpT2JStS8gszzo"
   }
 }
 products {
@@ -2510,6 +2740,21 @@ products {
   images {
     url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/iW3iVwIoyMranJY_mEpQwgBBOLnxtOmotMG1ywN1iYo"
   }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/RyJlFcujXLGZHuxXe3IZdQyCKs_CNhytrsuVhXf7_PA"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/XaSg9wadgAqRtF4iYL3-X9FYw_VmJV7Aqm4rblnISFo"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/F6sC_DVNmBK6RT3k6_dV0HS0oq0FnDZAfs_f2xHECrs"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/VpyaYYgJg2RYfFsH0eadRJZASWPShjmndQjSHDTygO4"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/sVCfa7uTWY6GtfUDAHHZryLhyQi77KMUdhbyM-PUbJk"
+  }
 }
 products {
   vendor: "jump"
@@ -2520,6 +2765,21 @@ products {
   images {
     url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/nNcKXdb9dRlmwNX2unefs1zXZpywGcFt-rIQHzZrTVc"
   }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/jGG5BnPBgPMPy4PhNzs2W8ZSXVwXl77F96CXfFalB1U"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/vcenhUXAo1u5TOxYcSM_ZsoMuqcZeI0zq9r6nr7aud4"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/GZZLodnhvwpqXbRMpaVm-yoPCVgiXMrbzT7eY8mebVY"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/Ckz-m01dXebbBUpwSq9ES1ujiT4R4Awpjju8kApLYog"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/mzAdkkfQb5YJpzw0X0xAi5VjPU2kgvHYJAfdN4bTWNQ"
+  }
 }
 products {
   vendor: "jump"
@@ -2529,6 +2789,21 @@ products {
   }
   images {
     url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/GBV8OiFlkR521NYOh6iZ1Z8-aiuCyvjtrB5pSWfkm0w"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/8itv34dc90pwrhET1GIrpQES2TL12Bscg4tXtv8xfVQ"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/n6eJlA7bponNtWwjAET3CoWlH_lnUV6vWTFfU1qZLEI"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/7x7XtkBbEbd9QylfdWlm48TLelkLDPT1WyQgCWsfqzs"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/iJn7ff327fmD6su5hFrf_H7MHbFq3VnGOjkjLBmRD4M"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/ElTGH3BQY62ETq2agzj4Krmvu-je5XNYA8MxywBHapI"
   }
 }
 products {
