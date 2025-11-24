@@ -457,6 +457,34 @@ h1 {
     
     #modal-thumbnail-gallery { margin-bottom: 15px; flex-shrink: 0; }
     #modal-tag-list { margin-bottom: 10px; flex-shrink: 0; }
+
+    filter-dropdown {
+        position: static;
+    }
+
+    .filter-dropdown-content {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); 
+        
+        width: 85%;
+        max-width: 320px;
+        max-height: 60vh; 
+
+        z-index: 2000;
+        
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2), 0 0 0 100vmax rgba(0,0,0,0.5);
+    }
+
+    .filter-dropdown.active .filter-dropdown-content {
+        animation: mobileFadeIn 0.2s ease-out;
+    }
+}
+
+@keyframes mobileFadeIn {
+    from { opacity: 0; transform: translate(-50%, -40%); }
+    to { opacity: 1; transform: translate(-50%, -50%); }
 }
 
 .danger-btn {
