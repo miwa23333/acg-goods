@@ -207,34 +207,36 @@ h1 {
 */
 #modal-backdrop, #preview-modal {
     display: none; 
-    position: fixed; z-index: 1000;
-    left: 0; top: 0; width: 100%; height: 100%;
+    position: fixed; 
+    z-index: 1000;
+    left: 0; 
+    top: 0; 
+    right: 0;             /* Changed from width: 100% */
+    bottom: 0;            /* Changed from height: 100% */
+    width: auto;          /* Let left/right handle the width */
+    height: auto;         /* Let top/bottom handle the height */
+    
     background-color: rgba(0, 0, 0, 0.85); 
-    align-items: center; justify-content: center;
+    align-items: center; 
+    justify-content: center;
     padding: 20px;
+    box-sizing: border-box; /* Force border-box calculation */
     overflow: hidden; 
 }
 #preview-modal { z-index: 1500; } 
 
-/* CRITICAL FIX: 
-   Ensure Modal uses Flexbox correctly so internal parts scroll,
-   not the whole window.
-*/
+/* Modal Content Box */
 #modal-content, .preview-content {
     position: relative;
     background-color: #fff;
     border-radius: 12px;
     padding: 20px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-    
-    /* Make the white box a flex container */
     display: flex; 
     flex-direction: column;
-    
     width: 95%; 
     max-width: 900px;
-    /* Safe height for desktop */
-    max-height: 90vh; 
+    max-height: 90vh; /* Safe height for desktop */
 }
 
 #modal-content { align-items: center; }
@@ -252,11 +254,11 @@ h1 {
 
 #modal-main-image {
     max-width: 100%; 
-    flex-shrink: 1; /* Allow shrinking */
+    flex-shrink: 1; 
     object-fit: contain; 
     border-radius: 4px;
     margin-bottom: 15px; 
-    min-height: 0; /* Crucial for flexbox shrinking */
+    min-height: 0; 
 }
 
 #modal-thumbnail-gallery {
@@ -289,7 +291,73 @@ h1 {
 .modal-thumbnail { width: 100%; height: 100%; object-fit: cover; }
 
 /* ==========================================
-  Preview Modal (The Collection Image)
+  Preview Modal & Generated Image (FIXED)
+  ==========================================
+*/
+
+.preview-content {
+    overflow: hidden; /* Prevent the white box from scrolling, internal parts will scroll */
+}
+
+.preview-image-container {
+    flex: 1;                     
+    min-height: 0;
+    
+    /* Use block + overflow-y to create a scrollable area */
+    display: block;              
+    overflow-y: auto;            
+    text-align: center;          /* Centers the image horizontally */
+    
+    /* Keep background clean/transparent as requested */
+    background-color: transparent; 
+    padding: 0;                    
+    margin-bottom: 12px;
+    
+    /* Optional: A faint border so users know where the scroll area is */
+    border: 1px solid #f1f1f1;
+    border-radius: 4px;
+}
+
+/* Ensure the generated image fits perfectly */
+#generated-preview-img {
+    max-width: 100%;             /* Ensure width fits the screen */
+    height: auto;                /* Let height grow naturally based on the image content */
+    max-height: none;            /* CRITICAL: Disables the "shrink to fit" behavior */
+    object-fit: unset;           /* Remove object-fit since we aren't constraining height */
+    
+    display: inline-block;       
+    box-shadow: none;
+}
+
+.preview-actions {
+    width: 100%;
+    flex-shrink: 0; 
+    display: flex;
+    justify-content: flex-end; /* Align buttons to right on desktop */
+    gap: 12px;
+    padding-top: 8px;
+    border-top: 1px solid var(--border-color);
+}
+
+/* Loading Overlay */
+#loading-overlay {
+    display: none;
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(255,255,255,0.9);
+    z-index: 2000;
+    flex-direction: column; align-items: center; justify-content: center;
+}
+.spinner {
+    width: 40px; height: 40px;
+    border: 4px solid #f3f3f3; border-top: 4px solid var(--primary-color);
+    border-radius: 50%; animation: spin 1s linear infinite;
+    margin-bottom: 15px;
+}
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+
+/* ==========================================
+  Mobile Responsiveness
   ==========================================
 */
 @media (max-width: 600px) {
@@ -299,49 +367,66 @@ h1 {
         grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); 
     }
 
-    /* 1. 基礎設定：限制彈窗最大高度，避免超出螢幕 */
+    /* 1. Fix Modal Wrapper Padding */
+    /* Reduce padding to give the modal more space */
+    #modal-backdrop, #preview-modal {
+        padding: 10px; 
+        align-items: center; 
+        justify-content: center;
+    }
+
+    /* 2. Fix Modal Box Sizing (CENTERING FIX) */
+    /* Change width to 100% so it fits inside the padding naturally */
     #modal-content, .preview-content { 
-        width: 92%;
-        max-width: 95vw;
-        max-height: 85dvh; /* 預留空間給網址列 */
-        padding: 15px; /* 增加內距避免貼邊 */
-        
+        width: 100%;      
+        max-width: 500px; 
+        max-height: 85dvh; 
+        padding: 15px; 
+        margin: 0 auto;    /* Force centering */
         display: flex;
         flex-direction: column;
         position: relative;
     }
 
-    /* 2. 【商品詳情彈窗】修正：允許整體滾動 */
-    /* 這是解決 "out of view" 的關鍵：內容太長時，讓整個白框框可以滑動 */
+    /* 3. Product Details Scrolling */
     #modal-content {
         overflow-y: auto; 
         overflow-x: hidden;
     }
 
-    /* 3. 【預覽圖彈窗】修正：鎖定高度，按鈕固定 */
+    /* 4. Preview Modal Layout */
     .preview-content {
-        overflow: hidden; /* 禁止整體滾動，強迫使用內部滾動區域 */
+        overflow: hidden; 
     }
 
-    /* 4. 預覽圖專用：內部滾動區 */
+    /* 5. Image Container - Scrollable & Clean */
     .preview-image-container {
-        flex: 1;        
-        min-height: 0;  
-        overflow-y: auto; /* 只有圖片區可以滾動 */
+        flex: 1;
+        min-height: 0;
+        overflow-y: auto;              /* Allow vertical scrolling */
         margin-bottom: 12px;
-        align-items: flex-start;
-        background-color: #eee;
+        background-color: transparent; /* Keep it clean/white */
+        padding: 0;
+        border: none;
+        display: block;                /* Ensure scrolling works reliably */
+        text-align: center;            /* Center the image horizontally */
     }
 
-    /* 5. 預覽圖專用：按鈕區固定 */
+    /* 6. Image Resizing */
+    #generated-preview-img {
+        max-width: 100%;    /* Shrink image to fit phone width */
+        height: auto;       /* Maintain aspect ratio */
+        display: inline-block;     
+        box-shadow: none;
+    }
+
+    /* 7. Action Buttons */
     .preview-actions {
         width: 100%;
         flex-shrink: 0; 
         display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        gap: 8px;
-        padding-top: 8px;
+        gap: 10px;
+        padding-top: 10px;
         border-top: 1px solid #eee;
     }
     
@@ -351,9 +436,8 @@ h1 {
         font-size: 0.95rem;
     }
 
-    /* 6. 商品詳情修正：圖片與關閉按鈕 */
+    /* 8. Other Mobile Adjustments */
     #modal-main-image {
-        /* 讓圖片不要佔滿所有空間，留位置給下面的縮圖 */
         max-height: 40vh; 
         width: auto;
         max-width: 100%;
@@ -361,25 +445,16 @@ h1 {
         align-self: center;
     }
 
-    /* 確保關閉按鈕在手機上清楚可見 */
     #modal-close-btn { 
         top: 8px; right: 8px; 
         width: 32px; height: 32px;
         font-size: 24px;
         background-color: rgba(255,255,255,0.95); 
-        border: 1px solid #eee; /* 增加邊框以免與白底融合 */
+        border: 1px solid #eee;
         box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        z-index: 1002; /* 確保在最上層 */
+        z-index: 1002; 
     }
     
-    /* 調整下方縮圖區與 Tag 的間距 */
-    #modal-thumbnail-gallery {
-        margin-bottom: 15px;
-        flex-shrink: 0;
-    }
-    
-    #modal-tag-list {
-        margin-bottom: 10px; /* 底部留白，避免滑到底被切掉 */
-        flex-shrink: 0;
-    }
+    #modal-thumbnail-gallery { margin-bottom: 15px; flex-shrink: 0; }
+    #modal-tag-list { margin-bottom: 10px; flex-shrink: 0; }
 }
