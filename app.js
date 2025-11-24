@@ -113,13 +113,37 @@ document.addEventListener("DOMContentLoaded", () => {
     return { sx, sy, sWidth, sHeight };
   }
 
+  function getProductSeries(product) {
+    // Try to match with the global SERIES_LIST
+    for (const series of SERIES_LIST) {
+        // 1. Check Tags (Best match)
+        if (product.tags) {
+            const hasTag = product.tags.some(t => t.textZh === series || t.textJp === series);
+            if (hasTag) return series;
+        }
+        // 2. Check Title
+        if ((product.titleZh && product.titleZh.includes(series)) || 
+            (product.titleJp && product.titleJp.includes(series))) {
+            return series;
+        }
+    }
+    return "其他系列"; // Fallback
+  }
+
   // === Image Generation Logic ===
   async function generateCollectionImage() {
-    let productsToDraw = [];
+    // === 1. Setup & Filtering ===
+    const loadingOverlay = document.getElementById('loading-overlay');
+    const previewModal = document.getElementById('preview-modal');
+    const generatedPreviewImg = document.getElementById('generated-preview-img');
+
     if (!allProductsInfo) return;
 
+    // Filter logic
+    let productsToDraw = [];
     allProductsInfo.products.forEach(product => {
         if (product.vendor !== "jump" || !product.images || product.images.length === 0) return;
+        
         let matches = false;
         if (activeSeriesFilters.size === 0) {
             matches = true; 
@@ -127,52 +151,71 @@ document.addEventListener("DOMContentLoaded", () => {
             const pTags = product.tags?.map(t => t.textZh) || [];
             matches = pTags.some(tag => activeSeriesFilters.has(tag));
         }
+        
         if (matches) productsToDraw.push(product);
     });
 
     if (productsToDraw.length === 0) {
-        alert("沒有選擇任何商品！");
+        alert("沒有符合篩選條件的商品！");
         return;
     }
 
     loadingOverlay.style.display = "flex";
 
     try {
-        // Configuration
-        const gap = 20; 
-        const cols = 5; 
-        // Resize all images to this square size
-        const thumbSize = 200; 
-        
-        const rows = Math.ceil(productsToDraw.length / cols);
-        const headerHeight = 100;
-        
-        const canvasWidth = (cols * thumbSize) + ((cols + 1) * gap);
-        const canvasHeight = headerHeight + (rows * thumbSize) + ((rows + 1) * gap);
+        // === 2. Grouping ===
+        const groupedProducts = {};
+        productsToDraw.forEach(p => {
+            const seriesName = getProductSeries(p);
+            if (!groupedProducts[seriesName]) groupedProducts[seriesName] = [];
+            groupedProducts[seriesName].push(p);
+        });
 
+        // Sort groups
+        const sortedSeriesNames = Object.keys(groupedProducts).sort((a, b) => {
+            if (a === "其他系列") return 1;
+            if (b === "其他系列") return -1;
+            const idxA = SERIES_LIST.indexOf(a);
+            const idxB = SERIES_LIST.indexOf(b);
+            return (idxA === -1 ? 999 : idxA) - (idxB === -1 ? 999 : idxB);
+        });
+
+        // === 3. Dimensions Calculation ===
+        const COLS = 5;
+        const PADDING = 40;
+        const CARD_SIZE = 200;
+        const GAP = 20;
+        const MAIN_HEADER_HEIGHT = 100;
+        const GROUP_HEADER_HEIGHT = 70;
+        const GROUP_BOTTOM_MARGIN = 40;
+
+        const canvasWidth = (PADDING * 2) + (COLS * CARD_SIZE) + ((COLS - 1) * GAP);
+        
+        let totalHeight = MAIN_HEADER_HEIGHT;
+        sortedSeriesNames.forEach(series => {
+            const count = groupedProducts[series].length;
+            const rows = Math.ceil(count / COLS);
+            totalHeight += GROUP_HEADER_HEIGHT + (rows * (CARD_SIZE + GAP)) + GROUP_BOTTOM_MARGIN;
+        });
+
+        // === 4. Canvas Setup ===
         const canvas = document.createElement('canvas');
         canvas.width = canvasWidth;
-        canvas.height = canvasHeight;
+        canvas.height = totalHeight;
         const ctx = canvas.getContext('2d');
 
-        // Background
+        // Draw Background (FIXED: used totalHeight instead of canvasHeight)
         ctx.fillStyle = "#ffffff";
-        ctx.fillRect(0, 0, canvasWidth, canvasHeight);
+        ctx.fillRect(0, 0, canvasWidth, totalHeight); 
 
-        // Header
+        // Draw Main Title
         ctx.fillStyle = "#333333";
-        ctx.font = "bold 40px sans-serif";
+        ctx.font = "bold 48px sans-serif";
         ctx.textAlign = "center";
         ctx.textBaseline = "middle";
-        let titleText = "蒐集進度";
-        if (activeSeriesFilters.size === 1) {
-            titleText = `${Array.from(activeSeriesFilters)[0]} - 蒐集進度`;
-        } else if (activeSeriesFilters.size > 1) {
-            titleText = `多選作品 - 蒐集進度`;
-        }
-        ctx.fillText(titleText, canvasWidth / 2, headerHeight / 2);
+        ctx.fillText("蒐集進度", canvasWidth / 2, MAIN_HEADER_HEIGHT / 2);
 
-        // Helper: Load Image
+        // Helper to load image
         const loadImage = (url) => {
             return new Promise((resolve, reject) => {
                 const img = new Image();
@@ -183,66 +226,106 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         };
 
-        // Draw Images
-        const drawPromises = productsToDraw.map(async (product, index) => {
-            const col = index % cols;
-            const row = Math.floor(index / cols);
-            const dx = gap + (col * (thumbSize + gap));
-            const dy = headerHeight + gap + (row * (thumbSize + gap));
+        // === 5. Draw Content ===
+        let currentY = MAIN_HEADER_HEIGHT;
 
-            try {
-                const imgObj = await loadImage(product.images[0].url);
-                const isOwned = ownedProductIds.has(product.productId);
+        for (const series of sortedSeriesNames) {
+            const groupItems = groupedProducts[series];
 
-                ctx.save(); 
-                if (!isOwned) {
-                    ctx.filter = 'grayscale(100%) opacity(60%)';
+            // Draw Series Header
+            ctx.textAlign = "left";
+            ctx.textBaseline = "top";
+            
+            // Decorative Line
+            ctx.fillStyle = "#007bff"; 
+            ctx.fillRect(PADDING, currentY + 15, 6, 30); 
+
+            // Series Title
+            ctx.fillStyle = "#333";
+            ctx.font = "bold 32px sans-serif";
+            ctx.fillText(series, PADDING + 20, currentY + 12);
+
+            currentY += GROUP_HEADER_HEIGHT;
+
+            // Prepare images
+            const drawPromises = groupItems.map(async (product, i) => {
+                const col = i % COLS;
+                const row = Math.floor(i / COLS);
+                const dx = PADDING + col * (CARD_SIZE + GAP);
+                const dy = currentY + row * (CARD_SIZE + GAP);
+
+                try {
+                    const imgObj = await loadImage(product.images[0].url);
+                    const isOwned = ownedProductIds.has(product.productId);
+
+                    ctx.save();
+                    
+                    if (!isOwned) {
+                        ctx.filter = 'grayscale(100%) opacity(50%)';
+                    }
+
+                    // Calculate Crop (Uses the helper function now)
+                    const { sx, sy, sWidth, sHeight } = getCropCoordinates(
+                        imgObj.naturalWidth, 
+                        imgObj.naturalHeight, 
+                        product.images[0].cropRect
+                    );
+
+                    // Draw Image
+                    ctx.drawImage(imgObj, sx, sy, sWidth, sHeight, dx, dy, CARD_SIZE, CARD_SIZE);
+                    ctx.restore();
+
+                    // Draw Checkmark
+                    if (isOwned) {
+                        const cx = dx + CARD_SIZE - 25;
+                        const cy = dy + CARD_SIZE - 25;
+                        
+                        ctx.beginPath();
+                        ctx.arc(cx, cy, 18, 0, 2 * Math.PI);
+                        ctx.fillStyle = "#28a745"; 
+                        ctx.fill();
+                        ctx.strokeStyle = "#fff";
+                        ctx.lineWidth = 3;
+                        ctx.stroke();
+
+                        ctx.fillStyle = "#fff";
+                        ctx.font = "bold 22px sans-serif";
+                        ctx.textAlign = "center";
+                        ctx.textBaseline = "middle";
+                        ctx.fillText("✓", cx, cy + 2);
+                    }
+                } catch (err) {
+                    console.error("Error drawing image", err);
+                    ctx.fillStyle = "#f0f0f0";
+                    ctx.fillRect(dx, dy, CARD_SIZE, CARD_SIZE);
                 }
+            });
 
-                const { sx, sy, sWidth, sHeight } = getCropCoordinates(
-                    imgObj.naturalWidth, 
-                    imgObj.naturalHeight, 
-                    product.images[0].cropRect
-                );
+            await Promise.all(drawPromises);
 
-                ctx.drawImage(imgObj, sx, sy, sWidth, sHeight, dx, dy, thumbSize, thumbSize);
-                ctx.restore(); 
+            const rows = Math.ceil(groupItems.length / COLS);
+            currentY += (rows * (CARD_SIZE + GAP)) + GROUP_BOTTOM_MARGIN;
+        }
 
-                if (isOwned) {
-                    const cx = dx + thumbSize - 25;
-                    const cy = dy + thumbSize - 25;
-                    ctx.beginPath();
-                    ctx.arc(cx, cy, 18, 0, 2 * Math.PI);
-                    ctx.fillStyle = "#28a745";
-                    ctx.fill();
-                    ctx.strokeStyle = "#fff";
-                    ctx.lineWidth = 3;
-                    ctx.stroke();
-
-                    ctx.fillStyle = "#fff";
-                    ctx.font = "bold 22px sans-serif";
-                    ctx.textAlign = "center";
-                    ctx.textBaseline = "middle";
-                    ctx.fillText("✓", cx, cy + 2);
-                }
-
-            } catch (err) {
-                console.error("Error drawing image", err);
-                ctx.fillStyle = "#f0f0f0";
-                ctx.fillRect(dx, dy, thumbSize, thumbSize);
-            }
-        });
-
-        await Promise.all(drawPromises);
-
-        // Show Preview
+        // === 6. Show Result ===
         const dataUrl = canvas.toDataURL("image/png");
         generatedPreviewImg.src = dataUrl;
-        previewModal.style.display = "flex";
+        previewModal.style.display = "flex"; 
+
+        // Update Download Button
+        const confirmDownloadBtn = document.getElementById('confirm-download-btn');
+        if(confirmDownloadBtn) {
+            confirmDownloadBtn.onclick = () => {
+                const link = document.createElement('a');
+                link.download = `蒐集進度_${new Date().getTime()}.png`;
+                link.href = dataUrl;
+                link.click();
+            };
+        }
 
     } catch (error) {
         console.error("Generation failed", error);
-        alert("產生圖片失敗，請檢查網路或圖片來源權限(CORS)。");
+        alert("產生圖片失敗，請檢查圖片來源或稍後再試。");
     } finally {
         loadingOverlay.style.display = "none";
     }
