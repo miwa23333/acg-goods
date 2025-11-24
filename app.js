@@ -249,7 +249,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // === 3. Dimensions Calculation ===
       const COLS = 5;
       const PADDING = 40;
-      const CARD_SIZE = 200;
+      const CARD_SIZE = 120;
       const GAP = 20;
       // Increased height to fit the stats text
       const MAIN_HEADER_HEIGHT = 130; 
