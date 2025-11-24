@@ -180,7 +180,6 @@ document.addEventListener("DOMContentLoaded", () => {
   async function generateCollectionImage() {
     // === 1. Setup & Filtering ===
     const loadingOverlay = document.getElementById("loading-overlay");
-    // [New] Select the text paragraph inside the overlay to update progress
     const loadingText = loadingOverlay.querySelector("p"); 
     
     const previewModal = document.getElementById("preview-modal");
@@ -216,17 +215,16 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    // --- Stats Calculation (For the Image Text) ---
+    // --- Stats Calculation ---
     const totalItems = productsToDraw.length;
     const ownedCount = productsToDraw.filter(p => ownedProductIds.has(p.productId)).length;
     const completionPercentage = totalItems > 0 ? Math.round((ownedCount / totalItems) * 100) : 0;
-    // ----------------------------------------------
-
-    // [New] Progress Tracking Variables
+    
+    // Progress Tracking
     let processedCount = 0;
     
     loadingOverlay.style.display = "flex";
-    loadingText.textContent = "正在準備畫布..."; // Initial text
+    loadingText.textContent = "正在準備畫布..."; 
 
     try {
       // === 2. Grouping ===
@@ -251,7 +249,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const PADDING = 40;
       const CARD_SIZE = 120;
       const GAP = 20;
-      // Increased height to fit the stats text
       const MAIN_HEADER_HEIGHT = 130; 
       const GROUP_HEADER_HEIGHT = 70;
       const GROUP_BOTTOM_MARGIN = 40;
@@ -385,15 +382,12 @@ document.addEventListener("DOMContentLoaded", () => {
             ctx.fillStyle = "#f0f0f0";
             ctx.fillRect(dx, dy, CARD_SIZE, CARD_SIZE);
           } finally {
-            // [New] Update Progress
             processedCount++;
             const percent = Math.round((processedCount / totalItems) * 100);
             loadingText.textContent = `正在繪製預覽圖... ${percent}%`;
           }
         });
 
-        // Wait for this group to finish before moving to next row calculation
-        // But the progress UI updates individually thanks to the 'finally' block above
         await Promise.all(drawPromises);
 
         const rows = Math.ceil(groupItems.length / COLS);
@@ -410,10 +404,8 @@ document.addEventListener("DOMContentLoaded", () => {
         "confirm-download-btn"
       );
       if (confirmDownloadBtn) {
-        // .onclick automatically replaces the previous handler, preventing duplicates
         confirmDownloadBtn.onclick = () => {
           const link = document.createElement("a");
-          // This uses the correct percentage calculated in this function
           link.download = `蒐集進度_${completionPercentage}percent_${new Date().getTime()}.png`;
           link.href = dataUrl;
           link.click();
@@ -424,33 +416,28 @@ document.addEventListener("DOMContentLoaded", () => {
       alert("產生圖片失敗，請檢查圖片來源或稍後再試。");
     } finally {
       loadingOverlay.style.display = "none";
-      loadingText.textContent = "正在繪製預覽圖，請稍候..."; // Reset text for next time
+      loadingText.textContent = "正在繪製預覽圖，請稍候..."; 
     }
   }
 
   const clearBtn = document.getElementById("clear-btn");
   if (clearBtn) {
     clearBtn.addEventListener("click", () => {
-      // A. Confirm with the user first
       const confirmed = confirm(
         "確定要清除所有已標記的商品嗎？\n此動作無法復原！"
       );
 
       if (confirmed) {
-        // B. Clear the Data
         ownedProductIds.clear();
         localStorage.removeItem(STORAGE_KEY);
 
-        // C. Update the UI (Remove 'is-owned' class from all cards)
         const allCards = document.querySelectorAll(".catalog-card");
         allCards.forEach((card) => {
           card.classList.remove("is-owned");
-          // Also reset the checkmark button inside the card
           const btn = card.querySelector(".own-it-btn");
           if (btn) btn.classList.remove("active");
         });
 
-        // D. Feedback
         alert("紀錄已清除！");
       }
     });
@@ -463,7 +450,6 @@ document.addEventListener("DOMContentLoaded", () => {
     previewModal.style.display = "none";
   });
 
-  // Clicking outside preview modal closes it
   previewModal.addEventListener("click", (e) => {
     if (e.target === previewModal) {
       previewModal.style.display = "none";
@@ -633,9 +619,25 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
+    // 1. Create the outer wrapper (fixed size frame)
     const content = document.createElement("div");
     content.className = "filter-dropdown-content";
 
+    // 2. Create the Close Button (Stays absolute relative to frame)
+    const closeBtn = document.createElement("div");
+    closeBtn.className = "filter-close-btn";
+    closeBtn.innerHTML = "&times;"; 
+    closeBtn.addEventListener("click", (e) => {
+      e.stopPropagation(); 
+      dropdown.classList.remove("active");
+    });
+    content.appendChild(closeBtn);
+
+    // 3. Create the inner Scroll Container (Scrolls independently)
+    const scrollContainer = document.createElement("div");
+    scrollContainer.className = "filter-scroll-container";
+    
+    // 4. Add items to Scroll Container
     const allWrapper = document.createElement("label");
     allWrapper.className = "filter-checkbox-label";
     const allInput = document.createElement("input");
@@ -658,7 +660,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const allText = document.createTextNode(" 顯示全部");
     allWrapper.append(allInput, allText);
-    content.appendChild(allWrapper);
+    scrollContainer.appendChild(allWrapper);
 
     SERIES_LIST.forEach((seriesName) => {
       const wrapper = document.createElement("label");
@@ -688,9 +690,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const text = document.createTextNode(` ${seriesName}`);
       wrapper.append(input, text);
-      content.appendChild(wrapper);
+      scrollContainer.appendChild(wrapper);
     });
 
+    // 5. Assemble
+    content.appendChild(scrollContainer);
     dropdown.append(btn, content);
     container.appendChild(dropdown);
   }
