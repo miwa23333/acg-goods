@@ -192,7 +192,7 @@ h1 {
 }
 
 .catalog-image {
-    width: 100%; height: 100%; object-fit: cover;
+    width: 100%; height: 100%; object-fit: contain;
     display: block; transition: opacity 0.3s ease;
 }
 
