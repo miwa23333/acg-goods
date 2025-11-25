@@ -180,8 +180,8 @@ document.addEventListener("DOMContentLoaded", () => {
   async function generateCollectionImage() {
     // === 1. Setup & Filtering ===
     const loadingOverlay = document.getElementById("loading-overlay");
-    const loadingText = loadingOverlay.querySelector("p"); 
-    
+    const loadingText = loadingOverlay.querySelector("p");
+
     const previewModal = document.getElementById("preview-modal");
     const generatedPreviewImg = document.getElementById(
       "generated-preview-img"
@@ -217,14 +217,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // --- Stats Calculation ---
     const totalItems = productsToDraw.length;
-    const ownedCount = productsToDraw.filter(p => ownedProductIds.has(p.productId)).length;
-    const completionPercentage = totalItems > 0 ? Math.round((ownedCount / totalItems) * 100) : 0;
-    
+    const ownedCount = productsToDraw.filter((p) =>
+      ownedProductIds.has(p.productId)
+    ).length;
+    const completionPercentage =
+      totalItems > 0 ? Math.round((ownedCount / totalItems) * 100) : 0;
+
     // Progress Tracking
     let processedCount = 0;
-    
+
     loadingOverlay.style.display = "flex";
-    loadingText.textContent = "正在準備畫布..."; 
+    loadingText.textContent = "正在準備畫布...";
 
     try {
       // === 2. Grouping ===
@@ -249,7 +252,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const PADDING = 40;
       const CARD_SIZE = 120;
       const GAP = 20;
-      const MAIN_HEADER_HEIGHT = 130; 
+      const MAIN_HEADER_HEIGHT = 130;
       const GROUP_HEADER_HEIGHT = 70;
       const GROUP_BOTTOM_MARGIN = 40;
 
@@ -285,7 +288,11 @@ document.addEventListener("DOMContentLoaded", () => {
       // Subtitle with Stats
       ctx.fillStyle = "#666666";
       ctx.font = "bold 28px sans-serif";
-      ctx.fillText(`完成度：${completionPercentage}%  (${ownedCount} / ${totalItems})`, canvasWidth / 2, 95);
+      ctx.fillText(
+        `完成度：${completionPercentage}%  (${ownedCount} / ${totalItems})`,
+        canvasWidth / 2,
+        95
+      );
       // ------------------------------------
 
       // Helper to load image
@@ -394,6 +401,13 @@ document.addEventListener("DOMContentLoaded", () => {
         currentY += rows * (CARD_SIZE + GAP) + GROUP_BOTTOM_MARGIN;
       }
 
+      // === Add Watermark ===
+      ctx.textAlign = "right";
+      ctx.textBaseline = "bottom";
+      ctx.fillStyle = "rgba(150, 150, 150, 0.6)";
+      ctx.font = "16px sans-serif";
+      ctx.fillText("miwa23333", canvasWidth - 20, totalHeight - 20);
+
       // === 6. Show Result ===
       const dataUrl = canvas.toDataURL("image/png");
       generatedPreviewImg.src = dataUrl;
@@ -416,7 +430,7 @@ document.addEventListener("DOMContentLoaded", () => {
       alert("產生圖片失敗，請檢查圖片來源或稍後再試。");
     } finally {
       loadingOverlay.style.display = "none";
-      loadingText.textContent = "正在繪製預覽圖，請稍候..."; 
+      loadingText.textContent = "正在繪製預覽圖，請稍候...";
     }
   }
 
@@ -626,9 +640,9 @@ document.addEventListener("DOMContentLoaded", () => {
     // 2. Create the Close Button (Stays absolute relative to frame)
     const closeBtn = document.createElement("div");
     closeBtn.className = "filter-close-btn";
-    closeBtn.innerHTML = "&times;"; 
+    closeBtn.innerHTML = "&times;";
     closeBtn.addEventListener("click", (e) => {
-      e.stopPropagation(); 
+      e.stopPropagation();
       dropdown.classList.remove("active");
     });
     content.appendChild(closeBtn);
@@ -636,7 +650,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // 3. Create the inner Scroll Container (Scrolls independently)
     const scrollContainer = document.createElement("div");
     scrollContainer.className = "filter-scroll-container";
-    
+
     // 4. Add items to Scroll Container
     const allWrapper = document.createElement("label");
     allWrapper.className = "filter-checkbox-label";
