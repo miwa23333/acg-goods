@@ -15,7 +15,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Preview Modal Elements
   const previewModal = document.getElementById("preview-modal");
-  const generatedPreviewImg = document.getElementById("generated-preview-img");
+  const generatedPreviewImg = document.getElementById(
+    "generated-preview-img"
+  );
   const closePreviewBtn = document.getElementById("close-preview-btn");
   const confirmDownloadBtn = document.getElementById("confirm-download-btn");
 
@@ -26,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // -- Filters State --
   let activeSeriesFilters = new Set();
-  let activeCategoryFilters = new Set(); // New: State for category filter
+  let activeCategoryFilters = new Set();
 
   // -- Constants --
   const SERIES_LIST = [
@@ -66,10 +68,52 @@ document.addEventListener("DOMContentLoaded", () => {
     "銀魂",
     "驅魔少年",
     "失憶投捕",
-    "忍者亂太郎", // Added based on your textproto snippet
+    "航海王",
+    "迪士尼扭曲仙境",
+    "數碼寶貝",
+    "美少女戰士",
+    "新世紀福音戰士",
+    "賽馬娘",
+    "藍色監獄",
+    "東京復仇者",
+    "遊戲王",
+    "地獄樂",
+    "鋼彈",
+    "JOJO",
+    "莉可麗絲",
+    "hololive",
+    "哈利波特",
+    "來自深淵",
+    "路人超能",
+    "BEASTARS",
+    "她來自煩星",
+    "Fantastic Beasts",
+    "孤獨搖滾",
+    "葬送的芙莉蓮",
+    "庫洛魔法使",
+    "肌肉魔法使",
+    "銀魂",
+    "偶像大師",
+    "防風少年",
+    "鬼太郎",
+    "擅長逃跑的殿下",
+    "藥師少女的獨語",
+    "IDOLiSH7 ",
+    "忍者亂太郎",
+    "文豪野犬",
+    "蔚藍檔案",
+    "進擊的巨人",
+    "Keroro軍曹",
+    "犬夜叉",
+    "亂馬1/2",
+    "一拳超人",
+    "網球王子",
+    "TIGER & BUNNY",
+    "反叛的魯路修",
+    "寶可夢",
+    "Piapro Characters",
   ];
 
-  // New: Category List
   const CATEGORIES_LIST = [
     "JS 趴娃",
     "抬頭娃"
@@ -167,16 +211,13 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function getProductSeries(product) {
-    // Try to match with the global SERIES_LIST
     for (const series of SERIES_LIST) {
-      // 1. Check Tags (Best match)
       if (product.tags) {
         const hasTag = product.tags.some(
           (t) => t.textZh === series || t.textJp === series
         );
         if (hasTag) return series;
       }
-      // 2. Check Title
       if (
         (product.titleZh && product.titleZh.includes(series)) ||
         (product.titleJp && product.titleJp.includes(series))
@@ -184,12 +225,11 @@ document.addEventListener("DOMContentLoaded", () => {
         return series;
       }
     }
-    return "其他系列"; // Fallback
+    return "其他系列";
   }
 
-  // === Image Generation Logic ===
+  // === Image Generation Logic (Modified) ===
   async function generateCollectionImage() {
-    // === 1. Setup & Filtering ===
     const loadingOverlay = document.getElementById("loading-overlay");
     const loadingText = loadingOverlay.querySelector("p");
 
@@ -200,35 +240,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!allProductsInfo) return;
 
-    // Filter logic (Logic AND: Must match Series AND Category)
+    // 1. Filter Logic
     let productsToDraw = [];
     allProductsInfo.products.forEach((product) => {
-      // Basic validation
-      if (
-        // Remove vendor check if you want to allow non-jump products (e.g. Megahouse)
-        // product.vendor !== "jump" || 
-        !product.images ||
-        product.images.length === 0
-      )
-        return;
+      if (!product.images || product.images.length === 0) return;
 
       const pTags = product.tags?.map((t) => t.textZh) || [];
 
-      // 1. Check Series Filter
-      let matchesSeries = false;
-      if (activeSeriesFilters.size === 0) {
-        matchesSeries = true;
-      } else {
-        matchesSeries = pTags.some((tag) => activeSeriesFilters.has(tag));
-      }
+      let matchesSeries = activeSeriesFilters.size === 0 
+        ? true 
+        : pTags.some((tag) => activeSeriesFilters.has(tag));
 
-      // 2. Check Category Filter (New)
-      let matchesCategory = false;
-      if (activeCategoryFilters.size === 0) {
-        matchesCategory = true;
-      } else {
-        matchesCategory = pTags.some((tag) => activeCategoryFilters.has(tag));
-      }
+      let matchesCategory = activeCategoryFilters.size === 0
+        ? true
+        : pTags.some((tag) => activeCategoryFilters.has(tag));
 
       if (matchesSeries && matchesCategory) {
         productsToDraw.push(product);
@@ -240,7 +265,6 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    // --- Stats Calculation ---
     const totalItems = productsToDraw.length;
     const ownedCount = productsToDraw.filter((p) =>
       ownedProductIds.has(p.productId)
@@ -248,14 +272,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const completionPercentage =
       totalItems > 0 ? Math.round((ownedCount / totalItems) * 100) : 0;
 
-    // Progress Tracking
     let processedCount = 0;
 
     loadingOverlay.style.display = "flex";
     loadingText.textContent = "正在準備畫布...";
 
     try {
-      // === 2. Grouping ===
+      // 2. Grouping & Sorting
       const groupedProducts = {};
       productsToDraw.forEach((p) => {
         const seriesName = getProductSeries(p);
@@ -263,7 +286,6 @@ document.addEventListener("DOMContentLoaded", () => {
         groupedProducts[seriesName].push(p);
       });
 
-      // Sort groups
       const sortedSeriesNames = Object.keys(groupedProducts).sort((a, b) => {
         if (a === "其他系列") return 1;
         if (b === "其他系列") return -1;
@@ -272,14 +294,28 @@ document.addEventListener("DOMContentLoaded", () => {
         return (idxA === -1 ? 999 : idxA) - (idxB === -1 ? 999 : idxB);
       });
 
-      // === 3. Dimensions Calculation ===
+      // 3. Prepare Header Text (Category)
+      let categoryText = "";
+      if (activeCategoryFilters.size > 0) {
+          categoryText = Array.from(activeCategoryFilters).join("、");
+      } else {
+          categoryText = CATEGORIES_LIST.join("、");
+      }
+
+      // 4. Dimensions Calculation
       const COLS = 5;
       const PADDING = 40;
       const CARD_SIZE = 120;
       const GAP = 20;
-      const MAIN_HEADER_HEIGHT = 130;
       const GROUP_HEADER_HEIGHT = 70;
       const GROUP_BOTTOM_MARGIN = 40;
+
+      // === UPDATED: Increased Height & Spacing ===
+      // 原本 130 -> 改為 180，增加基礎空間
+      const HEADER_BASE_HEIGHT = 180; 
+      // 原本 40 -> 改為 60，增加文字間的空間
+      const EXTRA_TEXT_HEIGHT = categoryText ? 60 : 0; 
+      const MAIN_HEADER_HEIGHT = HEADER_BASE_HEIGHT + EXTRA_TEXT_HEIGHT;
 
       const canvasWidth = PADDING * 2 + COLS * CARD_SIZE + (COLS - 1) * GAP;
 
@@ -291,36 +327,47 @@ document.addEventListener("DOMContentLoaded", () => {
           GROUP_HEADER_HEIGHT + rows * (CARD_SIZE + GAP) + GROUP_BOTTOM_MARGIN;
       });
 
-      // === 4. Canvas Setup ===
+      // 5. Canvas Setup
       const canvas = document.createElement("canvas");
       canvas.width = canvasWidth;
       canvas.height = totalHeight;
       const ctx = canvas.getContext("2d");
 
-      // Draw Background
       ctx.fillStyle = "#ffffff";
       ctx.fillRect(0, 0, canvasWidth, totalHeight);
 
-      // --- Draw Title & Stats on Canvas ---
+      // --- Draw Title & Stats ---
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
 
       // Main Title
       ctx.fillStyle = "#333333";
       ctx.font = "bold 48px sans-serif";
-      ctx.fillText("蒐集進度表", canvasWidth / 2, 50);
+      // Title Y Position: 50 -> 60 (稍微往下)
+      ctx.fillText("蒐集進度表", canvasWidth / 2, 60);
 
-      // Subtitle with Stats
+      // First line of text starts here: 95 -> 120 (拉開與標題的距離)
+      let currentTextY = 120;
+
+      // Draw Category Text (If exists)
+      if (categoryText) {
+          ctx.fillStyle = "#007bff";
+          ctx.font = "bold 24px sans-serif";
+          ctx.fillText(categoryText, canvasWidth / 2, currentTextY);
+          // Gap between lines: 40 -> 50 (拉開行距)
+          currentTextY += 50; 
+      }
+
+      // Draw Stats
       ctx.fillStyle = "#666666";
       ctx.font = "bold 28px sans-serif";
       ctx.fillText(
         `完成度：${completionPercentage}%  (${ownedCount} / ${totalItems})`,
         canvasWidth / 2,
-        95
+        currentTextY
       );
-      // ------------------------------------
+      // ----------------------------
 
-      // Helper to load image
       const loadImage = (url) => {
         return new Promise((resolve, reject) => {
           const img = new Image();
@@ -331,13 +378,12 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       };
 
-      // === 5. Draw Content ===
+      // 6. Draw Products
       let currentY = MAIN_HEADER_HEIGHT;
 
       for (const series of sortedSeriesNames) {
         const groupItems = groupedProducts[series];
 
-        // Draw Series Header
         ctx.textAlign = "left";
         ctx.textBaseline = "top";
 
@@ -352,7 +398,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         currentY += GROUP_HEADER_HEIGHT;
 
-        // Prepare images
         const drawPromises = groupItems.map(async (product, i) => {
           const col = i % COLS;
           const row = Math.floor(i / COLS);
@@ -364,19 +409,16 @@ document.addEventListener("DOMContentLoaded", () => {
             const isOwned = ownedProductIds.has(product.productId);
 
             ctx.save();
-
             if (!isOwned) {
               ctx.filter = "grayscale(100%) opacity(50%)";
             }
 
-            // Calculate Crop
             const { sx, sy, sWidth, sHeight } = getCropCoordinates(
               imgObj.naturalWidth,
               imgObj.naturalHeight,
               product.images[0].cropRect
             );
 
-            // Draw Image
             ctx.drawImage(
               imgObj,
               sx,
@@ -390,11 +432,9 @@ document.addEventListener("DOMContentLoaded", () => {
             );
             ctx.restore();
 
-            // Draw Checkmark
             if (isOwned) {
               const cx = dx + CARD_SIZE - 25;
               const cy = dy + CARD_SIZE - 25;
-
               ctx.beginPath();
               ctx.arc(cx, cy, 18, 0, 2 * Math.PI);
               ctx.fillStyle = "#28a745";
@@ -402,7 +442,6 @@ document.addEventListener("DOMContentLoaded", () => {
               ctx.strokeStyle = "#fff";
               ctx.lineWidth = 3;
               ctx.stroke();
-
               ctx.fillStyle = "#fff";
               ctx.font = "bold 22px sans-serif";
               ctx.textAlign = "center";
@@ -421,27 +460,21 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         await Promise.all(drawPromises);
-
         const rows = Math.ceil(groupItems.length / COLS);
         currentY += rows * (CARD_SIZE + GAP) + GROUP_BOTTOM_MARGIN;
       }
 
-      // === Add Watermark ===
+      // Watermark
       ctx.textAlign = "right";
       ctx.textBaseline = "bottom";
       ctx.fillStyle = "rgba(150, 150, 150, 0.6)";
       ctx.font = "16px sans-serif";
       ctx.fillText("miwa23333", canvasWidth - 20, totalHeight - 20);
 
-      // === 6. Show Result ===
       const dataUrl = canvas.toDataURL("image/png");
       generatedPreviewImg.src = dataUrl;
       previewModal.style.display = "flex";
 
-      // Update Download Button
-      const confirmDownloadBtn = document.getElementById(
-        "confirm-download-btn"
-      );
       if (confirmDownloadBtn) {
         confirmDownloadBtn.onclick = () => {
           const link = document.createElement("a");
@@ -469,14 +502,12 @@ document.addEventListener("DOMContentLoaded", () => {
       if (confirmed) {
         ownedProductIds.clear();
         localStorage.removeItem(STORAGE_KEY);
-
         const allCards = document.querySelectorAll(".catalog-card");
         allCards.forEach((card) => {
           card.classList.remove("is-owned");
           const btn = card.querySelector(".own-it-btn");
           if (btn) btn.classList.remove("active");
         });
-
         alert("紀錄已清除！");
       }
     });
@@ -540,12 +571,9 @@ document.addEventListener("DOMContentLoaded", () => {
           tagItem.textContent = tag.textZh;
 
           tagItem.addEventListener("click", () => {
-            // Check if this tag belongs to Series or Categories to trigger correct filter
-            // (Simple fallback logic: try both)
             let chk = document.querySelector(
               `.filter-checkbox[value="${tag.textZh}"]`
             );
-            
             if (chk) {
               chk.checked = true;
               chk.dispatchEvent(new Event("change"));
@@ -639,16 +667,13 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // === Filter UI Logic (Generic Factory) ===
-  // This helper function creates a dropdown and returns the DOM element
   function createDropdown(labelTitle, itemsList, activeSet, onUpdate) {
     const dropdown = document.createElement("div");
     dropdown.className = "filter-dropdown";
 
-    // Button
     const btn = document.createElement("button");
     btn.className = "filter-dropbtn";
     
-    // Helper to update button text
     const updateText = () => {
         if (activeSet.size === 0) {
             btn.textContent = `${labelTitle} (顯示全部) ▼`;
@@ -656,22 +681,19 @@ document.addEventListener("DOMContentLoaded", () => {
             btn.textContent = `${labelTitle} (已選 ${activeSet.size} 項) ▼`;
         }
     };
-    updateText(); // Initial text
+    updateText();
 
     btn.addEventListener("click", (e) => {
       e.stopPropagation();
-      // Close all other active dropdowns first
       document.querySelectorAll('.filter-dropdown.active').forEach(d => {
           if(d !== dropdown) d.classList.remove('active');
       });
       dropdown.classList.toggle("active");
     });
 
-    // Content Wrapper
     const content = document.createElement("div");
     content.className = "filter-dropdown-content";
 
-    // Close Button
     const closeBtn = document.createElement("div");
     closeBtn.className = "filter-close-btn";
     closeBtn.innerHTML = "&times;";
@@ -681,22 +703,18 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     content.appendChild(closeBtn);
 
-    // Scroll Container
     const scrollContainer = document.createElement("div");
     scrollContainer.className = "filter-scroll-container";
 
-    // "Show All" Checkbox
     const allWrapper = document.createElement("label");
     allWrapper.className = "filter-checkbox-label";
     const allInput = document.createElement("input");
     allInput.type = "checkbox";
     allInput.checked = (activeSet.size === 0);
 
-    // Scope "Show All" logic to this specific dropdown
     allInput.addEventListener("change", (e) => {
       if (e.target.checked) {
         activeSet.clear();
-        // Uncheck all item checkboxes IN THIS CONTAINER only
         scrollContainer.querySelectorAll(".filter-checkbox").forEach((cb) => (cb.checked = false));
       } else {
         if (activeSet.size === 0) e.target.checked = true;
@@ -709,14 +727,13 @@ document.addEventListener("DOMContentLoaded", () => {
     allWrapper.append(allInput, allText);
     scrollContainer.appendChild(allWrapper);
 
-    // List Items
     itemsList.forEach((item) => {
       const wrapper = document.createElement("label");
       wrapper.className = "filter-checkbox-label";
 
       const input = document.createElement("input");
       input.type = "checkbox";
-      input.className = "filter-checkbox"; // Generic class used for selection within this function
+      input.className = "filter-checkbox";
       input.value = item;
       if(activeSet.has(item)) input.checked = true;
 
@@ -742,24 +759,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     content.appendChild(scrollContainer);
     dropdown.append(btn, content);
-    
     return dropdown;
   }
 
-  // Initializer for all filters
   function initFilters() {
       const container = document.getElementById("filter-container");
-      container.innerHTML = ""; // Clear existing
+      container.innerHTML = "";
 
-      // 1. Series Filter
       const seriesDropdown = createDropdown("作品篩選", SERIES_LIST, activeSeriesFilters, displayProducts);
       container.appendChild(seriesDropdown);
 
-      // 2. Category Filter
       const categoryDropdown = createDropdown("類別篩選", CATEGORIES_LIST, activeCategoryFilters, displayProducts);
       container.appendChild(categoryDropdown);
 
-      // Global click listener to close dropdowns
       document.addEventListener("click", (e) => {
         if (!container.contains(e.target)) {
             document.querySelectorAll(".filter-dropdown.active").forEach(d => d.classList.remove("active"));
@@ -767,90 +779,63 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   }
 
-  // === Main Display Function (Updated for Grouping & Dual Filtering) ===
+  // === Main Display Function ===
   function displayProducts() {
     if (!allProductsInfo) return;
-
     const container = document.getElementById("catalog-container");
-    container.innerHTML = ""; // Clear existing content
+    container.innerHTML = "";
 
-    // --- Step 1: Filter Valid Products ---
     let productsToDraw = [];
     allProductsInfo.products.forEach((product) => {
-        // Validate Basic Requirements (Images, etc.)
-        // Note: Removed 'vendor==="jump"' check to allow Megahouse products from your example
-        // If you strictly want 'jump' or 'megahouse' only, add logic here.
-        if (!product.images || product.images.length === 0) {
-            return;
-        }
+        if (!product.images || product.images.length === 0) return;
 
         const pTags = product.tags?.map((t) => t.textZh) || [];
 
-        // 1. Series Check
-        let matchesSeries = false;
-        if (activeSeriesFilters.size === 0) {
-            matchesSeries = true;
-        } else {
-            matchesSeries = pTags.some((tag) => activeSeriesFilters.has(tag));
-        }
+        let matchesSeries = activeSeriesFilters.size === 0 
+          ? true 
+          : pTags.some((tag) => activeSeriesFilters.has(tag));
 
-        // 2. Category Check
-        let matchesCategory = false;
-        if (activeCategoryFilters.size === 0) {
-            matchesCategory = true;
-        } else {
-            matchesCategory = pTags.some((tag) => activeCategoryFilters.has(tag));
-        }
+        let matchesCategory = activeCategoryFilters.size === 0
+          ? true
+          : pTags.some((tag) => activeCategoryFilters.has(tag));
 
-        // Must match BOTH (AND logic)
         if (matchesSeries && matchesCategory) {
             productsToDraw.push(product);
         }
     });
 
-    // Handle empty state
     if (productsToDraw.length === 0) {
         container.innerHTML = '<p style="text-align:center; color:#666; margin-top:50px;">沒有符合篩選條件的商品。</p>';
         return;
     }
 
-    // --- Step 2: Group Products by Series ---
     const groupedProducts = {};
     productsToDraw.forEach((p) => {
         const seriesName = getProductSeries(p);
-        if (!groupedProducts[seriesName]) {
-            groupedProducts[seriesName] = [];
-        }
+        if (!groupedProducts[seriesName]) groupedProducts[seriesName] = [];
         groupedProducts[seriesName].push(p);
     });
 
-    // --- Step 3: Sort the Groups ---
     const sortedSeriesNames = Object.keys(groupedProducts).sort((a, b) => {
         if (a === "其他系列") return 1;
         if (b === "其他系列") return -1;
-
         const idxA = SERIES_LIST.indexOf(a);
         const idxB = SERIES_LIST.indexOf(b);
         return (idxA === -1 ? 999 : idxA) - (idxB === -1 ? 999 : idxB);
     });
 
-    // --- Step 4: Render Sections ---
     sortedSeriesNames.forEach((series) => {
-        // Section Wrapper
         const section = document.createElement("div");
         section.className = "series-section";
 
-        // Title
         const title = document.createElement("h2");
         title.className = "series-title";
         title.textContent = series;
         section.appendChild(title);
 
-        // Grid
         const grid = document.createElement("div");
         grid.className = "series-grid";
 
-        // Cards
         groupedProducts[series].forEach((product) => {
             const card = document.createElement("div");
             card.className = "catalog-card";
@@ -917,9 +902,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       allProductsInfo = ProductsInfoMessage.fromObject(camelObj);
 
-      // Initialize both filters
       initFilters();
-      
       displayProducts();
     } catch (err) {
       console.error(err);

@@ -52,7 +52,14 @@ h1 {
     z-index: 100;
 }
 
-#filter-container { margin-bottom: 0; }
+#filter-container { 
+    margin-bottom: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
+}
 
 .action-btn {
     background-color: var(--success-color);
