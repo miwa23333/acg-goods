@@ -908,7 +908,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const root = protobuf.parse(await protoRes.text()).root;
       const ProductsInfoMessage = root.lookupType("ProductsInfo");
 
-      const dataRes = await fetch("jump_product.txtpb");
+      const dataRes = await fetch("jump_product.txtpb?t=123");
       const plainObj = parseTextprotoToJsObject(await dataRes.text());
       const camelObj = convertKeysToCamelCase(plainObj);
 
