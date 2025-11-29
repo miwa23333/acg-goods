@@ -721,63 +721,141 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  // === Main Display Function (Updated for Grouping) ===
   function displayProducts() {
     if (!allProductsInfo) return;
+
     const container = document.getElementById("catalog-container");
-    container.innerHTML = "";
+    container.innerHTML = ""; // Clear existing content
 
+    // --- Step 1: Filter Valid Products ---
+    let productsToDraw = [];
     allProductsInfo.products.forEach((product) => {
-      let matches = false;
-      if (activeSeriesFilters.size === 0) {
-        matches = true;
-      } else {
-        const pTags = product.tags?.map((t) => t.textZh) || [];
-        matches = pTags.some((tag) => activeSeriesFilters.has(tag));
-      }
-
-      if (!matches) return;
-
-      if (product.vendor === "jump" && product.images?.length > 0) {
-        const card = document.createElement("div");
-        card.className = "catalog-card";
-
-        const imageWrapper = document.createElement("div");
-        imageWrapper.className = "catalog-image-wrapper";
-        imageWrapper.addEventListener("click", () => {
-          openModal(product.images, product.titleJp, product.tags);
-        });
-
-        const img = document.createElement("img");
-        img.src = product.images[0].url;
-        img.className = "catalog-image";
-        img.alt = product.titleJp || "Product";
-        applyCrop(img, product.images[0].cropRect);
-        imageWrapper.appendChild(img);
-
-        if (product.images.length > 1) {
-          const indicator = document.createElement("span");
-          indicator.className = "image-count-indicator";
-          indicator.textContent = `+${product.images.length - 1}`;
-          imageWrapper.appendChild(indicator);
+        // Only show products from 'jump' vendor that have images
+        if (product.vendor !== "jump" || !product.images || product.images.length === 0) {
+            return;
         }
 
-        const ownBtn = document.createElement("button");
-        ownBtn.className = "own-it-btn";
-        ownBtn.innerHTML = "✓";
-        ownBtn.addEventListener("click", (e) => {
-          e.stopPropagation();
-          toggleOwnedStatus(product.productId, card, ownBtn);
-        });
-        imageWrapper.appendChild(ownBtn);
-
-        if (ownedProductIds.has(product.productId)) {
-          card.classList.add("is-owned");
-          ownBtn.classList.add("active");
+        // Apply active filters (Dropdown filters)
+        let matches = false;
+        if (activeSeriesFilters.size === 0) {
+            matches = true;
+        } else {
+            const pTags = product.tags?.map((t) => t.textZh) || [];
+            matches = pTags.some((tag) => activeSeriesFilters.has(tag));
         }
 
-        card.appendChild(imageWrapper);
-        container.appendChild(card);
-      }
+        if (matches) productsToDraw.push(product);
+    });
+
+    // Handle empty state
+    if (productsToDraw.length === 0) {
+        container.innerHTML = '<p style="text-align:center; color:#666; margin-top:50px;">沒有符合篩選條件的商品。</p>';
+        return;
+    }
+
+    // --- Step 2: Group Products by Series ---
+    const groupedProducts = {};
+    productsToDraw.forEach((p) => {
+        const seriesName = getProductSeries(p);
+        if (!groupedProducts[seriesName]) {
+            groupedProducts[seriesName] = [];
+        }
+        groupedProducts[seriesName].push(p);
+    });
+
+    // --- Step 3: Sort the Groups ---
+    // We want the groups to appear in the order defined in SERIES_LIST
+    const sortedSeriesNames = Object.keys(groupedProducts).sort((a, b) => {
+        // Always put "Other Series" at the bottom
+        if (a === "其他系列") return 1;
+        if (b === "其他系列") return -1;
+
+        const idxA = SERIES_LIST.indexOf(a);
+        const idxB = SERIES_LIST.indexOf(b);
+
+        // If a series is not in the list, push it to the end (before "Others")
+        // Otherwise, sort by index
+        return (idxA === -1 ? 999 : idxA) - (idxB === -1 ? 999 : idxB);
+    });
+
+    // --- Step 4: Render Sections ---
+    sortedSeriesNames.forEach((series) => {
+        // 1. Create the Section Container
+        const section = document.createElement("div");
+        section.className = "series-section";
+
+        // 2. Create the Title (e.g., "Haikyuu")
+        const title = document.createElement("h2");
+        title.className = "series-title";
+        title.textContent = series;
+        section.appendChild(title);
+
+        // 3. Create the Grid Container for this specific series
+        const grid = document.createElement("div");
+        grid.className = "series-grid";
+
+        // 4. Create Cards (Same logic as previous version)
+        groupedProducts[series].forEach((product) => {
+            const card = document.createElement("div");
+            card.className = "catalog-card";
+
+            // -- Image Wrapper --
+            const imageWrapper = document.createElement("div");
+            imageWrapper.className = "catalog-image-wrapper";
+            
+            // Open Modal on click
+            imageWrapper.addEventListener("click", () => {
+                openModal(product.images, product.titleJp, product.tags);
+            });
+
+            // Main Image
+            const img = document.createElement("img");
+            img.src = product.images[0].url;
+            img.className = "catalog-image";
+            img.loading = "lazy"; // Add lazy loading for performance
+            img.alt = product.titleJp || "Product";
+            
+            // Apply crop if available
+            if(typeof applyCrop === 'function' && product.images[0].cropRect) {
+                 applyCrop(img, product.images[0].cropRect);
+            }
+            imageWrapper.appendChild(img);
+
+            // Multiple Images Indicator (+2, +3 etc.)
+            if (product.images.length > 1) {
+                const indicator = document.createElement("span");
+                indicator.className = "image-count-indicator";
+                indicator.textContent = `+${product.images.length - 1}`;
+                imageWrapper.appendChild(indicator);
+            }
+
+            // "Own It" Checkmark Button
+            const ownBtn = document.createElement("button");
+            ownBtn.className = "own-it-btn";
+            ownBtn.innerHTML = "✓";
+            ownBtn.title = "標記為已擁有";
+            ownBtn.addEventListener("click", (e) => {
+                e.stopPropagation(); // Prevent opening modal
+                toggleOwnedStatus(product.productId, card, ownBtn);
+            });
+            imageWrapper.appendChild(ownBtn);
+
+            // Check if already owned
+            if (ownedProductIds.has(product.productId)) {
+                card.classList.add("is-owned");
+                ownBtn.classList.add("active");
+            }
+
+            card.appendChild(imageWrapper);
+            
+            // Append card to the specific series grid
+            grid.appendChild(card); 
+        });
+
+        // Assemble the section
+        section.appendChild(grid);
+        container.appendChild(section);
     });
   }
 
