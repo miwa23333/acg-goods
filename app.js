@@ -23,8 +23,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const STORAGE_KEY = "ownedProductIds";
   let ownedProductIds = new Set();
   let allProductsInfo = null;
-  let activeSeriesFilters = new Set();
 
+  // -- Filters State --
+  let activeSeriesFilters = new Set();
+  let activeCategoryFilters = new Set(); // New: State for category filter
+
+  // -- Constants --
   const SERIES_LIST = [
     "排球少年",
     "鬼滅之刃",
@@ -62,6 +66,13 @@ document.addEventListener("DOMContentLoaded", () => {
     "銀魂",
     "驅魔少年",
     "失憶投捕",
+    "忍者亂太郎", // Added based on your textproto snippet
+  ];
+
+  // New: Category List
+  const CATEGORIES_LIST = [
+    "JS 趴娃",
+    "抬頭娃"
   ];
 
   // === LocalStorage Logic ===
@@ -189,25 +200,39 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!allProductsInfo) return;
 
-    // Filter logic
+    // Filter logic (Logic AND: Must match Series AND Category)
     let productsToDraw = [];
     allProductsInfo.products.forEach((product) => {
+      // Basic validation
       if (
-        product.vendor !== "jump" ||
+        // Remove vendor check if you want to allow non-jump products (e.g. Megahouse)
+        // product.vendor !== "jump" || 
         !product.images ||
         product.images.length === 0
       )
         return;
 
-      let matches = false;
+      const pTags = product.tags?.map((t) => t.textZh) || [];
+
+      // 1. Check Series Filter
+      let matchesSeries = false;
       if (activeSeriesFilters.size === 0) {
-        matches = true;
+        matchesSeries = true;
       } else {
-        const pTags = product.tags?.map((t) => t.textZh) || [];
-        matches = pTags.some((tag) => activeSeriesFilters.has(tag));
+        matchesSeries = pTags.some((tag) => activeSeriesFilters.has(tag));
       }
 
-      if (matches) productsToDraw.push(product);
+      // 2. Check Category Filter (New)
+      let matchesCategory = false;
+      if (activeCategoryFilters.size === 0) {
+        matchesCategory = true;
+      } else {
+        matchesCategory = pTags.some((tag) => activeCategoryFilters.has(tag));
+      }
+
+      if (matchesSeries && matchesCategory) {
+        productsToDraw.push(product);
+      }
     });
 
     if (productsToDraw.length === 0) {
@@ -515,9 +540,12 @@ document.addEventListener("DOMContentLoaded", () => {
           tagItem.textContent = tag.textZh;
 
           tagItem.addEventListener("click", () => {
-            const chk = document.querySelector(
-              `.series-checkbox[value="${tag.textZh}"]`
+            // Check if this tag belongs to Series or Categories to trigger correct filter
+            // (Simple fallback logic: try both)
+            let chk = document.querySelector(
+              `.filter-checkbox[value="${tag.textZh}"]`
             );
+            
             if (chk) {
               chk.checked = true;
               chk.dispatchEvent(new Event("change"));
@@ -610,34 +638,40 @@ document.addEventListener("DOMContentLoaded", () => {
     }, {});
   }
 
-  // === Filter UI Logic ===
-  function createDropdownFilterUI() {
-    const container = document.getElementById("filter-container");
-    container.innerHTML = "";
-
+  // === Filter UI Logic (Generic Factory) ===
+  // This helper function creates a dropdown and returns the DOM element
+  function createDropdown(labelTitle, itemsList, activeSet, onUpdate) {
     const dropdown = document.createElement("div");
     dropdown.className = "filter-dropdown";
 
+    // Button
     const btn = document.createElement("button");
     btn.className = "filter-dropbtn";
-    updateDropdownButtonText(btn);
+    
+    // Helper to update button text
+    const updateText = () => {
+        if (activeSet.size === 0) {
+            btn.textContent = `${labelTitle} (顯示全部) ▼`;
+        } else {
+            btn.textContent = `${labelTitle} (已選 ${activeSet.size} 項) ▼`;
+        }
+    };
+    updateText(); // Initial text
 
     btn.addEventListener("click", (e) => {
       e.stopPropagation();
+      // Close all other active dropdowns first
+      document.querySelectorAll('.filter-dropdown.active').forEach(d => {
+          if(d !== dropdown) d.classList.remove('active');
+      });
       dropdown.classList.toggle("active");
     });
 
-    document.addEventListener("click", (e) => {
-      if (!dropdown.contains(e.target)) {
-        dropdown.classList.remove("active");
-      }
-    });
-
-    // 1. Create the outer wrapper (fixed size frame)
+    // Content Wrapper
     const content = document.createElement("div");
     content.className = "filter-dropdown-content";
 
-    // 2. Create the Close Button (Stays absolute relative to frame)
+    // Close Button
     const closeBtn = document.createElement("div");
     closeBtn.className = "filter-close-btn";
     closeBtn.innerHTML = "&times;";
@@ -647,81 +681,93 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     content.appendChild(closeBtn);
 
-    // 3. Create the inner Scroll Container (Scrolls independently)
+    // Scroll Container
     const scrollContainer = document.createElement("div");
     scrollContainer.className = "filter-scroll-container";
 
-    // 4. Add items to Scroll Container
+    // "Show All" Checkbox
     const allWrapper = document.createElement("label");
     allWrapper.className = "filter-checkbox-label";
     const allInput = document.createElement("input");
     allInput.type = "checkbox";
-    allInput.id = "filter-all";
-    allInput.checked = true;
+    allInput.checked = (activeSet.size === 0);
 
+    // Scope "Show All" logic to this specific dropdown
     allInput.addEventListener("change", (e) => {
       if (e.target.checked) {
-        activeSeriesFilters.clear();
-        document
-          .querySelectorAll(".series-checkbox")
-          .forEach((cb) => (cb.checked = false));
+        activeSet.clear();
+        // Uncheck all item checkboxes IN THIS CONTAINER only
+        scrollContainer.querySelectorAll(".filter-checkbox").forEach((cb) => (cb.checked = false));
       } else {
-        if (activeSeriesFilters.size === 0) e.target.checked = true;
+        if (activeSet.size === 0) e.target.checked = true;
       }
-      updateDropdownButtonText(btn);
-      displayProducts();
+      updateText();
+      onUpdate();
     });
 
     const allText = document.createTextNode(" 顯示全部");
     allWrapper.append(allInput, allText);
     scrollContainer.appendChild(allWrapper);
 
-    SERIES_LIST.forEach((seriesName) => {
+    // List Items
+    itemsList.forEach((item) => {
       const wrapper = document.createElement("label");
       wrapper.className = "filter-checkbox-label";
 
       const input = document.createElement("input");
       input.type = "checkbox";
-      input.className = "series-checkbox";
-      input.value = seriesName;
+      input.className = "filter-checkbox"; // Generic class used for selection within this function
+      input.value = item;
+      if(activeSet.has(item)) input.checked = true;
 
       input.addEventListener("change", (e) => {
         const isChecked = e.target.checked;
-        const showAllCheckbox = document.getElementById("filter-all");
-
         if (isChecked) {
-          activeSeriesFilters.add(seriesName);
-          showAllCheckbox.checked = false;
+          activeSet.add(item);
+          allInput.checked = false;
         } else {
-          activeSeriesFilters.delete(seriesName);
-          if (activeSeriesFilters.size === 0) {
-            showAllCheckbox.checked = true;
+          activeSet.delete(item);
+          if (activeSet.size === 0) {
+            allInput.checked = true;
           }
         }
-        updateDropdownButtonText(btn);
-        displayProducts();
+        updateText();
+        onUpdate();
       });
 
-      const text = document.createTextNode(` ${seriesName}`);
+      const text = document.createTextNode(` ${item}`);
       wrapper.append(input, text);
       scrollContainer.appendChild(wrapper);
     });
 
-    // 5. Assemble
     content.appendChild(scrollContainer);
     dropdown.append(btn, content);
-    container.appendChild(dropdown);
+    
+    return dropdown;
   }
 
-  function updateDropdownButtonText(btn) {
-    if (activeSeriesFilters.size === 0) {
-      btn.textContent = "作品篩選 (顯示全部) ▼";
-    } else {
-      btn.textContent = `作品篩選 (已選 ${activeSeriesFilters.size} 項) ▼`;
-    }
+  // Initializer for all filters
+  function initFilters() {
+      const container = document.getElementById("filter-container");
+      container.innerHTML = ""; // Clear existing
+
+      // 1. Series Filter
+      const seriesDropdown = createDropdown("作品篩選", SERIES_LIST, activeSeriesFilters, displayProducts);
+      container.appendChild(seriesDropdown);
+
+      // 2. Category Filter
+      const categoryDropdown = createDropdown("類別篩選", CATEGORIES_LIST, activeCategoryFilters, displayProducts);
+      container.appendChild(categoryDropdown);
+
+      // Global click listener to close dropdowns
+      document.addEventListener("click", (e) => {
+        if (!container.contains(e.target)) {
+            document.querySelectorAll(".filter-dropdown.active").forEach(d => d.classList.remove("active"));
+        }
+      });
   }
 
-  // === Main Display Function (Updated for Grouping) ===
+  // === Main Display Function (Updated for Grouping & Dual Filtering) ===
   function displayProducts() {
     if (!allProductsInfo) return;
 
@@ -731,21 +777,35 @@ document.addEventListener("DOMContentLoaded", () => {
     // --- Step 1: Filter Valid Products ---
     let productsToDraw = [];
     allProductsInfo.products.forEach((product) => {
-        // Only show products from 'jump' vendor that have images
-        if (product.vendor !== "jump" || !product.images || product.images.length === 0) {
+        // Validate Basic Requirements (Images, etc.)
+        // Note: Removed 'vendor==="jump"' check to allow Megahouse products from your example
+        // If you strictly want 'jump' or 'megahouse' only, add logic here.
+        if (!product.images || product.images.length === 0) {
             return;
         }
 
-        // Apply active filters (Dropdown filters)
-        let matches = false;
+        const pTags = product.tags?.map((t) => t.textZh) || [];
+
+        // 1. Series Check
+        let matchesSeries = false;
         if (activeSeriesFilters.size === 0) {
-            matches = true;
+            matchesSeries = true;
         } else {
-            const pTags = product.tags?.map((t) => t.textZh) || [];
-            matches = pTags.some((tag) => activeSeriesFilters.has(tag));
+            matchesSeries = pTags.some((tag) => activeSeriesFilters.has(tag));
         }
 
-        if (matches) productsToDraw.push(product);
+        // 2. Category Check
+        let matchesCategory = false;
+        if (activeCategoryFilters.size === 0) {
+            matchesCategory = true;
+        } else {
+            matchesCategory = pTags.some((tag) => activeCategoryFilters.has(tag));
+        }
+
+        // Must match BOTH (AND logic)
+        if (matchesSeries && matchesCategory) {
+            productsToDraw.push(product);
+        }
     });
 
     // Handle empty state
@@ -765,64 +825,54 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // --- Step 3: Sort the Groups ---
-    // We want the groups to appear in the order defined in SERIES_LIST
     const sortedSeriesNames = Object.keys(groupedProducts).sort((a, b) => {
-        // Always put "Other Series" at the bottom
         if (a === "其他系列") return 1;
         if (b === "其他系列") return -1;
 
         const idxA = SERIES_LIST.indexOf(a);
         const idxB = SERIES_LIST.indexOf(b);
-
-        // If a series is not in the list, push it to the end (before "Others")
-        // Otherwise, sort by index
         return (idxA === -1 ? 999 : idxA) - (idxB === -1 ? 999 : idxB);
     });
 
     // --- Step 4: Render Sections ---
     sortedSeriesNames.forEach((series) => {
-        // 1. Create the Section Container
+        // Section Wrapper
         const section = document.createElement("div");
         section.className = "series-section";
 
-        // 2. Create the Title (e.g., "Haikyuu")
+        // Title
         const title = document.createElement("h2");
         title.className = "series-title";
         title.textContent = series;
         section.appendChild(title);
 
-        // 3. Create the Grid Container for this specific series
+        // Grid
         const grid = document.createElement("div");
         grid.className = "series-grid";
 
-        // 4. Create Cards (Same logic as previous version)
+        // Cards
         groupedProducts[series].forEach((product) => {
             const card = document.createElement("div");
             card.className = "catalog-card";
 
-            // -- Image Wrapper --
             const imageWrapper = document.createElement("div");
             imageWrapper.className = "catalog-image-wrapper";
             
-            // Open Modal on click
             imageWrapper.addEventListener("click", () => {
                 openModal(product.images, product.titleJp, product.tags);
             });
 
-            // Main Image
             const img = document.createElement("img");
             img.src = product.images[0].url;
             img.className = "catalog-image";
-            img.loading = "lazy"; // Add lazy loading for performance
+            img.loading = "lazy";
             img.alt = product.titleJp || "Product";
             
-            // Apply crop if available
             if(typeof applyCrop === 'function' && product.images[0].cropRect) {
                  applyCrop(img, product.images[0].cropRect);
             }
             imageWrapper.appendChild(img);
 
-            // Multiple Images Indicator (+2, +3 etc.)
             if (product.images.length > 1) {
                 const indicator = document.createElement("span");
                 indicator.className = "image-count-indicator";
@@ -830,30 +880,25 @@ document.addEventListener("DOMContentLoaded", () => {
                 imageWrapper.appendChild(indicator);
             }
 
-            // "Own It" Checkmark Button
             const ownBtn = document.createElement("button");
             ownBtn.className = "own-it-btn";
             ownBtn.innerHTML = "✓";
             ownBtn.title = "標記為已擁有";
             ownBtn.addEventListener("click", (e) => {
-                e.stopPropagation(); // Prevent opening modal
+                e.stopPropagation();
                 toggleOwnedStatus(product.productId, card, ownBtn);
             });
             imageWrapper.appendChild(ownBtn);
 
-            // Check if already owned
             if (ownedProductIds.has(product.productId)) {
                 card.classList.add("is-owned");
                 ownBtn.classList.add("active");
             }
 
             card.appendChild(imageWrapper);
-            
-            // Append card to the specific series grid
             grid.appendChild(card); 
         });
 
-        // Assemble the section
         section.appendChild(grid);
         container.appendChild(section);
     });
@@ -872,7 +917,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
       allProductsInfo = ProductsInfoMessage.fromObject(camelObj);
 
-      createDropdownFilterUI();
+      // Initialize both filters
+      initFilters();
+      
       displayProducts();
     } catch (err) {
       console.error(err);
