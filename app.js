@@ -15,9 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Preview Modal Elements
   const previewModal = document.getElementById("preview-modal");
-  const generatedPreviewImg = document.getElementById(
-    "generated-preview-img"
-  );
+  const generatedPreviewImg = document.getElementById("generated-preview-img");
   const closePreviewBtn = document.getElementById("close-preview-btn");
   const confirmDownloadBtn = document.getElementById("confirm-download-btn");
 
@@ -32,92 +30,87 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // -- Constants --
   const SERIES_LIST = [
-    "排球少年",
-    "鬼滅之刃",
-    "神劍闖江湖",
-    "鏈鋸人",
-    "怪獸8號",
-    "我推的孩子",
-    "憂國的莫里亞蒂",
-    "獵人",
-    "我的英雄學院",
-    "坂本日常",
-    "達伊的大冒險",
-    "死神",
-    "火影忍者",
-    "青春之箱",
-    "魔女守護者",
-    "間諜家家酒",
-    "黃金神威",
-    "瑠璃龍龍",
-    "七龍珠",
-    "咒術迴戰",
-    "魔男伊奇",
-    "膽大黨",
-    "極樂街",
-    "惡靈剋星",
-    "神樂鉢",
-    "影子籃球員",
-    "青之驅魔師",
-    "家庭教師 HITMAN REBORN！",
-    "élDLIVE宇宙警探",
-    "鴨乃橋論的禁忌推理",
-    "約定的夢幻島",
-    "肌肉魔法使-MASHLE-",
-    "境界觸發者",
-    "銀魂",
-    "驅魔少年",
-    "失憶投捕",
-    "航海王",
-    "迪士尼扭曲仙境",
-    "數碼寶貝",
-    "美少女戰士",
-    "新世紀福音戰士",
-    "賽馬娘",
-    "藍色監獄",
-    "東京復仇者",
-    "遊戲王",
-    "地獄樂",
-    "鋼彈",
-    "JOJO",
-    "莉可麗絲",
-    "hololive",
-    "哈利波特",
-    "來自深淵",
-    "路人超能",
-    "BEASTARS",
-    "她來自煩星",
-    "Fantastic Beasts",
-    "孤獨搖滾",
-    "葬送的芙莉蓮",
-    "庫洛魔法使",
-    "肌肉魔法使",
-    "銀魂",
-    "偶像大師",
-    "防風少年",
-    "鬼太郎",
-    "擅長逃跑的殿下",
-    "藥師少女的獨語",
-    "IDOLiSH7 ",
-    "忍者亂太郎",
-    "文豪野犬",
-    "蔚藍檔案",
-    "進擊的巨人",
-    "Keroro軍曹",
-    "犬夜叉",
-    "亂馬1/2",
-    "一拳超人",
-    "網球王子",
-    "TIGER & BUNNY",
-    "反叛的魯路修",
     "寶可夢",
+    "坂本日常",
+    "排球少年",
+    "魔女守護者",
+    "魔男伊奇",
+    "美少女戰士",
+    "反叛的魯路修",
+    "防風少年",
+    "迪士尼扭曲仙境",
+    "地獄樂",
+    "東京復仇者",
+    "達伊的大冒險",
+    "膽大黨",
+    "她來自煩星",
+    "獵人",
+    "瑠璃龍龍",
+    "鏈鋸人",
+    "莉可麗絲",
+    "亂馬1/2",
+    "路人超能",
+    "來自深淵",
+    "藍色監獄",
+    "孤獨搖滾",
+    "怪獸8號",
+    "鬼滅之刃",
+    "鬼太郎",
+    "鋼彈",
+    "庫洛魔法使",
+    "火影忍者",
+    "黃金神威",
+    "哈利波特",
+    "航海王",
+    "肌肉魔法使",
+    "家庭教師 HITMAN REBORN！",
+    "間諜家家酒",
+    "進擊的巨人",
+    "境界觸發者",
+    "極樂街",
+    "七龍珠",
+    "青之驅魔師",
+    "青春之箱",
+    "驅魔少年",
+    "犬夜叉",
+    "新世紀福音戰士",
+    "咒術迴戰",
+    "失憶投捕",
+    "數碼寶貝",
+    "擅長逃跑的殿下",
+    "神樂鉢",
+    "神劍闖江湖",
+    "忍者亂太郎",
+    "葬送的芙莉蓮",
+    "賽馬娘",
+    "死神",
+    "鴨乃橋論的禁忌推理",
+    "藥師少女的獨語",
+    "憂國的莫里亞蒂",
+    "遊戲王",
+    "銀魂",
+    "影子籃球員",
+    "一拳超人",
+    "我的英雄學院",
+    "我推的孩子",
+    "蔚藍檔案",
+    "文豪野犬",
+    "網球王子",
+    "約定的夢幻島",
+    "惡靈剋星",
+    "偶像大師",
+    "BEASTARS",
+    "Fantastic Beasts",
+    "IDOLiSH7",
+    "JOJO",
+    "Keroro軍曹",
     "Piapro Characters",
+    "TIGER & BUNNY",
+    "hololive",
+    "élDLIVE宇宙警探",
   ];
 
-  const CATEGORIES_LIST = [
-    "JS 趴娃",
-    "抬頭娃"
-  ];
+  const CATEGORIES_LIST = ["JS 趴娃", "抬頭娃"];
 
   // === LocalStorage Logic ===
   function loadOwnedProducts() {
@@ -247,13 +240,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const pTags = product.tags?.map((t) => t.textZh) || [];
 
-      let matchesSeries = activeSeriesFilters.size === 0 
-        ? true 
-        : pTags.some((tag) => activeSeriesFilters.has(tag));
+      let matchesSeries =
+        activeSeriesFilters.size === 0
+          ? true
+          : pTags.some((tag) => activeSeriesFilters.has(tag));
 
-      let matchesCategory = activeCategoryFilters.size === 0
-        ? true
-        : pTags.some((tag) => activeCategoryFilters.has(tag));
+      let matchesCategory =
+        activeCategoryFilters.size === 0
+          ? true
+          : pTags.some((tag) => activeCategoryFilters.has(tag));
 
       if (matchesSeries && matchesCategory) {
         productsToDraw.push(product);
@@ -297,9 +292,9 @@ document.addEventListener("DOMContentLoaded", () => {
       // 3. Prepare Header Text (Category)
       let categoryText = "";
       if (activeCategoryFilters.size > 0) {
-          categoryText = Array.from(activeCategoryFilters).join("、");
+        categoryText = Array.from(activeCategoryFilters).join("、");
       } else {
-          categoryText = CATEGORIES_LIST.join("、");
+        categoryText = CATEGORIES_LIST.join("、");
       }
 
       // 4. Dimensions Calculation
@@ -312,9 +307,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // === UPDATED: Increased Height & Spacing ===
       // 原本 130 -> 改為 180，增加基礎空間
-      const HEADER_BASE_HEIGHT = 180; 
+      const HEADER_BASE_HEIGHT = 180;
       // 原本 40 -> 改為 60，增加文字間的空間
-      const EXTRA_TEXT_HEIGHT = categoryText ? 60 : 0; 
+      const EXTRA_TEXT_HEIGHT = categoryText ? 60 : 0;
       const MAIN_HEADER_HEIGHT = HEADER_BASE_HEIGHT + EXTRA_TEXT_HEIGHT;
 
       const canvasWidth = PADDING * 2 + COLS * CARD_SIZE + (COLS - 1) * GAP;
@@ -351,11 +346,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Draw Category Text (If exists)
       if (categoryText) {
-          ctx.fillStyle = "#007bff";
-          ctx.font = "bold 24px sans-serif";
-          ctx.fillText(categoryText, canvasWidth / 2, currentTextY);
-          // Gap between lines: 40 -> 50 (拉開行距)
-          currentTextY += 50; 
+        ctx.fillStyle = "#007bff";
+        ctx.font = "bold 24px sans-serif";
+        ctx.fillText(categoryText, canvasWidth / 2, currentTextY);
+        // Gap between lines: 40 -> 50 (拉開行距)
+        currentTextY += 50;
       }
 
       // Draw Stats
@@ -673,20 +668,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const btn = document.createElement("button");
     btn.className = "filter-dropbtn";
-    
+
     const updateText = () => {
-        if (activeSet.size === 0) {
-            btn.textContent = `${labelTitle} (顯示全部) ▼`;
-        } else {
-            btn.textContent = `${labelTitle} (已選 ${activeSet.size} 項) ▼`;
-        }
+      if (activeSet.size === 0) {
+        btn.textContent = `${labelTitle} (顯示全部) ▼`;
+      } else {
+        btn.textContent = `${labelTitle} (已選 ${activeSet.size} 項) ▼`;
+      }
     };
     updateText();
 
     btn.addEventListener("click", (e) => {
       e.stopPropagation();
-      document.querySelectorAll('.filter-dropdown.active').forEach(d => {
-          if(d !== dropdown) d.classList.remove('active');
+      document.querySelectorAll(".filter-dropdown.active").forEach((d) => {
+        if (d !== dropdown) d.classList.remove("active");
       });
       dropdown.classList.toggle("active");
     });
@@ -710,12 +705,14 @@ document.addEventListener("DOMContentLoaded", () => {
     allWrapper.className = "filter-checkbox-label";
     const allInput = document.createElement("input");
     allInput.type = "checkbox";
-    allInput.checked = (activeSet.size === 0);
+    allInput.checked = activeSet.size === 0;
 
     allInput.addEventListener("change", (e) => {
       if (e.target.checked) {
         activeSet.clear();
-        scrollContainer.querySelectorAll(".filter-checkbox").forEach((cb) => (cb.checked = false));
+        scrollContainer
+          .querySelectorAll(".filter-checkbox")
+          .forEach((cb) => (cb.checked = false));
       } else {
         if (activeSet.size === 0) e.target.checked = true;
       }
@@ -735,7 +732,7 @@ document.addEventListener("DOMContentLoaded", () => {
       input.type = "checkbox";
       input.className = "filter-checkbox";
       input.value = item;
-      if(activeSet.has(item)) input.checked = true;
+      if (activeSet.has(item)) input.checked = true;
 
       input.addEventListener("change", (e) => {
         const isChecked = e.target.checked;
@@ -763,20 +760,32 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function initFilters() {
-      const container = document.getElementById("filter-container");
-      container.innerHTML = "";
+    const container = document.getElementById("filter-container");
+    container.innerHTML = "";
 
-      const seriesDropdown = createDropdown("作品篩選", SERIES_LIST, activeSeriesFilters, displayProducts);
-      container.appendChild(seriesDropdown);
+    const seriesDropdown = createDropdown(
+      "作品篩選",
+      SERIES_LIST,
+      activeSeriesFilters,
+      displayProducts
+    );
+    container.appendChild(seriesDropdown);
 
-      const categoryDropdown = createDropdown("類別篩選", CATEGORIES_LIST, activeCategoryFilters, displayProducts);
-      container.appendChild(categoryDropdown);
+    const categoryDropdown = createDropdown(
+      "類別篩選",
+      CATEGORIES_LIST,
+      activeCategoryFilters,
+      displayProducts
+    );
+    container.appendChild(categoryDropdown);
 
-      document.addEventListener("click", (e) => {
-        if (!container.contains(e.target)) {
-            document.querySelectorAll(".filter-dropdown.active").forEach(d => d.classList.remove("active"));
-        }
-      });
+    document.addEventListener("click", (e) => {
+      if (!container.contains(e.target)) {
+        document
+          .querySelectorAll(".filter-dropdown.active")
+          .forEach((d) => d.classList.remove("active"));
+      }
+    });
   }
 
   // === Main Display Function ===
@@ -787,105 +796,108 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let productsToDraw = [];
     allProductsInfo.products.forEach((product) => {
-        if (!product.images || product.images.length === 0) return;
+      if (!product.images || product.images.length === 0) return;
 
-        const pTags = product.tags?.map((t) => t.textZh) || [];
+      const pTags = product.tags?.map((t) => t.textZh) || [];
 
-        let matchesSeries = activeSeriesFilters.size === 0 
-          ? true 
+      let matchesSeries =
+        activeSeriesFilters.size === 0
+          ? true
           : pTags.some((tag) => activeSeriesFilters.has(tag));
 
-        let matchesCategory = activeCategoryFilters.size === 0
+      let matchesCategory =
+        activeCategoryFilters.size === 0
           ? true
           : pTags.some((tag) => activeCategoryFilters.has(tag));
 
-        if (matchesSeries && matchesCategory) {
-            productsToDraw.push(product);
-        }
+      if (matchesSeries && matchesCategory) {
+        productsToDraw.push(product);
+      }
     });
 
     if (productsToDraw.length === 0) {
-        container.innerHTML = '<p style="text-align:center; color:#666; margin-top:50px;">沒有符合篩選條件的商品。</p>';
-        return;
+      container.innerHTML =
+        '<p style="text-align:center; color:#666; margin-top:50px;">沒有符合篩選條件的商品。</p>';
+      return;
     }
 
     const groupedProducts = {};
     productsToDraw.forEach((p) => {
-        const seriesName = getProductSeries(p);
-        if (!groupedProducts[seriesName]) groupedProducts[seriesName] = [];
-        groupedProducts[seriesName].push(p);
+      const seriesName = getProductSeries(p);
+      if (!groupedProducts[seriesName]) groupedProducts[seriesName] = [];
+      groupedProducts[seriesName].push(p);
     });
 
     const sortedSeriesNames = Object.keys(groupedProducts).sort((a, b) => {
-        if (a === "其他系列") return 1;
-        if (b === "其他系列") return -1;
-        const idxA = SERIES_LIST.indexOf(a);
-        const idxB = SERIES_LIST.indexOf(b);
-        return (idxA === -1 ? 999 : idxA) - (idxB === -1 ? 999 : idxB);
+      if (a === "其他系列") return 1;
+      if (b === "其他系列") return -1;
+      const idxA = SERIES_LIST.indexOf(a);
+      const idxB = SERIES_LIST.indexOf(b);
+      return (idxA === -1 ? 999 : idxA) - (idxB === -1 ? 999 : idxB);
     });
 
     sortedSeriesNames.forEach((series) => {
-        const section = document.createElement("div");
-        section.className = "series-section";
+      const section = document.createElement("div");
+      section.className = "series-section";
 
-        const title = document.createElement("h2");
-        title.className = "series-title";
-        title.textContent = series;
-        section.appendChild(title);
+      const title = document.createElement("h2");
+      title.className = "series-title";
+      title.textContent = series;
+      section.appendChild(title);
 
-        const grid = document.createElement("div");
-        grid.className = "series-grid";
+      const grid = document.createElement("div");
+      grid.className = "series-grid";
 
-        groupedProducts[series].forEach((product) => {
-            const card = document.createElement("div");
-            card.className = "catalog-card";
+      groupedProducts[series].forEach((product) => {
+        const card = document.createElement("div");
+        card.className = "catalog-card";
 
-            const imageWrapper = document.createElement("div");
-            imageWrapper.className = "catalog-image-wrapper";
-            
-            imageWrapper.addEventListener("click", () => {
-                openModal(product.images, product.titleJp, product.tags);
-            });
+        const imageWrapper = document.createElement("div");
+        imageWrapper.className = "catalog-image-wrapper";
 
-            const img = document.createElement("img");
-            img.src = product.images[0].url;
-            img.className = "catalog-image";
-            img.loading = "lazy";
-            img.alt = product.titleJp || "Product";
-            
-            if(typeof applyCrop === 'function' && product.images[0].cropRect) {
-                 applyCrop(img, product.images[0].cropRect);
-            }
-            imageWrapper.appendChild(img);
-
-            if (product.images.length > 1) {
-                const indicator = document.createElement("span");
-                indicator.className = "image-count-indicator";
-                indicator.textContent = `+${product.images.length - 1}`;
-                imageWrapper.appendChild(indicator);
-            }
-
-            const ownBtn = document.createElement("button");
-            ownBtn.className = "own-it-btn";
-            ownBtn.innerHTML = "✓";
-            ownBtn.title = "標記為已擁有";
-            ownBtn.addEventListener("click", (e) => {
-                e.stopPropagation();
-                toggleOwnedStatus(product.productId, card, ownBtn);
-            });
-            imageWrapper.appendChild(ownBtn);
-
-            if (ownedProductIds.has(product.productId)) {
-                card.classList.add("is-owned");
-                ownBtn.classList.add("active");
-            }
-
-            card.appendChild(imageWrapper);
-            grid.appendChild(card); 
+        imageWrapper.addEventListener("click", () => {
+          openModal(product.images, product.titleJp, product.tags);
         });
 
-        section.appendChild(grid);
-        container.appendChild(section);
+        const img = document.createElement("img");
+        img.src = product.images[0].url;
+        img.className = "catalog-image";
+        img.loading = "lazy";
+        img.alt = product.titleJp || "Product";
+
+        if (typeof applyCrop === "function" && product.images[0].cropRect) {
+          applyCrop(img, product.images[0].cropRect);
+        }
+        imageWrapper.appendChild(img);
+
+        if (product.images.length > 1) {
+          const indicator = document.createElement("span");
+          indicator.className = "image-count-indicator";
+          indicator.textContent = `+${product.images.length - 1}`;
+          imageWrapper.appendChild(indicator);
+        }
+
+        const ownBtn = document.createElement("button");
+        ownBtn.className = "own-it-btn";
+        ownBtn.innerHTML = "✓";
+        ownBtn.title = "標記為已擁有";
+        ownBtn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          toggleOwnedStatus(product.productId, card, ownBtn);
+        });
+        imageWrapper.appendChild(ownBtn);
+
+        if (ownedProductIds.has(product.productId)) {
+          card.classList.add("is-owned");
+          ownBtn.classList.add("active");
+        }
+
+        card.appendChild(imageWrapper);
+        grid.appendChild(card);
+      });
+
+      section.appendChild(grid);
+      container.appendChild(section);
     });
   }
 
