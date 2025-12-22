@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Controls
   const generateBtn = document.getElementById("generate-btn");
+  const generateOwnedBtn = document.getElementById("generate-owned-btn");
   const loadingOverlay = document.getElementById("loading-overlay");
 
   // Preview Modal Elements
@@ -221,66 +222,82 @@ document.addEventListener("DOMContentLoaded", () => {
     return "其他系列";
   }
 
-  // === Image Generation Logic (Modified) ===
-  async function generateCollectionImage() {
+
+  // === Image Generation Logic ===
+  /**
+   * Generates a canvas image based on current filters.
+   * @param {boolean} onlyOwned - If true, generates a "Collection Image" (only owned items, no checkmarks).
+   * If false, generates a "Progress Chart" (all items, checkmarks on owned).
+   */
+   async function generateCollectionImage(onlyOwned = false) {
     const loadingOverlay = document.getElementById("loading-overlay");
     const loadingText = loadingOverlay.querySelector("p");
 
     const previewModal = document.getElementById("preview-modal");
-    const generatedPreviewImg = document.getElementById(
-      "generated-preview-img"
-    );
+    const generatedPreviewImg = document.getElementById("generated-preview-img");
 
     if (!allProductsInfo) return;
 
     // 1. Filter Logic
     let productsToDraw = [];
     allProductsInfo.products.forEach((product) => {
+      // Skip if product has no images
       if (!product.images || product.images.length === 0) return;
 
       const pTags = product.tags?.map((t) => t.textZh) || [];
 
+      // Check Series Filter
       let matchesSeries =
         activeSeriesFilters.size === 0
           ? true
           : pTags.some((tag) => activeSeriesFilters.has(tag));
 
+      // Check Category Filter
       let matchesCategory =
         activeCategoryFilters.size === 0
           ? true
           : pTags.some((tag) => activeCategoryFilters.has(tag));
 
       if (matchesSeries && matchesCategory) {
+        // If in "Collection Mode", exclude items that are not owned
+        if (onlyOwned && !ownedProductIds.has(product.productId)) {
+          return; 
+        }
         productsToDraw.push(product);
       }
     });
 
     if (productsToDraw.length === 0) {
-      alert("沒有符合篩選條件的商品！");
+      alert(onlyOwned ? "No collected items found matching the criteria!" : "No items found matching the criteria!");
       return;
     }
 
+    // Calculate stats
     const totalItems = productsToDraw.length;
-    const ownedCount = productsToDraw.filter((p) =>
-      ownedProductIds.has(p.productId)
-    ).length;
+    // In 'onlyOwned' mode, totalItems is equal to ownedCount
+    const ownedCount = onlyOwned 
+        ? totalItems 
+        : productsToDraw.filter((p) => ownedProductIds.has(p.productId)).length;
+        
     const completionPercentage =
-      totalItems > 0 ? Math.round((ownedCount / totalItems) * 100) : 0;
+      !onlyOwned && totalItems > 0 ? Math.round((ownedCount / totalItems) * 100) : 100;
 
     let processedCount = 0;
 
+    // Show loading overlay
     loadingOverlay.style.display = "flex";
-    loadingText.textContent = "正在準備畫布...";
+    loadingText.textContent = "Preparing canvas...";
 
     try {
-      // 2. Grouping & Sorting
+      // 2. Grouping & Sorting by Series
       const groupedProducts = {};
       productsToDraw.forEach((p) => {
-        const seriesName = getProductSeries(p);
+        const seriesName = getProductSeries(p); // Helper function assumed to exist
         if (!groupedProducts[seriesName]) groupedProducts[seriesName] = [];
         groupedProducts[seriesName].push(p);
       });
 
+      // Sort series based on predefined SERIES_LIST order
       const sortedSeriesNames = Object.keys(groupedProducts).sort((a, b) => {
         if (a === "其他系列") return 1;
         if (b === "其他系列") return -1;
@@ -289,15 +306,17 @@ document.addEventListener("DOMContentLoaded", () => {
         return (idxA === -1 ? 999 : idxA) - (idxB === -1 ? 999 : idxB);
       });
 
-      // 3. Prepare Header Text (Category)
+      // 3. Layout Configuration
+      // Prepare Category Text (if filtered)
       let categoryText = "";
       if (activeCategoryFilters.size > 0) {
         categoryText = Array.from(activeCategoryFilters).join("、");
-      } else {
-        categoryText = CATEGORIES_LIST.join("、");
+      } else if (!onlyOwned) {
+          // If viewing progress chart without specific filters, maybe show all categories text
+          // or leave blank. Keeping logic consistent with previous version:
+          categoryText = CATEGORIES_LIST.join("、");
       }
 
-      // 4. Dimensions Calculation
       const COLS = 5;
       const PADDING = 40;
       const CARD_SIZE = 120;
@@ -305,64 +324,64 @@ document.addEventListener("DOMContentLoaded", () => {
       const GROUP_HEADER_HEIGHT = 70;
       const GROUP_BOTTOM_MARGIN = 40;
 
-      // === UPDATED: Increased Height & Spacing ===
-      // 原本 130 -> 改為 180，增加基礎空間
       const HEADER_BASE_HEIGHT = 180;
-      // 原本 40 -> 改為 60，增加文字間的空間
       const EXTRA_TEXT_HEIGHT = categoryText ? 60 : 0;
       const MAIN_HEADER_HEIGHT = HEADER_BASE_HEIGHT + EXTRA_TEXT_HEIGHT;
 
+      // Calculate Canvas Dimensions
       const canvasWidth = PADDING * 2 + COLS * CARD_SIZE + (COLS - 1) * GAP;
 
       let totalHeight = MAIN_HEADER_HEIGHT;
       sortedSeriesNames.forEach((series) => {
         const count = groupedProducts[series].length;
         const rows = Math.ceil(count / COLS);
-        totalHeight +=
-          GROUP_HEADER_HEIGHT + rows * (CARD_SIZE + GAP) + GROUP_BOTTOM_MARGIN;
+        totalHeight += GROUP_HEADER_HEIGHT + rows * (CARD_SIZE + GAP) + GROUP_BOTTOM_MARGIN;
       });
 
-      // 5. Canvas Setup
+      // 4. Initialize Canvas
       const canvas = document.createElement("canvas");
       canvas.width = canvasWidth;
       canvas.height = totalHeight;
       const ctx = canvas.getContext("2d");
 
+      // Fill Background
       ctx.fillStyle = "#ffffff";
       ctx.fillRect(0, 0, canvasWidth, totalHeight);
 
-      // --- Draw Title & Stats ---
+      // 5. Draw Header (Title & Stats)
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
 
       // Main Title
       ctx.fillStyle = "#333333";
       ctx.font = "bold 48px sans-serif";
-      // Title Y Position: 50 -> 60 (稍微往下)
-      ctx.fillText("蒐集進度表", canvasWidth / 2, 60);
+      // Dynamic title based on mode
+      const titleText = onlyOwned ? "我的收藏圖" : "蒐集進度表";
+      ctx.fillText(titleText, canvasWidth / 2, 60);
 
-      // First line of text starts here: 95 -> 120 (拉開與標題的距離)
       let currentTextY = 120;
 
-      // Draw Category Text (If exists)
+      // Category Subtitle
       if (categoryText) {
         ctx.fillStyle = "#007bff";
         ctx.font = "bold 24px sans-serif";
         ctx.fillText(categoryText, canvasWidth / 2, currentTextY);
-        // Gap between lines: 40 -> 50 (拉開行距)
         currentTextY += 50;
       }
 
-      // Draw Stats
+      // Stats Text
       ctx.fillStyle = "#666666";
       ctx.font = "bold 28px sans-serif";
-      ctx.fillText(
-        `完成度：${completionPercentage}%  (${ownedCount} / ${totalItems})`,
-        canvasWidth / 2,
-        currentTextY
-      );
-      // ----------------------------
+      
+      let statsText = "";
+      if (onlyOwned) {
+          statsText = `目前收藏數量：${ownedCount} 個`;
+      } else {
+          statsText = `完成度：${completionPercentage}%  (${ownedCount} / ${totalItems})`;
+      }
+      ctx.fillText(statsText, canvasWidth / 2, currentTextY);
 
+      // Helper for image loading
       const loadImage = (url) => {
         return new Promise((resolve, reject) => {
           const img = new Image();
@@ -373,7 +392,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       };
 
-      // 6. Draw Products
+      // 6. Draw Products Loop
       let currentY = MAIN_HEADER_HEIGHT;
 
       for (const series of sortedSeriesNames) {
@@ -382,7 +401,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ctx.textAlign = "left";
         ctx.textBaseline = "top";
 
-        // Decorative Line
+        // Decorative Blue Line
         ctx.fillStyle = "#007bff";
         ctx.fillRect(PADDING, currentY + 15, 6, 30);
 
@@ -393,6 +412,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         currentY += GROUP_HEADER_HEIGHT;
 
+        // Draw items in this group
         const drawPromises = groupItems.map(async (product, i) => {
           const col = i % COLS;
           const row = Math.floor(i / COLS);
@@ -404,16 +424,20 @@ document.addEventListener("DOMContentLoaded", () => {
             const isOwned = ownedProductIds.has(product.productId);
 
             ctx.save();
-            if (!isOwned) {
+            
+            // Grayscale logic: ONLY apply if in "Progress Mode" AND item is NOT owned
+            if (!onlyOwned && !isOwned) {
               ctx.filter = "grayscale(100%) opacity(50%)";
             }
 
+            // Calculate crop (using existing helper)
             const { sx, sy, sWidth, sHeight } = getCropCoordinates(
               imgObj.naturalWidth,
               imgObj.naturalHeight,
               product.images[0].cropRect
             );
 
+            // Draw the main product image
             ctx.drawImage(
               imgObj,
               sx,
@@ -427,16 +451,24 @@ document.addEventListener("DOMContentLoaded", () => {
             );
             ctx.restore();
 
-            if (isOwned) {
+            // Checkmark logic: ONLY apply in "Progress Mode"
+            // In "Collection Mode", we want a clean look without icons overlay
+            if (!onlyOwned && isOwned) {
               const cx = dx + CARD_SIZE - 25;
               const cy = dy + CARD_SIZE - 25;
+              
+              // Green circle
               ctx.beginPath();
               ctx.arc(cx, cy, 18, 0, 2 * Math.PI);
               ctx.fillStyle = "#28a745";
               ctx.fill();
+              
+              // White border
               ctx.strokeStyle = "#fff";
               ctx.lineWidth = 3;
               ctx.stroke();
+              
+              // Check mark symbol
               ctx.fillStyle = "#fff";
               ctx.font = "bold 22px sans-serif";
               ctx.textAlign = "center";
@@ -445,45 +477,51 @@ document.addEventListener("DOMContentLoaded", () => {
             }
           } catch (err) {
             console.error("Error drawing image", err);
+            // Draw placeholder if failed
             ctx.fillStyle = "#f0f0f0";
             ctx.fillRect(dx, dy, CARD_SIZE, CARD_SIZE);
           } finally {
             processedCount++;
             const percent = Math.round((processedCount / totalItems) * 100);
-            loadingText.textContent = `正在繪製預覽圖... ${percent}%`;
+            loadingText.textContent = `Rendering preview... ${percent}%`;
           }
         });
 
         await Promise.all(drawPromises);
+        
+        // Advance Y position for next group
         const rows = Math.ceil(groupItems.length / COLS);
         currentY += rows * (CARD_SIZE + GAP) + GROUP_BOTTOM_MARGIN;
       }
 
-      // Watermark
+      // 7. Watermark
       ctx.textAlign = "right";
       ctx.textBaseline = "bottom";
       ctx.fillStyle = "rgba(150, 150, 150, 0.6)";
       ctx.font = "16px sans-serif";
       ctx.fillText("miwa23333", canvasWidth - 20, totalHeight - 20);
 
+      // 8. Finalize and Show
       const dataUrl = canvas.toDataURL("image/png");
       generatedPreviewImg.src = dataUrl;
       previewModal.style.display = "flex";
 
+      // Setup download button
       if (confirmDownloadBtn) {
         confirmDownloadBtn.onclick = () => {
           const link = document.createElement("a");
-          link.download = `蒐集進度_${completionPercentage}percent_${new Date().getTime()}.png`;
+          const prefix = onlyOwned ? "MyCollection" : "ProgressChart";
+          link.download = `${prefix}_${new Date().getTime()}.png`;
           link.href = dataUrl;
           link.click();
         };
       }
     } catch (error) {
       console.error("Generation failed", error);
-      alert("產生圖片失敗，請檢查圖片來源或稍後再試。");
+      alert("Failed to generate image. Please try again later.");
     } finally {
       loadingOverlay.style.display = "none";
-      loadingText.textContent = "正在繪製預覽圖，請稍候...";
+      loadingText.textContent = "Rendering preview...";
     }
   }
 
@@ -509,7 +547,10 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // === Event Listeners for Preview Modal ===
-  generateBtn.addEventListener("click", generateCollectionImage);
+  generateBtn.addEventListener("click", () => generateCollectionImage(false));
+  if (generateOwnedBtn) {
+    generateOwnedBtn.addEventListener("click", () => generateCollectionImage(true));
+  }
 
   closePreviewBtn.addEventListener("click", () => {
     previewModal.style.display = "none";
