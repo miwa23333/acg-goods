@@ -52,7 +52,7 @@ h1 {
     z-index: 100;
 }
 
-#filter-container { 
+#filter-container {
     margin-bottom: 0;
     display: flex;
     justify-content: center;
@@ -127,13 +127,16 @@ h1 {
     border: 1px solid var(--border-color);
     max-height: 400px;
     flex-direction: column;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: visible;
 }
 
 .filter-scroll-container {
     overflow-y: auto;
+    overflow-x: hidden;
     padding: 8px;
     width: 100%;
+    max-height: 320px;
     scrollbar-width: thin;
     scrollbar-color: #adb5bd transparent;
 }
@@ -181,9 +184,9 @@ h1 {
   ==========================================
 */
 #catalog-container {
-    display: block; 
-    max-width: 1600px; 
-    margin: 0 auto; 
+    display: block;
+    max-width: 1600px;
+    margin: 0 auto;
     padding-bottom: 60px;
 }
 
@@ -392,6 +395,33 @@ h1 {
 
 .filter-close-btn { display: none; }
 
+.filter-search-container {
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--border-color);
+    flex-shrink: 0;
+    background-color: var(--card-bg);
+}
+
+.filter-search-input {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 0.9rem;
+    outline: none;
+    transition: border-color 0.2s ease;
+    box-sizing: border-box;
+}
+
+.filter-search-input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.1);
+}
+
+.filter-search-input::placeholder {
+    color: #999;
+}
+
 .danger-btn {
     background-color: #dc3545;
     color: white;
@@ -421,7 +451,7 @@ h1 {
         grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
         gap: 16px;
     }
-    
+
     .series-title {
         font-size: 1.3rem;
         margin-bottom: 16px;

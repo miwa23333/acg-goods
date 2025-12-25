@@ -698,6 +698,17 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     content.appendChild(closeBtn);
 
+    // Add search/filter text box
+    const searchContainer = document.createElement("div");
+    searchContainer.className = "filter-search-container";
+
+    const searchInput = document.createElement("input");
+    searchInput.type = "text";
+    searchInput.className = "filter-search-input";
+    searchInput.placeholder = `搜尋${labelTitle}...`;
+    searchContainer.appendChild(searchInput);
+    content.appendChild(searchContainer);
+
     const scrollContainer = document.createElement("div");
     scrollContainer.className = "filter-scroll-container";
 
@@ -724,9 +735,12 @@ document.addEventListener("DOMContentLoaded", () => {
     allWrapper.append(allInput, allText);
     scrollContainer.appendChild(allWrapper);
 
+    const allItemLabels = [];
+
     itemsList.forEach((item) => {
       const wrapper = document.createElement("label");
       wrapper.className = "filter-checkbox-label";
+      wrapper.dataset.filterText = item.toLowerCase();
 
       const input = document.createElement("input");
       input.type = "checkbox";
@@ -752,6 +766,20 @@ document.addEventListener("DOMContentLoaded", () => {
       const text = document.createTextNode(` ${item}`);
       wrapper.append(input, text);
       scrollContainer.appendChild(wrapper);
+      allItemLabels.push(wrapper);
+    });
+
+    // Add filter functionality
+    searchInput.addEventListener("input", (e) => {
+      const filterValue = e.target.value.toLowerCase().trim();
+      allItemLabels.forEach((label) => {
+        const text = label.dataset.filterText;
+        if (text.includes(filterValue)) {
+          label.style.display = "flex";
+        } else {
+          label.style.display = "none";
+        }
+      });
     });
 
     content.appendChild(scrollContainer);
