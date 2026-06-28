@@ -6248,6 +6248,20 @@ products {
 }
 products {
   vendor: "megahouse"
+  product_id: "B4ZugjG6DDZ_EGzBXVCnK5tugtaynHMvp2fgq7B2lGY"
+  tags {
+    text_zh: "鬼滅之刃"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/zFTjTFeuxFnT05D40KIuIe_KK1LfNjukMu6fOKrrq0Q"
+  }
+}
+products {
+  vendor: "megahouse"
   product_id: "kexyLxG2YScwpJQvB7N_8PQyIcRuW2_qGs5K1qRKkOc"
   tags {
     text_zh: "火影忍者"
@@ -6780,6 +6794,62 @@ products {
 }
 products {
   vendor: "megahouse"
+  product_id: "1NT6MrVAiZ1qUHzpEjQUjrHUC8t-kY2GrjX9ZoATjmE"
+  tags {
+    text_zh: "航海王"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/G8-LPYOwGDrfE1huNT1sDkv6LshTka0QJXnOtFG9VjU"
+  }
+}
+products {
+  vendor: "megahouse"
+  product_id: "-npHWH5s1CoDXOc_Hlq3VxByRSwVAqGkDq8agga-SUw"
+  tags {
+    text_zh: "航海王"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/nrh7ruU44kllxlfENvpoaKDd41PLex0dBAgP9-4-haE"
+  }
+}
+products {
+  vendor: "megahouse"
+  product_id: "XhLqU_fcTtQEFAQP0ZGpk_8BImW3XIvCEWrnw2ZvwaI"
+  tags {
+    text_zh: "航海王"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/jgiLtMQwiTtoZU6eSotlRGWWTFmlOPcmuQJqNjoeXi0"
+  }
+}
+products {
+  vendor: "megahouse"
+  product_id: "DEfhWQpZejwdewaXGpD0f7T9QacpA_Gfs4g0rsRmE9U"
+  tags {
+    text_zh: "航海王"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/k9hbn-VSeCFP_AyFQnn2HnoTU20AO3PmCBnOU2W_j8U"
+  }
+}
+products {
+  vendor: "megahouse"
   product_id: "a2zQHH7_fjvW8mXqmzl3Ri-fFHQ8gJBe2Iy3fDuBp0w"
   tags {
     text_zh: "咒術迴戰"
@@ -7088,6 +7158,62 @@ products {
 }
 products {
   vendor: "megahouse"
+  product_id: "tzVO4JPwmMsGzrTsxt268eHFNV2hBSITaL01-Ww6y9E"
+  tags {
+    text_zh: "咒術迴戰"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/jfBgubPpYwoJ729dHmaoBdb0RxgnSN8JYHVJ85QhTNc"
+  }
+}
+products {
+  vendor: "megahouse"
+  product_id: "BvjEOGtSEFm1YSahtJkmQnyVaianBDuI2DYI0aBXt4I"
+  tags {
+    text_zh: "咒術迴戰"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/4E6_5yyy76RiAotESd2JRMkqZZqHMGW9WnhX64b89BY"
+  }
+}
+products {
+  vendor: "megahouse"
+  product_id: "J3Bz-GEDuSAeKnjn4DbEBHO1DrKqsswqqEDFSOamiNg"
+  tags {
+    text_zh: "咒術迴戰"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/gmx_6XcTFDGXgvqJvivgYvfWSjUDoSq4xknYyUfbNWw"
+  }
+}
+products {
+  vendor: "megahouse"
+  product_id: "Zht1xt_XxgSZsP-HFACdvJmxfh1SbckydJZjiTQkmM0"
+  tags {
+    text_zh: "咒術迴戰"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/R9Fwe-_9VPggaPlLhfyKDThEUbN69A7_JiztbDOABiw"
+  }
+}
+products {
+  vendor: "megahouse"
   product_id: "7LfZcaR3ldt0EuId1sf7Y0DzXExLiUucGo1AbSYdHbY"
   tags {
     text_zh: "咒術迴戰"
@@ -7112,6 +7238,20 @@ products {
   }
   images {
     url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/dM0NQtWhboyQNp797PYJY3PH32LcXQifJ_gNYk6Lq6Y"
+  }
+}
+products {
+  vendor: "megahouse"
+  product_id: "edhzUr-3IK_Kyc7C2DLVeC-TkIw_wx-gMdyUfFECRdM"
+  tags {
+    text_zh: "咒術迴戰"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/O1q0YOmrPweO671iS409TKUJQeQiPJTuHbW9AGytfEE"
   }
 }
 products {
@@ -7840,6 +7980,62 @@ products {
   }
   images {
     url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/2p8EL7U5n9dSyFCzVIYe2onUIo8JKJG2LrESHvaETUA"
+  }
+}
+products {
+  vendor: "megahouse"
+  product_id: "6ObNBMtV3mOuSytsyFSDwmNzynEGAFqSq78pJDUNNRk"
+  tags {
+    text_zh: "排球少年"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/j2IZm8_7Rk3FcM7INIprMnGy-pATVtmfAfahQJJ3yYk"
+  }
+}
+products {
+  vendor: "megahouse"
+  product_id: "clAa-RvvRzzG5TbI0eQzztJHZ20if7NhJqMB4edD2y0"
+  tags {
+    text_zh: "排球少年"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/NpiWKjhEUwt4E6AQfA_kOWIDUeXBxe63axJaR8azA8U"
+  }
+}
+products {
+  vendor: "megahouse"
+  product_id: "mlomZlLxOkp8DAa2gJA4zCnup0GABfiIdv2ujt663ws"
+  tags {
+    text_zh: "排球少年"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/JIJrcEU7SIIbkcxiclSK6MCXSPYnArF3srFItJS106g"
+  }
+}
+products {
+  vendor: "megahouse"
+  product_id: "JmbUo1RT9cykdGXxQCCdhcUH4bN3SFpBZcsxaN1YX44"
+  tags {
+    text_zh: "排球少年"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/q4Ea_k-M9bX4z0U6ORCO3ju7zHs3kArEvht8-RnK7bw"
   }
 }
 products {
@@ -9034,6 +9230,34 @@ products {
 }
 products {
   vendor: "megahouse"
+  product_id: "bp7DafKkP7cqcoNnGrGcLq_0OOEaij75hUcmqMbfPRA"
+  tags {
+    text_zh: "我的英雄學院"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/hZ050KVvhziAJIPDGz_PQmtr0YsXbZpOSyhhnC94a94"
+  }
+}
+products {
+  vendor: "megahouse"
+  product_id: "KZUiSYUYF1IfCU7ZwQ0bHlZuvhRhPCk1S-t0UdPVkVc"
+  tags {
+    text_zh: "我的英雄學院"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/oOaGMcDB8YaPQp8FPLqbKWq8vbe1vLm_-2YMxbzACX4"
+  }
+}
+products {
+  vendor: "megahouse"
   product_id: "fjUrVbVWAT20iDhBmtH_JEAzyIZsWQSBTGracuKD5nA"
   tags {
     text_zh: "她來自煩星"
@@ -9188,6 +9412,34 @@ products {
 }
 products {
   vendor: "megahouse"
+  product_id: "-9q03w_Kx_g1DFGIr6lan752iddJuk63zAUqsveYMbc"
+  tags {
+    text_zh: "葬送的芙莉蓮"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/qi-VjQceEh-e0-wOzqUWwIukDgv8m193HdFuecgOeQg"
+  }
+}
+products {
+  vendor: "megahouse"
+  product_id: "1aBUnD8u9KhUh5oQOuDvo6XyYq81S5VJKc83_NsbvF4"
+  tags {
+    text_zh: "葬送的芙莉蓮"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/L99Mh-EQ6fxRNJINN8hL2x5IwvjOIujHfMmaNNhlufU"
+  }
+}
+products {
+  vendor: "megahouse"
   product_id: "NG6WOQeK0bsd6mxYet2nf5MFfBXZzCmotS_xAGzm_XE"
   tags {
     text_zh: "肌肉魔法使"
@@ -9310,6 +9562,48 @@ products {
   }
   images {
     url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/MF4JIMCDbDvV4DtJQD1hy032SlgjJTjQ2NaIqZRxTew"
+  }
+}
+products {
+  vendor: "megahouse"
+  product_id: "KeITYPq9qIhnmaLGOsVaDFkpsGA9YQLa3enzU6gd0u8"
+  tags {
+    text_zh: "銀魂"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/gxGe-s7b6usauPrPck5pVJ2_5YM3I6vAMohnf676GqA"
+  }
+}
+products {
+  vendor: "megahouse"
+  product_id: "hk6z7CCJmUNz3b6UbHwLICYOv0vbzfletL-AVOOtTt4"
+  tags {
+    text_zh: "銀魂"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/Zfl3qY5qsNppuSK_j3NpRUytUOFhKnsI1YkOHXP1NkI"
+  }
+}
+products {
+  vendor: "megahouse"
+  product_id: "OvISPL3Hlt2iHZ5V7pyd5dN6JXzGwajDUZGqX4aVBgI"
+  tags {
+    text_zh: "銀魂"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/lDammr6gUpoY_avDGxjeo2Fag1V8hpTz5METNOhsbvE"
   }
 }
 products {
@@ -9748,6 +10042,34 @@ products {
 }
 products {
   vendor: "megahouse"
+  product_id: "83iYbW1-Xg8bfa8eB6_XNxvIlDcbZX5nJSKEEaKNiE8"
+  tags {
+    text_zh: "七龍珠"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/wtBKJ8DFW4n24r2e589GzYGv-aUrMY2SbyOdihvi2cs"
+  }
+}
+products {
+  vendor: "megahouse"
+  product_id: "sJV0YM8fcnmyy3RhWdX6ibvQ3qphoW_E8ZAHT-lXJxI"
+  tags {
+    text_zh: "七龍珠"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/UcarGGDJXYV_9By_0v-pLoWRmQ0zNirwaTVOm4teM_Q"
+  }
+}
+products {
+  vendor: "megahouse"
   product_id: "bib9U10yYszaOliJUXNp7epkHZYhjcz1NEb38VfkuNM"
   tags {
     text_zh: "擅長逃跑的殿下"
@@ -10154,6 +10476,90 @@ products {
 }
 products {
   vendor: "megahouse"
+  product_id: "kPyWXA7XpGUYzQyABPsYCp3Lfff16QTLg6M9_FZN3xY"
+  tags {
+    text_zh: "進擊的巨人"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/5A99xj07A_5r2uAGidNaQO84hGc9R2WbWqFU2HBsurM"
+  }
+}
+products {
+  vendor: "megahouse"
+  product_id: "96oNbJdalM98Qb56tKCLZd2sBzpfX-9Xd_c4MsbJixI"
+  tags {
+    text_zh: "進擊的巨人"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/WjFb6C9ZuoPXKGXDtkstoduAAtaJKwMno4yXpBwhwLo"
+  }
+}
+products {
+  vendor: "megahouse"
+  product_id: "ciZSB8qMRaRysnfq7VsLjScMnojjqZLj_o3AhFeTKiI"
+  tags {
+    text_zh: "進擊的巨人"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/WIs_AjRSVvI7qeEOalL0BqpoiM5FxU2jJmpm8npMDc4"
+  }
+}
+products {
+  vendor: "megahouse"
+  product_id: "xVT-ZVCfh18yZpQqgsyaNZAAifdPJ3CjjfniHOZf0kg"
+  tags {
+    text_zh: "進擊的巨人"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/rj7m8yUkNEPHyaaxLLvhAmYAj4RYttwuLyrLb4VpdlU"
+  }
+}
+products {
+  vendor: "megahouse"
+  product_id: "Si6lbO5yhc_s4_6ZrGyjG3PwYV6x-ae_ZX4LuAPO2KI"
+  tags {
+    text_zh: "進擊的巨人"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/yBjpXKDI6LweT8ttR0coTu3L7T3DQpCuBS9bJsaNl5A"
+  }
+}
+products {
+  vendor: "megahouse"
+  product_id: "lx-MmuFKI6xPDG2i9Z1gbQUDT6GN3xoUjvecq95qVlg"
+  tags {
+    text_zh: "進擊的巨人"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/034JmMJHixLCe5nGz0z4-_oWMaFcCnOv-zHaZ1b0o00"
+  }
+}
+products {
+  vendor: "megahouse"
   product_id: "9UQvrgEeOig-9Zw4iT8rU6zbXqxKpCDfDLIvUeN5EGA"
   tags {
     text_zh: "魔女守護者"
@@ -10280,6 +10686,34 @@ products {
 }
 products {
   vendor: "megahouse"
+  product_id: "TQdfvOlkh8nE29FGDxNf6AdAD-GgWIkAu3vSPDnXCAQ"
+  tags {
+    text_zh: "銀魂"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/GazW8TVDfLEDyFxsu-ZtNhM4nv5cFf4RGpe2Uzab7us"
+  }
+}
+products {
+  vendor: "megahouse"
+  product_id: "nNVmFeXoQPexV1gEQQp0cb-SiIv02vKACsGAFh2B1oY"
+  tags {
+    text_zh: "銀魂"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/5C8qHyvkYgL7sMMyNylVJCtsgP4Qq2yUslW7XCEUnX8"
+  }
+}
+products {
+  vendor: "megahouse"
   product_id: "cD5BmozPxlXwJigkXoFNoV-07C61WVcjnDeQP4rotQQ"
   tags {
     text_zh: "犬夜叉"
@@ -10392,6 +10826,62 @@ products {
 }
 products {
   vendor: "megahouse"
+  product_id: "-VD-NHLJMWv2yNsafNe7wDUGd1S8DOlx-sFT545ylkU"
+  tags {
+    text_zh: "網球王子"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/jxycdAb9_sTqaxA7y38QXCklBoFlsfGqWGHdNEWO6c8"
+  }
+}
+products {
+  vendor: "megahouse"
+  product_id: "NYt5j6KClzQF_Qnnf_oDVxg8zCeqMfq7_Xu1i7br1pw"
+  tags {
+    text_zh: "網球王子"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/AI1ivQcwPAFjauXiMpAZsalDdm0IbcdkAdju8BjjsqQ"
+  }
+}
+products {
+  vendor: "megahouse"
+  product_id: "CH8NdLWL1tFI530sa571-9lOLwwtDOIa74Q0fsDlHoI"
+  tags {
+    text_zh: "網球王子"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/UasEyik7ZwD3OrgMuwUTkfRYn0VaEvvSlQtN9DxTBxQ"
+  }
+}
+products {
+  vendor: "megahouse"
+  product_id: "jJXHMSs58HNYrIJCK_QZ_iWIKAILl0YRIktAoJhPf1I"
+  tags {
+    text_zh: "網球王子"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/IDPOy5bp1xcnxUoW4q8hBh5CCGewMQdQTwr1evHCtwc"
+  }
+}
+products {
+  vendor: "megahouse"
   product_id: "J3C_RRRFRP6SVk_FSRopQeHiRXW3z80rTQ-3beu1g_w"
   tags {
     text_zh: "TIGER & BUNNY"
@@ -10486,5 +10976,397 @@ products {
   }
   images {
     url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/SZIZMg0j2tlrDBro4OLmNNIVzvU-GNM8LZs8s3C9Ocw"
+  }
+}
+products {
+  vendor: "megahouse"
+  product_id: "J8Q5VUPe0Ys2v2h887m7KhbJUQllIPigdMsz5sM_vB0"
+  tags {
+    text_zh: "魔法壞女巫"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/2aygkq4G6V9liVj8mCmZOKq7aitdjOVZCfdyNDl5jN0"
+  }
+}
+products {
+  vendor: "megahouse"
+  product_id: "WrCCejDmLr_YHWJ9m8SO-OOUsMiHfpbp1ixDEwyOEEM"
+  tags {
+    text_zh: "魔法壞女巫"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/6tPusoZvIy7S7iDAcBWQOZSHe9WD6BrcdhxWrVBadEU"
+  }
+}
+products {
+  vendor: "megahouse"
+  product_id: "A0W2fPnYbvR84llaaacgQlc4qBwLl23einjfscoTKnw"
+  tags {
+    text_zh: "Piapro Characters"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/I3ZPrGbBcEdGckOcLLVkgHWdaAF9YX9ScAC_TbPE-lc"
+  }
+}
+products {
+  vendor: "megahouse"
+  product_id: "9f8AUJejOh9E51ZhhDXRGsjY4HZdkanDTmVBoNULQNw"
+  tags {
+    text_zh: "Piapro Characters"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/KULiLSLt1hUNtiObE85ZK9c3fAyyYRSPVmbrv9ibsm8"
+  }
+}
+products {
+  vendor: "megahouse"
+  product_id: "mXThWr-54mSzF3O4o_IhAE7I_WEDsfCW2Kjf4M2rIn4"
+  tags {
+    text_zh: "原神"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/sUCgFlrx20tiTARriBi1CAFoOlWR78OclNsrRI7SD1A"
+  }
+}
+products {
+  vendor: "megahouse"
+  product_id: "kezG506IubvY76I_hfKs_v1VktBWLvZTfVGMd9z7_Yo"
+  tags {
+    text_zh: "原神"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/mLScRSLviUUa7uqCg4g1R-r5UdT58HbPXrQc8A5KRvo"
+  }
+}
+products {
+  vendor: "megahouse"
+  product_id: "ZWbMyCeq2jVTweiZ8WtFGboZT8tdn1Qmsi19c8hnzDE"
+  tags {
+    text_zh: "崩壞：星穹鐵道"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/RvTzo4S3I-uZQ4svJoUWSaQ9S6R6bqAg4qJmFc_cyaQ"
+  }
+}
+products {
+  vendor: "megahouse"
+  product_id: "u3yRbnIhRZuf4hpUR74sqsV44MtkDyHbq4udxZOA3RU"
+  tags {
+    text_zh: "崩壞：星穹鐵道"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/eQhDRUQMZoRtcVsPkRuLPDPwkf3AGfMrrxBUGELwSts"
+  }
+}
+products {
+  vendor: "megahouse"
+  product_id: "l-Pfy4abtt9S9H5cE_sy_bHKOZZpzjUIjbseMF1AE5g"
+  tags {
+    text_zh: "鋼彈"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/dHomKlglP3_suvCPvAF38-lJ1VFKUkmRa2A2axYRNFg"
+  }
+}
+products {
+  vendor: "megahouse"
+  product_id: "tEOjSIOO22UnTnZZQxROkJdKwpon0ExoUBIVe6nE7bY"
+  tags {
+    text_zh: "鋼彈"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/JCTq5V3k1G7udptgkDZR8TFa-EnEaGo3roBCkCoQLxw"
+  }
+}
+products {
+  vendor: "megahouse"
+  product_id: "f-T-w58hrk9jvd2oOiEA37PMCYO8ArKfHnnVCrQrzro"
+  tags {
+    text_zh: "ALIEN STAGE"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/BbkgBumo6m_8Mfpat5bqjHOlcpryi87mN6NNKboL0LQ"
+  }
+}
+products {
+  vendor: "megahouse"
+  product_id: "H1kCfg9ahiLeE4CQ14I6s5PedHIvTg4pUru_tDl-yNk"
+  tags {
+    text_zh: "ALIEN STAGE"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/vkkRPCnmFPAsTPGnAOCjhqQG2BQUF9QuCS5UqL76jjU"
+  }
+}
+products {
+  vendor: "megahouse"
+  product_id: "8qhiAVD97m3HFoxhiOKZHKOEpEpF3Ri6iS1hlovbsu8"
+  tags {
+    text_zh: "ALIEN STAGE"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/X0ImiCAvZCK7N_CP7O9hxXNKZpX4muy-DNUX0GzBRUo"
+  }
+}
+products {
+  vendor: "megahouse"
+  product_id: "rdaMCm31ZtSvsstukOrOSbUZRsb2HBxhB1HsJ0YJx5Y"
+  tags {
+    text_zh: "ALIEN STAGE"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/0c2AlUi_lDMbl43glXmGSwF8ZCQ4C6R2mCCeJwuegSM"
+  }
+}
+products {
+  vendor: "megahouse"
+  product_id: "uokTuLVOLabr9_rJZl-zL_6InMeoAH-W9Lyqr1O882s"
+  tags {
+    text_zh: "ALIEN STAGE"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/kGbnRA6vFjOsezpraY9zQDs11Kf1GMjG_7bpnoDTBu4"
+  }
+}
+products {
+  vendor: "megahouse"
+  product_id: "S8hO61v2E4QCjZvW2wJGdWP7Hu8vOIo1N-SaLvdochI"
+  tags {
+    text_zh: "ALIEN STAGE"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/SuTKwUyDsgrYcvt9HOdgpWXE8NN5ktEX2oxul6v8YRU"
+  }
+}
+products {
+  vendor: "megahouse"
+  product_id: "XfaZ5km_OqzAOPMzRb30ZyScnifvrMDuCxrz2jvaeDE"
+  tags {
+    text_zh: "神樂鉢"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/bfmpzl9eSNnIi1R99ZwNYwPzcNha_PTK9fiHwF3fkz4"
+  }
+}
+products {
+  vendor: "megahouse"
+  product_id: "kk51HYCCFzQ8T_Q4nzruiP14TRMQ4u2ROF6QmFjCW1Y"
+  tags {
+    text_zh: "神樂鉢"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/KlHF7lkrDzTI97sChGA3G4kl26eNRmVmPTI7MvyWqmo"
+  }
+}
+products {
+  vendor: "megahouse"
+  product_id: "WOSvJ59o8OPQH0MtqnNoBr3etLGqtpwbOqnMjzqMPs8"
+  tags {
+    text_zh: "魔物獵人"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/MDRcSlQvP1lpMcbWF267hEaVFqfXk6gsoa2pFnq1HIo"
+  }
+}
+products {
+  vendor: "megahouse"
+  product_id: "9jKx_mDw5YvFtI7x3HL0iSVJwS4YHg7-WieJLZ40JZQ"
+  tags {
+    text_zh: "魔法少女小圓"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/O3eqrOXTfJKXHizY0XpWH4uqq9VVp1YOkM0zz_EfXGo"
+  }
+}
+products {
+  vendor: "megahouse"
+  product_id: "GRx2x1Gz1IbPahWfTyMnj4CeCuIKoILFqq656Xl6xL0"
+  tags {
+    text_zh: "魔法少女小圓"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/Gndjl1uysxfY1kul9dCRDlhbRyR1s-p5MF3vbNob6u0"
+  }
+}
+products {
+  vendor: "megahouse"
+  product_id: "JstKx4NyxGHxGp4elMdhiLTC0rXQvHX-p9jO-u8gphM"
+  tags {
+    text_zh: "守護甜心"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/abomaKH1BcALvFgzFZLSo6zuB4m14QX6yNpsaIZWff4"
+  }
+}
+products {
+  vendor: "megahouse"
+  product_id: "WNfUIkOJsvnXTaONmsQZj6yB50k05MocVDuKm6tVSbA"
+  tags {
+    text_zh: "銀河特急 Milky☆Subway"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/xY8JXLAbPaaFVJel3Z448Xb6rSbG7NEQAbtZeZmX3AA"
+  }
+}
+products {
+  vendor: "megahouse"
+  product_id: "xKp934dQuguendMIDjWs0sW2G56yJICZYFK2ndzoK_o"
+  tags {
+    text_zh: "銀河特急 Milky☆Subway"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/0V35lr_HirOJgSN9ZDa_XTiYfaDUNaGZ2494jt0bfkA"
+  }
+}
+products {
+  vendor: "megahouse"
+  product_id: "BJC92ryP5uQWQn_b7egMPYJNulOcvPabAElM7Bb4JCE"
+  tags {
+    text_zh: "銀河特急 Milky☆Subway"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/O4BMOoLvFRH_UiW83bN1cI-RbFjF-hudMexKPpSxPJ8"
+  }
+}
+products {
+  vendor: "megahouse"
+  product_id: "UEkkhtfDZhCJJVISkjNCk5kvOnYX-gCDt1P_aN7-LbY"
+  tags {
+    text_zh: "銀河特急 Milky☆Subway"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/XR1MQd21LcBRyXmPNXkufvcziaz8b1qfR_fiYBtDiww"
+  }
+}
+products {
+  vendor: "megahouse"
+  product_id: "auWq4Ktuz7q1xty6mxlrezZWHY8tv5qB_HuIqpsP-zo"
+  tags {
+    text_zh: "名偵探柯南"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/GK0THrTPyFsLsIdFW1odf8IFKeXjZ7mtkJh5f0wbv-4"
+  }
+}
+products {
+  vendor: "megahouse"
+  product_id: "iIPYst0u3jxDunIPtluX0VVnjqC6s_1kU13IQEkq4Mo"
+  tags {
+    text_zh: "名偵探柯南"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/MFRx-i-khVHDSkNkzNv6P5nZTlP2nxqW-2iT4xgHaKQ"
   }
 }

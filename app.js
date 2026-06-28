@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const modalCloseBtn = document.getElementById("modal-close-btn");
   const modalMainImage = document.getElementById("modal-main-image");
   const modalThumbnailGallery = document.getElementById(
-    "modal-thumbnail-gallery"
+    "modal-thumbnail-gallery",
   );
   const modalTagList = document.getElementById("modal-tag-list");
 
@@ -32,9 +32,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const SERIES_LIST = [
     "寶可夢",
     "坂本日常",
+    "崩壞：星穹鐵道",
     "排球少年",
+    "名偵探柯南",
+    "魔法壞女巫",
+    "魔法少女小圓",
     "魔女守護者",
     "魔男伊奇",
+    "魔物獵人",
     "美少女戰士",
     "反叛的魯路修",
     "防風少年",
@@ -77,6 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "咒術迴戰",
     "失憶投捕",
     "數碼寶貝",
+    "守護甜心",
     "擅長逃跑的殿下",
     "神樂鉢",
     "神劍闖江湖",
@@ -89,6 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "憂國的莫里亞蒂",
     "遊戲王",
     "銀魂",
+    "銀河特急 Milky☆Subway",
     "影子籃球員",
     "一拳超人",
     "我的英雄學院",
@@ -97,8 +104,10 @@ document.addEventListener("DOMContentLoaded", () => {
     "文豪野犬",
     "網球王子",
     "約定的夢幻島",
+    "原神",
     "惡靈剋星",
     "偶像大師",
+    "ALIEN STAGE",
     "BEASTARS",
     "Fantastic Beasts",
     "IDOLiSH7",
@@ -127,7 +136,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function saveOwnedProducts() {
     localStorage.setItem(
       STORAGE_KEY,
-      JSON.stringify(Array.from(ownedProductIds))
+      JSON.stringify(Array.from(ownedProductIds)),
     );
   }
 
@@ -169,7 +178,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const left = x1;
       element.style.setProperty(
         "object-view-box",
-        `inset(${top}% ${right}% ${bottom}% ${left}%)`
+        `inset(${top}% ${right}% ${bottom}% ${left}%)`,
       );
       element.classList.add("is-cropped");
     }
@@ -207,7 +216,7 @@ document.addEventListener("DOMContentLoaded", () => {
     for (const series of SERIES_LIST) {
       if (product.tags) {
         const hasTag = product.tags.some(
-          (t) => t.textZh === series || t.textJp === series
+          (t) => t.textZh === series || t.textJp === series,
         );
         if (hasTag) return series;
       }
@@ -228,7 +237,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const previewModal = document.getElementById("preview-modal");
     const generatedPreviewImg = document.getElementById(
-      "generated-preview-img"
+      "generated-preview-img",
     );
 
     if (!allProductsInfo) return;
@@ -262,7 +271,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const totalItems = productsToDraw.length;
     const ownedCount = productsToDraw.filter((p) =>
-      ownedProductIds.has(p.productId)
+      ownedProductIds.has(p.productId),
     ).length;
     const completionPercentage =
       totalItems > 0 ? Math.round((ownedCount / totalItems) * 100) : 0;
@@ -359,7 +368,7 @@ document.addEventListener("DOMContentLoaded", () => {
       ctx.fillText(
         `完成度：${completionPercentage}%  (${ownedCount} / ${totalItems})`,
         canvasWidth / 2,
-        currentTextY
+        currentTextY,
       );
       // ----------------------------
 
@@ -411,7 +420,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const { sx, sy, sWidth, sHeight } = getCropCoordinates(
               imgObj.naturalWidth,
               imgObj.naturalHeight,
-              product.images[0].cropRect
+              product.images[0].cropRect,
             );
 
             ctx.drawImage(
@@ -423,7 +432,7 @@ document.addEventListener("DOMContentLoaded", () => {
               dx,
               dy,
               CARD_SIZE,
-              CARD_SIZE
+              CARD_SIZE,
             );
             ctx.restore();
 
@@ -491,7 +500,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (clearBtn) {
     clearBtn.addEventListener("click", () => {
       const confirmed = confirm(
-        "確定要清除所有已標記的商品嗎？\n此動作無法復原！"
+        "確定要清除所有已標記的商品嗎？\n此動作無法復原！",
       );
 
       if (confirmed) {
@@ -567,7 +576,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
           tagItem.addEventListener("click", () => {
             let chk = document.querySelector(
-              `.filter-checkbox[value="${tag.textZh}"]`
+              `.filter-checkbox[value="${tag.textZh}"]`,
             );
             if (chk) {
               chk.checked = true;
@@ -795,7 +804,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "作品篩選",
       SERIES_LIST,
       activeSeriesFilters,
-      displayProducts
+      displayProducts,
     );
     container.appendChild(seriesDropdown);
 
@@ -803,7 +812,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "類別篩選",
       CATEGORIES_LIST,
       activeCategoryFilters,
-      displayProducts
+      displayProducts,
     );
     container.appendChild(categoryDropdown);
 
@@ -936,7 +945,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const root = protobuf.parse(await protoRes.text()).root;
       const ProductsInfoMessage = root.lookupType("ProductsInfo");
 
-      const dataRes = await fetch("jump_product.txtpb?t=124");
+      const dataRes = await fetch("jump_product.txtpb?t=125");
       const plainObj = parseTextprotoToJsObject(await dataRes.text());
       const camelObj = convertKeysToCamelCase(plainObj);
 
