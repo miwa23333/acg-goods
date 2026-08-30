@@ -1254,7 +1254,7 @@ products {
 }
 products {
   vendor: "jump"
-  product_id: "BuOZpGZwKkSzVtRZ-shDCnDfJa8KMURXouXxzjcTDdw"
+  product_id: "0WNe2woPl6XvTmNjbwII7DEb0LemA82RE8gbau-6P20"
   title_jp: "『魔男のイチ』のるキャラマスコット(R)　イチ"
   tags {
     text_zh: "魔男伊奇"
@@ -1281,7 +1281,7 @@ products {
 }
 products {
   vendor: "jump"
-  product_id: "UN6qN-jtdSJ2ICtn2ZXdNhrO6X9PBG94Aibwu133Yfs"
+  product_id: "r4aoTPQsUURRlyhPr1fq5DmeTYxYZ2Cu-3uPvaWPs2I"
   title_jp: "『ダンダダン』のるキャラマスコット(R)　モモ"
   tags {
     text_zh: "膽大黨"
@@ -1308,7 +1308,7 @@ products {
 }
 products {
   vendor: "jump"
-  product_id: "3UkN4_Tk0rpK1Sip3SZMZb4W1MlLOhg8EAXc1yZ6XhA"
+  product_id: "hfuhONCOeIj0bajOuuSMYuvIOE5OlTKD7dE_Dau-_Lw"
   title_jp: "『ダンダダン』のるキャラマスコット(R)　ターボババア"
   tags {
     text_zh: "膽大黨"
@@ -1335,7 +1335,7 @@ products {
 }
 products {
   vendor: "jump"
-  product_id: "qRBdfrvAwPN30pINKC4HWQer_-7AL5pRncC6Sbsw0-Y"
+  product_id: "USOgEwNgvpzuQn7A-blCiH-13pgcKMRBmC-BzneYZus"
   title_jp: "『ダンダダン』のるキャラマスコット(R)　オカルン"
   tags {
     text_zh: "膽大黨"
@@ -1362,7 +1362,7 @@ products {
 }
 products {
   vendor: "jump"
-  product_id: "uVdvoUm3MPj7kI8oFe2VJQf9_bt9DppwwHDcMxH4C00"
+  product_id: "pt4WrFX3Y_XlppWfySoL0gUQa8yWPYQNVwvEqEQ-EYY"
   title_jp: "『NARUTO-ナルト-』のるキャラマスコット(R)　波風ミナト"
   tags {
     text_zh: "火影忍者"
@@ -1389,7 +1389,7 @@ products {
 }
 products {
   vendor: "jump"
-  product_id: "haaEbNJeGdiJb4P1kJz-Z5MjssPmVf5HK2H5rx53Obs"
+  product_id: "8KmKeF9tSC030atmfSFA91B1lxKLcNOH8tnCAdydiZM"
   title_jp: "『NARUTO-ナルト-』のるキャラマスコット(R)　奈良シカマル"
   tags {
     text_zh: "火影忍者"
@@ -1470,7 +1470,7 @@ products {
 }
 products {
   vendor: "jump"
-  product_id: "rn3Y898nK6kWFSQrsj3_2-OxT4LBqyyUqu_aGAoT5LI"
+  product_id: "sYHSqaCWloP347x-eYvYz8bGLRKbNq7KYbA_XBRwATM"
   title_jp: "『極楽街』のるキャラマスコット(R)　タオ"
   tags {
     text_zh: "極樂街"
@@ -1497,7 +1497,7 @@ products {
 }
 products {
   vendor: "jump"
-  product_id: "Cwdqy0Gd6f4-L42UGOq4nr4zJlCaPb2ek7RFpFEe8sg"
+  product_id: "-Y80oajHaz5aEluUtyY8wPWHblvIoIel1bUMg3ITBuA"
   title_jp: "『極楽街』のるキャラマスコット(R)　アルマ"
   tags {
     text_zh: "極樂街"
@@ -1524,34 +1524,7 @@ products {
 }
 products {
   vendor: "jump"
-  product_id: "K46SHHr7xuAukcvcFi-9etZStJ1NrdxwjVn8sP8vuX4"
-  title_jp: "『ファントムバスターズ』のるキャラマスコット(R)2体セット　宍喰野虎落＆是岸遊人"
-  tags {
-    text_zh: "惡靈剋星"
-  }
-  tags {
-    text_jp: "のるキャラマスコット"
-    text_zh: "JS 趴娃"
-  }
-  images {
-    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/u9_KMQh8TjY7s2e4wkPnAmfg9JEUwwAcjnzd0XcQ3Ss"
-  }
-  images {
-    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/lm1Uct35YXnjCCBS34wAxbYJUaWhf7geIdPm7F5rRss"
-  }
-  images {
-    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/qfdzHWeGCok27mTpNNk2ZwvkwYdOD3ys0J05kmGf65s"
-  }
-  images {
-    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/i4txQ-adAdUiFkE5iQO422SiMJb9eO3IanDFxwM5kTw"
-  }
-  images {
-    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/r-ABFtze0NAO0bnJEQ1gDMQu7E99kocDrubMpLIfpx0"
-  }
-}
-products {
-  vendor: "jump"
-  product_id: "4XmRffYd049l8mDrBPfegFldkm93_1_RQp82Q7mbCh8"
+  product_id: "iB4N33C7HcuRP384AixUsCxsulP_9aC03Q49ys8MyS8"
   title_jp: "『BLEACH』のるキャラマスコット(R)　市丸ギン"
   tags {
     text_zh: "死神"
@@ -1659,7 +1632,7 @@ products {
 }
 products {
   vendor: "jump"
-  product_id: "5YBlWNqNednLsIo4TIbvwf1ceBG5Hkll87dFhdz0ymQ"
+  product_id: "X3mmNP7s1CiqtvlSg5mqAztqbGKi8PeQVc7jd69g-Nc"
   title_jp: "『NARUTO-ナルト-』のるキャラマスコット(R)　我愛羅"
   tags {
     text_zh: "火影忍者"
@@ -1686,7 +1659,7 @@ products {
 }
 products {
   vendor: "jump"
-  product_id: "PvDzVeI_xIhSa6FW8ei_gVT0jEjqglioipGqw5lrS1w"
+  product_id: "MZMDgrkipEWsZbDcgW5eI_G-YoJIJjo52v8lUt1Fiq0"
   title_jp: "『BLEACH』のるキャラマスコット(R)　藍染惣右介"
   tags {
     text_zh: "死神"
@@ -3615,254 +3588,6 @@ products {
 }
 products {
   vendor: "jump"
-  product_id: "X3mmNP7s1CiqtvlSg5mqAztqbGKi8PeQVc7jd69g-Nc"
-  tags {
-    text_zh: "火影忍者"
-  }
-  tags {
-    text_jp: "のるキャラマスコット"
-    text_zh: "JS 趴娃"
-  }
-  images {
-    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/ZEXIGwgI97AnfRXBdM_eRLoqBbyAzVNV8aRWjEythn8"
-  }
-  images {
-    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/tHZe02Kuj9b6h5B5MJQC94V6KWq9sNjPPyp52eN3aW4"
-  }
-  images {
-    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/d-xWekorRzumk7zMZLeP6ToKXmyo_58ULcLbo5LkPcM"
-  }
-  images {
-    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/HYiYF-t2gpVhlR8h4_qdLMAPDeU99BRgCPpDGkB8gZI"
-  }
-  images {
-    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/MV-FTSXqEoiSI9uak4m-TgAIZu6Ev_eKbjpw7aF1yg4"
-  }
-}
-products {
-  vendor: "jump"
-  product_id: "8KmKeF9tSC030atmfSFA91B1lxKLcNOH8tnCAdydiZM"
-  tags {
-    text_zh: "火影忍者"
-  }
-  tags {
-    text_jp: "のるキャラマスコット"
-    text_zh: "JS 趴娃"
-  }
-  images {
-    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/Kf22UusYuMMnf7tn9K2qSruEM__VWa9D2ZGNsbhrQ_k"
-  }
-  images {
-    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/T5zHQKjZaI3Sv6MTmycQhmq5vRPTNhfNDKQ9XVDqJpo"
-  }
-  images {
-    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/GptZ6sqB-3YSC8wCIGAKjIxl9-brkkOcvZuAJgxDv70"
-  }
-  images {
-    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/du-nit9VZp6ptwTldRSb-NgR0Pd6P1H1Qff6EgBbk8g"
-  }
-  images {
-    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/LQ2Bv-yseFJqCuYWK2400ma8Rfqd-cJBjMUwFXTArSc"
-  }
-}
-products {
-  vendor: "jump"
-  product_id: "pt4WrFX3Y_XlppWfySoL0gUQa8yWPYQNVwvEqEQ-EYY"
-  tags {
-    text_zh: "火影忍者"
-  }
-  tags {
-    text_jp: "のるキャラマスコット"
-    text_zh: "JS 趴娃"
-  }
-  images {
-    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/UYevlMIJYlSR_yQtLwjFtg7k0PuTh0uuD0BnnLBiD5E"
-  }
-  images {
-    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/X1gKO7-V4Q_ofaFG2y9sjpXJ-Uskp2OM8uk8xJo-_tE"
-  }
-  images {
-    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/RZwaKGD4HT8IgUqxps1KE8xkPA3qzEs58kz4NfSclrE"
-  }
-  images {
-    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/3P-qWL3aqzIbl9AXfz5cEiHwO-6-ECDnHH7wXGenKHo"
-  }
-  images {
-    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/XYf4siTgvS-A5dbXAYwP6cbnXDVHtKcsPf2fpwro5QQ"
-  }
-}
-products {
-  vendor: "jump"
-  product_id: "MZMDgrkipEWsZbDcgW5eI_G-YoJIJjo52v8lUt1Fiq0"
-  tags {
-    text_zh: "死神"
-  }
-  tags {
-    text_jp: "のるキャラマスコット"
-    text_zh: "JS 趴娃"
-  }
-  images {
-    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/OMTIng7Lke9hSOzXHt2nJCX6M2cCkI2IR_LA6u1n2A4"
-  }
-  images {
-    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/2odcMm20K4gbhMGeotTz5-38iLYcEs5eIeMeIJ_qMpc"
-  }
-  images {
-    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/4iCjAoyIK4w5y8peTl142Enxu5ufDgwyzHGE8c3HM3I"
-  }
-  images {
-    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/zErAdWTi0XFGknMUdT3T-UkZ7gw_z2aohHd0CMJkBA4"
-  }
-}
-products {
-  vendor: "jump"
-  product_id: "iB4N33C7HcuRP384AixUsCxsulP_9aC03Q49ys8MyS8"
-  tags {
-    text_zh: "死神"
-  }
-  tags {
-    text_jp: "のるキャラマスコット"
-    text_zh: "JS 趴娃"
-  }
-  images {
-    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/gCtLJuFf7ThVPynFR5roCaEvc5OdSQhxbykJ7nZ_7HY"
-  }
-  images {
-    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/dI2Lx_GH6-C5AZFuv9tuNJoGips5ga4060fUmk8F43k"
-  }
-  images {
-    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/Si9VMSHpg_zrntGgZ2fwO1X_eq2YqMcaDOmvqZ96fgk"
-  }
-  images {
-    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/dFShwvwIeHQgxslrBloNVW2OT42TP0UIT6DO9Qlm-KE"
-  }
-}
-products {
-  vendor: "jump"
-  product_id: "0WNe2woPl6XvTmNjbwII7DEb0LemA82RE8gbau-6P20"
-  tags {
-    text_zh: "魔男伊奇"
-  }
-  tags {
-    text_jp: "のるキャラマスコット"
-    text_zh: "JS 趴娃"
-  }
-  images {
-    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/xLBzt4ftrJNCo2gms3YXtgElaH9eDZ276hDf-V6_nb4"
-  }
-  images {
-    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/77ewFQXffzL08AnzVIGO2NVFIS22cuXztBtpdsS1QBA"
-  }
-  images {
-    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/q9_2Y6pZB-PwX0m84x7sAM2yxlTp5I05N0-th9IdUN4"
-  }
-  images {
-    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/ien0QBAG7Mm7tGPxKPtSQJGiERVxJnC7S4luzdM_9pU"
-  }
-  images {
-    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/ySDCMJC-P9QG8LaTKIY8SOCQYjglHb1TakYwHyU-ciA"
-  }
-}
-products {
-  vendor: "jump"
-  product_id: "USOgEwNgvpzuQn7A-blCiH-13pgcKMRBmC-BzneYZus"
-  tags {
-    text_zh: "膽大黨"
-  }
-  tags {
-    text_jp: "のるキャラマスコット"
-    text_zh: "JS 趴娃"
-  }
-  images {
-    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/4TVQDF-W5d0U03v9ibAkrnm5dDfzQrDRJO-8HEKNhZU"
-  }
-  images {
-    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/nZG5r3NBd00iqRSM3zEo88r3siAoQBiE6NjJvlzO0VM"
-  }
-  images {
-    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/2LqXI5vMQvEa4eA2zgtSQuTUtiO1OXgisrqiz-l80ic"
-  }
-  images {
-    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/N-hN-6ZNrOhNt4yZlnj9POdAoh9W1TYiol2jlvSl2qM"
-  }
-  images {
-    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/R9Dn7uT7aVZsTVD9g_Ag4hV6oJzmuzG5lvTxKAVw4FQ"
-  }
-}
-products {
-  vendor: "jump"
-  product_id: "r4aoTPQsUURRlyhPr1fq5DmeTYxYZ2Cu-3uPvaWPs2I"
-  tags {
-    text_zh: "膽大黨"
-  }
-  tags {
-    text_jp: "のるキャラマスコット"
-    text_zh: "JS 趴娃"
-  }
-  images {
-    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/zv5AmZCveOQ1cwqNdK5B3AddZzimX1P3hL78B1vxnbk"
-  }
-  images {
-    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/buthX2ii7CqNK8zgMSO7vKiG7t-87mr3qAZofbQ35d0"
-  }
-  images {
-    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/r1YO0ERFoK9AvvsbIKaRbfzausbLJPQCdghCEkh2PRg"
-  }
-  images {
-    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/KKf14gxMbYCtpZBPzYxpgrS-GqXYv_ec1-xs-Doj3B8"
-  }
-  images {
-    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/Ve2UZTZMvCq1mywVlcG4kb0oWvgBq8W7LZ_hZqW-Rm4"
-  }
-}
-products {
-  vendor: "jump"
-  product_id: "sYHSqaCWloP347x-eYvYz8bGLRKbNq7KYbA_XBRwATM"
-  tags {
-    text_zh: "極樂街"
-  }
-  tags {
-    text_jp: "のるキャラマスコット"
-    text_zh: "JS 趴娃"
-  }
-  images {
-    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/Lz2x7KKMwDevpkK5-hHhgfSx46vT5SEw5PzFefK_amA"
-  }
-  images {
-    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/eDFYeBnSypqeFh5R4OcC3KC7JaYdu8Kp_54TIvdk7YA"
-  }
-  images {
-    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/ssEHVh8JARxXXQGI9Q6y_eGcEkX9at7L_Ao0uHa9W60"
-  }
-  images {
-    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/x20mxdt8a0IvYgu1dXaQz_k4TZvD45sRl6mR91kqnaE"
-  }
-}
-products {
-  vendor: "jump"
-  product_id: "-Y80oajHaz5aEluUtyY8wPWHblvIoIel1bUMg3ITBuA"
-  tags {
-    text_zh: "極樂街"
-  }
-  tags {
-    text_jp: "のるキャラマスコット"
-    text_zh: "JS 趴娃"
-  }
-  images {
-    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/-9rf0o6qDRYJ_ei5pH9CFobzb3Akh7wmazj-6PyrkDs"
-  }
-  images {
-    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/EPXGmYm90C3d7F4KHxXfNlY9n1pGrpTMW66WNoAo76U"
-  }
-  images {
-    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/sMrjgnpgcCiGdRtnx_Zl619Q4k5Y7yij0U4nUCgNnWg"
-  }
-  images {
-    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/R2UsX1wDkYWhhezV6X5JHzZZpYsaD6TNBY9IplKJ1-w"
-  }
-}
-products {
-  vendor: "jump"
   product_id: "1Xrh5dPG2d3j_yFQNNSTf7v3OQmfqf3N2-5GGRC0jKY"
   tags {
     text_zh: "神樂鉢"
@@ -4265,35 +3990,6 @@ products {
   }
   images {
     url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/RUW81bezD0KetM_JGQixOfRtx3YqjB1ENIweKr4LL2k"
-  }
-}
-products {
-  vendor: "jump"
-  product_id: "hfuhONCOeIj0bajOuuSMYuvIOE5OlTKD7dE_Dau-_Lw"
-  tags {
-    text_zh: "膽大黨"
-  }
-  tags {
-    text_jp: "のるキャラマスコット"
-    text_zh: "JS 趴娃"
-  }
-  images {
-    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/g1rvrhNkTBFzzAlWmyc_KZZ1pCcGg52igksNt_QsVT8"
-  }
-  images {
-    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/4nGLmW2VdSVAYBHJwNZVQ2UCSQ1K5gwXxk0yVR92i7Q"
-  }
-  images {
-    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/Q9y1DPngSM5LRPgWLc4_wY571vrP11pRa1MHearOvTs"
-  }
-  images {
-    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/ko0KFUOct10yQCBpSbsGzWhu6JgNujrlh8_ne9Gu9L8"
-  }
-  images {
-    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/DPcSdppz4kzeBbQnOmUhKJ7eRynfk0sHeHbGDJdWG2k"
-  }
-  images {
-    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/pVxxBe7Sogn_l3n_bdGamr1uL8jn3YcnGUGN8gSG2yI"
   }
 }
 products {
