@@ -1254,6 +1254,465 @@ products {
 }
 products {
   vendor: "jump"
+  product_id: "BuOZpGZwKkSzVtRZ-shDCnDfJa8KMURXouXxzjcTDdw"
+  title_jp: "『魔男のイチ』のるキャラマスコット(R)　イチ"
+  tags {
+    text_zh: "魔男伊奇"
+  }
+  tags {
+    text_jp: "のるキャラマスコット"
+    text_zh: "JS 趴娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/L8OSK37EZQPOL4EBNSDRfRLkAy0hfTJyvhk2mibjaMc"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/1qRBjr7nGOprWpL334T_T6ZLCHf5WlSf851r_aEaScc"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/91DbMaDvrggrQwU8hRBAUp6z9f5fdCY2BeEPAeucXnI"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/4EHyaMvhI9K8XhiisX7g2mPmqvL1WSVdwM_gUEETgh0"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/YGFVaZ8QJ2v4RIE_Mn8aSEoFZ1FWOiU4kg8rw4tJ8hs"
+  }
+}
+products {
+  vendor: "jump"
+  product_id: "UN6qN-jtdSJ2ICtn2ZXdNhrO6X9PBG94Aibwu133Yfs"
+  title_jp: "『ダンダダン』のるキャラマスコット(R)　モモ"
+  tags {
+    text_zh: "膽大黨"
+  }
+  tags {
+    text_jp: "のるキャラマスコット"
+    text_zh: "JS 趴娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/Is6ALSIeUqnACVv59OQbbZlWi8Yumlg4aXJrL1aV-qY"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/v9jPGe1VbdbyEaNkgunTI2F1L9bgd1gBtq41UHsfgx0"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/kxqlobcwwM66yumfAgLok_xJ9eicidKPUyej1Q-H6i0"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/E2OXBDnCI2aHo3HAr2G4j36RT4tW2dRM_kbXkmGTBgw"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/3de_CTatOappg-JBRZrJLGJToJYQqjdKsdqZGzEn2dg"
+  }
+}
+products {
+  vendor: "jump"
+  product_id: "3UkN4_Tk0rpK1Sip3SZMZb4W1MlLOhg8EAXc1yZ6XhA"
+  title_jp: "『ダンダダン』のるキャラマスコット(R)　ターボババア"
+  tags {
+    text_zh: "膽大黨"
+  }
+  tags {
+    text_jp: "のるキャラマスコット"
+    text_zh: "JS 趴娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/74tVWtZoKJb1npVL0aqmKipJ85zxhRGXQjh7rpYRed8"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/GcvQtYra8U_CD7Bso3dJZ2xS7-Ymz4YTIXki9whCA_U"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/KGrcd7CC-Wy6jwuYlSFUi1L-4cDyjRaVwokLd1YdSio"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/uKqKKpI1Y88C8KgbmbIC3DOtmWErW6uFnbrtggs0CXw"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/VxOcdoGFGlxbbFdMF5rAb6nC9q8p3x0M2JxMK0xLnHA"
+  }
+}
+products {
+  vendor: "jump"
+  product_id: "qRBdfrvAwPN30pINKC4HWQer_-7AL5pRncC6Sbsw0-Y"
+  title_jp: "『ダンダダン』のるキャラマスコット(R)　オカルン"
+  tags {
+    text_zh: "膽大黨"
+  }
+  tags {
+    text_jp: "のるキャラマスコット"
+    text_zh: "JS 趴娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/ndfsH6kf6s6w5LDhcB3M042uP6BHxKrv9DHxsCuKal4"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/J_bV6zWrywegh3xd_TYKlXrbndwlT6so0NSL17bRrMA"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/z7GuRS6umcAFg9UaBQiJNGi9iPitFtHdNtY-CO-2h20"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/mq3076Hy82klmPcGYbgBXguWwTbL0C7OiesXp2FLMqk"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/_W_PHu4O-b1gJUBXp4CCgvGwSW2VmMsqGj0BHaL7u0s"
+  }
+}
+products {
+  vendor: "jump"
+  product_id: "uVdvoUm3MPj7kI8oFe2VJQf9_bt9DppwwHDcMxH4C00"
+  title_jp: "『NARUTO-ナルト-』のるキャラマスコット(R)　波風ミナト"
+  tags {
+    text_zh: "火影忍者"
+  }
+  tags {
+    text_jp: "のるキャラマスコット"
+    text_zh: "JS 趴娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/oLgy3rBN66oFcP_AyQhwAVxBfQUFt_bG_PRcpo5SV58"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/A-wXLp4s-cnLflCTgylfKlcz13FTrgePi3l-iJXPniM"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/cMMBzQSlxUmoKYimZfT3i5SSjtlxrIOFuLo7uUIiLTA"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/ZaUQTIaOWP6tFXwkAhnpcpIbwzy8RTrWqpyFda65nwE"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/CQWCH_LMrUMSb41JK6o6CZzjGXs5V6rvGwpD8sVR0Aw"
+  }
+}
+products {
+  vendor: "jump"
+  product_id: "haaEbNJeGdiJb4P1kJz-Z5MjssPmVf5HK2H5rx53Obs"
+  title_jp: "『NARUTO-ナルト-』のるキャラマスコット(R)　奈良シカマル"
+  tags {
+    text_zh: "火影忍者"
+  }
+  tags {
+    text_jp: "のるキャラマスコット"
+    text_zh: "JS 趴娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/h_0O2n42rgrjy0g0LeEu5_c8r53mHGmRSIJaR_37AKY"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/JYVfr9hjs92-m_xs4cmZ3THmGZPe_DsmkzVWxg4OzeU"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/vAAJN1tZRxKDwMYPB98E6iGLAZ9uCw-HmNLuYwZSemA"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/Bq2xc4-tqzPWo0Oes8H7uYPe-v1w9_rh5Oi0GYPwhHY"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/lhpG2Vb31jylP_ld2IJOhrcfHruoZiGDOXvukCZxozw"
+  }
+}
+products {
+  vendor: "jump"
+  product_id: "IDDJ3w6FdZEdKvID-SE1M0U4aM-BtzM7f4cJCyOTbLQ"
+  title_jp: "『忘却バッテリー』のるキャラマスコット(R)　千早瞬平　都立小手指高校制服Ver."
+  tags {
+    text_zh: "失憶投捕"
+  }
+  tags {
+    text_jp: "のるキャラマスコット"
+    text_zh: "JS 趴娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/fa-5jepL9Bq-lfmz20O5iN94hyibQBKbBIVO3_ed8R8"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/s2Ad9dYWMBy28ByWePABPZQorVM-1z8Wg9naVwK00ew"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/bpQNq0CL4e7gcyMBFUZO5mNmgboGDkI_oHaURJwaMyM"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/xL-RF48k4tszfINW4yBonY56KRcXj64eUVGtWu0C2SM"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/yYWdKcTJ3J2h0ShZUDsrx8QAUA-j1PyJbrEc61dZcRw"
+  }
+}
+products {
+  vendor: "jump"
+  product_id: "irXREjlF0wU2-2_Ti91nt1FhKz4uBS5YfGc8wrajFoI"
+  title_jp: "『忘却バッテリー』のるキャラマスコット(R)　山田太郎　都立小手指高校制服Ver."
+  tags {
+    text_zh: "失憶投捕"
+  }
+  tags {
+    text_jp: "のるキャラマスコット"
+    text_zh: "JS 趴娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/Kjgvpvtu0-TRDv8748c1Bpc0gVQW8fEwivyaIFhMcyk"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/di2l_CbjwI14oH1yXJ0aDb1ITFyGktUktl_ikLe0VSA"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/qq-qHOxw3uL3rTumBYt2oILRL2fTReDiHKb73mXITtA"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/nm2UzCfwdWc5_P8YwlErXqTzf6M_wEVdFGUx3iL4VLc"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/k6dKdyerNzULuKpit9JfEkYoiJxMrDwE4L0jFGfpEqA"
+  }
+}
+products {
+  vendor: "jump"
+  product_id: "rn3Y898nK6kWFSQrsj3_2-OxT4LBqyyUqu_aGAoT5LI"
+  title_jp: "『極楽街』のるキャラマスコット(R)　タオ"
+  tags {
+    text_zh: "極樂街"
+  }
+  tags {
+    text_jp: "のるキャラマスコット"
+    text_zh: "JS 趴娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/KTitinTWC6NMP-6HEpz_3mr8bbeuzEBldgW4ba0l0pI"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/VESTUTqrwaRoCZgCb8kVAcMr7Rj5R1E0e5EAjEZG9v0"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/Q8TJ7rw-dJ_6JhdhprfQlaUiOd4tr24WZA0YkFjNsVA"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/djsSXMmJyLWlVh8yYVyRjvcvrHqfbssWJ6H0xK11qy0"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/SKsNL94ulpUVOxFbtwKTTijuIARKWGpWeRu6JKz_z40"
+  }
+}
+products {
+  vendor: "jump"
+  product_id: "Cwdqy0Gd6f4-L42UGOq4nr4zJlCaPb2ek7RFpFEe8sg"
+  title_jp: "『極楽街』のるキャラマスコット(R)　アルマ"
+  tags {
+    text_zh: "極樂街"
+  }
+  tags {
+    text_jp: "のるキャラマスコット"
+    text_zh: "JS 趴娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/jA27YKkz_oiwKhNGrU9wi2DlV56PKh-YeZlfccfXaAM"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/RlcAUjL9Z8S0D87LHxlBzIpaiRO7UFCF1WqQk7S4JXQ"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/yREs0yzPoOCMB1dgb8vMfF4tohT7i8uuultwWjAsHJk"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/pkrW87qzil5is0sll14VFXg6fIZvHaJqdgfiFJ2e1bQ"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/NCP8bhExnqKjX-XjkVSWocEA8sdpdDzBP-OyNnlGSfA"
+  }
+}
+products {
+  vendor: "jump"
+  product_id: "K46SHHr7xuAukcvcFi-9etZStJ1NrdxwjVn8sP8vuX4"
+  title_jp: "『ファントムバスターズ』のるキャラマスコット(R)2体セット　宍喰野虎落＆是岸遊人"
+  tags {
+    text_zh: "惡靈剋星"
+  }
+  tags {
+    text_jp: "のるキャラマスコット"
+    text_zh: "JS 趴娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/u9_KMQh8TjY7s2e4wkPnAmfg9JEUwwAcjnzd0XcQ3Ss"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/lm1Uct35YXnjCCBS34wAxbYJUaWhf7geIdPm7F5rRss"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/qfdzHWeGCok27mTpNNk2ZwvkwYdOD3ys0J05kmGf65s"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/i4txQ-adAdUiFkE5iQO422SiMJb9eO3IanDFxwM5kTw"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/r-ABFtze0NAO0bnJEQ1gDMQu7E99kocDrubMpLIfpx0"
+  }
+}
+products {
+  vendor: "jump"
+  product_id: "4XmRffYd049l8mDrBPfegFldkm93_1_RQp82Q7mbCh8"
+  title_jp: "『BLEACH』のるキャラマスコット(R)　市丸ギン"
+  tags {
+    text_zh: "死神"
+  }
+  tags {
+    text_jp: "のるキャラマスコット"
+    text_zh: "JS 趴娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/kePJ0w29EVCkYxm4Howzjxuue4EC_FnVAYl5FYOSoQM"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/1UErVLynD22AcZa6lFfmycQHIevmefp1E2thAhj4ly8"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/ot65NJ5VlY_St6_jdTkbYEX2OzcJ4XKpSUoPeo6qQ1E"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/PPJ1amgEWcS5C9_NmXIdMEz_PJRq1eCKf6KPod73Rgo"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/YNs33kzAMBH2o4tim8rC1S8NXOiFApK_YOx36F_8ysI"
+  }
+}
+products {
+  vendor: "jump"
+  product_id: "TlcWfid8nGeP8uaZVL5qQVFoCfqaBlVL3BesmW5i7rE"
+  title_jp: "『忘却バッテリー』のるキャラマスコット(R)　清峰葉流火　都立小手指高校制服Ver."
+  tags {
+    text_zh: "失憶投捕"
+  }
+  tags {
+    text_jp: "のるキャラマスコット"
+    text_zh: "JS 趴娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/cAhmHiAfddGmLhwPks6NAw8kintpy3eDxhU97PWtx1A"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/vPgDYgIJZBbO46DRf5Dw3D5fcprvww-GeF2PmlUaEKc"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/eZVrU8yQxGhfFPIPQt2j4sglPwUhN8LqurL13L0k1No"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/H1QePaWP6L7vUgRHXi178X7yfkTCTgRHRKU3476SNOk"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/Z70RQ9jmHYrMx84GIg77rAV_--Mx4iUUtEnCZ9FOwbs"
+  }
+}
+products {
+  vendor: "jump"
+  product_id: "3_xsXZHLNzw8NLDF1E0wmdcYKBy4G19ypH2hjiwZrCQ"
+  title_jp: "『忘却バッテリー』のるキャラマスコット(R)　要圭　都立小手指高校制服Ver."
+  tags {
+    text_zh: "失憶投捕"
+  }
+  tags {
+    text_jp: "のるキャラマスコット"
+    text_zh: "JS 趴娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/f5R29dQCTiKvCZJq_5_aIRnEmmVsRLHs6ELVvtNslW0"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/f-Pk9dtE4LtLgxhdB9UJ5kSIMyFVLBAv6ScLZ23uOnc"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/tzKeplquLN8T6_OVKEeLnSOn15o6tEo3Vbhr8WdX0Xk"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/IA_ku3uJ8jX-HYQB2Glx4xwMqaKXqINqeKyCOkr5AAE"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/3LMZ08sNwAVSsj7yAZ5CvKtdMypVes9ybQDxC-GPGFs"
+  }
+}
+products {
+  vendor: "jump"
+  product_id: "1BGfm8l1RRd5C7-tjiet9cYg8ef29-abFxCGVXZYP04"
+  title_jp: "『忘却バッテリー』のるキャラマスコット(R)　藤堂葵　都立小手指高校制服Ver."
+  tags {
+    text_zh: "失憶投捕"
+  }
+  tags {
+    text_jp: "のるキャラマスコット"
+    text_zh: "JS 趴娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/-v5XtOmiWNx_fpwEjp5oC4qjcrKaoNJkN7PFrhKH5Bg"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/GGGWUZ3EU_LGzhgohVLfLLaec9ftohesoS3oezGdEFc"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/yg2wcIBfui09zQBmwAIYZYrIfaTRUki3ISQ34ONGZLQ"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/KXHYnO12m30hpbKx1ZZJBPb1v6h71k6EzwpE834UJeI"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/CzSpTycYTvs5gUKcqAF6KBqpiTeXAhwEIN9xjsMvL10"
+  }
+}
+products {
+  vendor: "jump"
+  product_id: "5YBlWNqNednLsIo4TIbvwf1ceBG5Hkll87dFhdz0ymQ"
+  title_jp: "『NARUTO-ナルト-』のるキャラマスコット(R)　我愛羅"
+  tags {
+    text_zh: "火影忍者"
+  }
+  tags {
+    text_jp: "のるキャラマスコット"
+    text_zh: "JS 趴娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/KoYwFrR6If4RQl7oMbrtCTvEcvZ0mQ3MFIFFDiyMsbg"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/OqyvY4p7_oIn1PeE8tZCyzjEakUxrRl5lnSD3iX8MvY"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/ppnzDJTVU90Vk5_OOjVij-n7Yoa-MUqZc5r1Ohr0Vb8"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/eXDhvYhOSgji6Fe1HzQDlWpYJAAQRw_9VbI-pmNdP3Q"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/bMFEe-XIfLkhbWOKZoS32gYk46aiEk41YIh1maFOTXE"
+  }
+}
+products {
+  vendor: "jump"
+  product_id: "PvDzVeI_xIhSa6FW8ei_gVT0jEjqglioipGqw5lrS1w"
+  title_jp: "『BLEACH』のるキャラマスコット(R)　藍染惣右介"
+  tags {
+    text_zh: "死神"
+  }
+  tags {
+    text_jp: "のるキャラマスコット"
+    text_zh: "JS 趴娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/yorMX2qoihDqYZBpT3GVa2kZCfMQ3fauaxt3WhB-2H0"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/VfYqTdmGgLFOxAGlI469zfEVpmTktUhadnz2XdfKgCo"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/pFTliPiXUvdfiI2398S16BOawkzclGF9zsLRPOLL0SY"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/hYcIUYWgdm3WBj2c7Br-wd--PUQSTQE75_2skFFepgA"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/D-yXfQZkDZU139q9Uvn4rt__eRlqKV7wIFc3f8qlA3A"
+  }
+}
+products {
+  vendor: "jump"
   product_id: "VY4cYG1ABunBXuyhfqNtJJBYgBkOFlZjQUG0cYexN4g"
   tags {
     text_zh: "七龍珠"
@@ -6262,6 +6721,34 @@ products {
 }
 products {
   vendor: "megahouse"
+  product_id: "1RV6E4p1vLjLYVx9tSH8AJqdjXtHEwQhX1jrU4TwrEY"
+  tags {
+    text_zh: "鬼滅之刃"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/1vys3BtkTJOFa6acgM_9fvwzrfYi3lEQxeruP8qLxng"
+  }
+}
+products {
+  vendor: "megahouse"
+  product_id: "D5yuDROBHNUGyIEaWk-hNtVsoZ0lEqR5uwSc232RhhU"
+  tags {
+    text_zh: "鬼滅之刃"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/Gmk2a9vBWD9JJSHpC2hv2cQtoPULeYIvidssLoPOpJA"
+  }
+}
+products {
+  vendor: "megahouse"
   product_id: "kexyLxG2YScwpJQvB7N_8PQyIcRuW2_qGs5K1qRKkOc"
   tags {
     text_zh: "火影忍者"
@@ -6454,6 +6941,34 @@ products {
   }
   images {
     url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/IZLAEU--3PWgnlPQGPr4NurYiA6Q_SHGKWwkMF3Q6SM"
+  }
+}
+products {
+  vendor: "megahouse"
+  product_id: "jKB7MzWdMikDTnaJJaQs1NN9vnhXsJPqYacmIwgrXYA"
+  tags {
+    text_zh: "火影忍者"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/DLqONmemzrzF_Fzhe12XW8MeK1adBKl9pkzIQOJnb7Y"
+  }
+}
+products {
+  vendor: "megahouse"
+  product_id: "zSWemf7c5uQ7p_l8MGRTZtWybSdUppsnvcsMVHOlnMY"
+  tags {
+    text_zh: "火影忍者"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/17PsMbamOnpSuoEbE1dt917TWnBiVxSS_aWmCWnoM14"
   }
 }
 products {
@@ -9020,6 +9535,34 @@ products {
 }
 products {
   vendor: "megahouse"
+  product_id: "Q_Z5McRw7CmPXm_HoSz8o3713A15ocnwRsxmu3LGPms"
+  tags {
+    text_zh: "死神"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/CUFm7EWlaiyJqcOMXO-fzebvQ3YRcwaMrsi6l8vlONM"
+  }
+}
+products {
+  vendor: "megahouse"
+  product_id: "n_z9qO3qEA0i16U5NgpKDfwT8QOlCHTcbz_3h4ifmRA"
+  tags {
+    text_zh: "死神"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/RJIzKJqlVehz_Mm4BTFyWXDhXUk0OEDx-sOHlM8EH5E"
+  }
+}
+products {
+  vendor: "megahouse"
   product_id: "IzFu6OKqCSbRO_Ed64fp8tMKu2ZIc9nfloelauE3tAc"
   tags {
     text_zh: "來自深淵"
@@ -9608,6 +10151,20 @@ products {
 }
 products {
   vendor: "megahouse"
+  product_id: "7S4x8bcBIy-b5LYq7ibeEu8d6uokI_l1MZtIHxnnRlY"
+  tags {
+    text_zh: "銀魂"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/I2jfo_ff8tJZ9tsB5PP88aA32VUMKo0a1vSN_PlInT0"
+  }
+}
+products {
+  vendor: "megahouse"
   product_id: "fCZWNY-bL4_deAcd0pbO0PapNBWHpFQrrIhv134aVTA"
   tags {
     text_zh: "偶像大師"
@@ -9702,6 +10259,20 @@ products {
   }
   images {
     url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/CPXwdrny3eaYFSw-7SqgzlWHDqgL7Fha6MZciLxHU_U"
+  }
+}
+products {
+  vendor: "megahouse"
+  product_id: "4d7uv4mfv5Piczp3LwlA5gYYYYh-Ma4WOmZXEjDdHds"
+  tags {
+    text_zh: "怪獸8號"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/Rv8G6U5N1DareEU9RP1cLZC_ZnJKGi9JWFbHeFqTn1s"
   }
 }
 products {
@@ -11344,6 +11915,34 @@ products {
 }
 products {
   vendor: "megahouse"
+  product_id: "4-AnwyvfXVqcybuymagvm4WDAvq3X8jSPM5GBF6VIT0"
+  tags {
+    text_zh: "銀河特急 Milky☆Subway"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/XbzKm2z5_bPemhL27XfncYuCgE61yfJ580mBi_29lnU"
+  }
+}
+products {
+  vendor: "megahouse"
+  product_id: "KBTr3NM7XrS7qXxnMQ5mi4JzqD9ZhPunyFvEdqb-bXk"
+  tags {
+    text_zh: "銀河特急 Milky☆Subway"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/LXTk-Ur1ugxVbgM68k8j9LTHSvXPuUfg48RVnhHgXxw"
+  }
+}
+products {
+  vendor: "megahouse"
   product_id: "auWq4Ktuz7q1xty6mxlrezZWHY8tv5qB_HuIqpsP-zo"
   tags {
     text_zh: "名偵探柯南"
@@ -11368,5 +11967,215 @@ products {
   }
   images {
     url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/MFRx-i-khVHDSkNkzNv6P5nZTlP2nxqW-2iT4xgHaKQ"
+  }
+}
+products {
+  vendor: "megahouse"
+  product_id: "fv9VvT11sPkK8mBTiCv23txSeLDwM6fQOvIKCKd3Q_4"
+  tags {
+    text_zh: "鋼之鍊金術師"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/Umf2hl-S_yesMXKJgqfmduJlLgNBLvJVQXsksEch2uU"
+  }
+}
+products {
+  vendor: "megahouse"
+  product_id: "GrMgF27cJZZORIQii0gF9yDSbi-ipGQx_ANsJAFmuLY"
+  tags {
+    text_zh: "鋼之鍊金術師"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/H-RNHjks6fbX0NToB_u-EsptUAmljAXDBPIIScfY5Bg"
+  }
+}
+products {
+  vendor: "megahouse"
+  product_id: "0SAfznW0TMc3hiKSmrKGD0qJhefsa3HuERsJr6eGukQ"
+  tags {
+    text_zh: "獵人"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/dWWzESDfhixRmKlWvA1qxCat3HNpYHQ_oG_95-7uG6s"
+  }
+}
+products {
+  vendor: "megahouse"
+  product_id: "JyTnocXY23QCq4kHgPvGmPi5bjTKaMWWKzoD9sIpAyI"
+  tags {
+    text_zh: "獵人"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/6jKIOw20_Hv0WWBgaQ4p4NwSi4TulMh-GppsT5Q8BsU"
+  }
+}
+products {
+  vendor: "megahouse"
+  product_id: "8YwCRBV7YjCi22rKy9TqUZEcfK7HOQbCWAPtLcxceHs"
+  tags {
+    text_zh: "女神異聞錄"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/7WFDq2XlX6ffSQD6-mx4S2cj_UhrtFPd9O13pH9x-Nk"
+  }
+}
+products {
+  vendor: "megahouse"
+  product_id: "-D8bUhOxQvs5_VInI8tvh3VskgYw3TjujNW5P5xG0y4"
+  tags {
+    text_zh: "女神異聞錄"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/fVmoyXIoD8y6JYGno_HFNSuLz3Hy0L51FZVXB6B0Cv8"
+  }
+}
+products {
+  vendor: "megahouse"
+  product_id: "fopuJhCwoyNMxZqYvS3R62ih2RilDprD_73jda10oN4"
+  tags {
+    text_zh: "超時空輝耀姬！"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/rdc5iRjzIV7n1N8tAQTYyQnvQaHEU64ZFF-pM0Cmje4"
+  }
+}
+products {
+  vendor: "megahouse"
+  product_id: "aQSQTmKNWhDECFS6CWXa6kgilMzJys9XFnkg8LDGM1g"
+  tags {
+    text_zh: "超時空輝耀姬！"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/vi7T65-Ki_0J2G0SzOk_EPef2ZvgXqAu7GZM3rphLUg"
+  }
+}
+products {
+  vendor: "megahouse"
+  product_id: "dJ6Xn6PkDgNl-xBlGNYCHt_FAEXgDa5WiLCjwCxRyyI"
+  tags {
+    text_zh: "刀劍亂舞"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/PkzXZCvyXXRocws3U66SMhgQAjSL7ynkMYiej296s6o"
+  }
+}
+products {
+  vendor: "megahouse"
+  product_id: "ZsqPtWS-lp3qzqWuNU-wOqiUfrimrhFnA9eTDrZDWDA"
+  tags {
+    text_zh: "刀劍亂舞"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/atTGIA-YdL16rLi549o7Pv7onz0AkuGEGl50YozvKNE"
+  }
+}
+products {
+  vendor: "megahouse"
+  product_id: "UbAuAj_gIlxudwF9vts-tU6c6MYGry1EqZVc8JSsa0k"
+  tags {
+    text_zh: "齊木楠雄的災難"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/GT0mEy_ln6jpEf86TIuK4piuikWG65skiNKimrsVmn4"
+  }
+}
+products {
+  vendor: "megahouse"
+  product_id: "BHm1z3lkuy-tw50XlRrIh0eOwcv_vCbS4ZaXvdzQqFQ"
+  tags {
+    text_zh: "入間同學入魔了！"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/35-iAGTu22kGMCheLaqdNkxccQPsjzCUJFc4k1MxdEc"
+  }
+}
+products {
+  vendor: "megahouse"
+  product_id: "CPtZrsbSYwFwGkC-baemnmqV8m1NhGy6TY7cNrfYltk"
+  tags {
+    text_zh: "入間同學入魔了！"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/iDWA3lxFSa7nknXZYgGHRfcwau5oDdfB9v3WE1XZaC4"
+  }
+}
+products {
+  vendor: "megahouse"
+  product_id: "c1ey6vgZkfEuOA90OXhoeiew5pDDgSZCJ1ncSxnnIpE"
+  tags {
+    text_zh: "女神異聞錄"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/FSB9Z9eg-zSEIWoBdy-p5e43wYx0406cpj9ZmuQV6Tg"
+  }
+}
+products {
+  vendor: "megahouse"
+  product_id: "L5dGrm-LpMVI-ONGcV2YeF0ElAAcHN22RDjESkRFRDg"
+  tags {
+    text_zh: "女神異聞錄"
+  }
+  tags {
+    text_jp: "るかっぷ"
+    text_zh: "抬頭娃"
+  }
+  images {
+    url: "https://raw.githubusercontent.com/miwa23333/acg-goods/refs/heads/main/blobs/deMv8RsNujIeyBSd6tPPEERMGPEUAqvTO3iCeuSOEm0"
   }
 }
